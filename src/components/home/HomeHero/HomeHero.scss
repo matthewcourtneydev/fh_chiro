@@ -43,7 +43,9 @@
   
   .home-hero h1 {
     margin-top: 18px;
-    font-size: clamp(3.2rem, 6vw, 6.4rem);
+    font-size: clamp(3.8rem, 6vw, 6.6rem);
+    line-height: 0.92;
+    max-width: 620px;
   }
   
   .home-hero h1 span {
@@ -155,5 +157,12 @@
   
     .home-hero h1 {
       font-size: clamp(2.75rem, 13vw, 3.8rem);
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .hero h1 {
+      font-size: 5.8rem;
+      max-width: 700px;
     }
   }
