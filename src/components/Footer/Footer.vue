@@ -122,7 +122,7 @@ const props = defineProps({
         <h2>Contact</h2>
 
         <p>
-          21 Yost Blvd #150<br />
+          21 Yost Blvd Ste. 148/150<br />
           Forest Hills, PA 15221
         </p>
 

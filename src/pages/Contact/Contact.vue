@@ -38,13 +38,13 @@ import { Phone, MapPin, Clock, MessageCircle } from "lucide-vue-next";
             <div>
               <h2>Forest Hills Shopping Center</h2>
               <p>
-                1901 Ardmore Blvd, Ste 123<br />
+                21 Yost Blvd, Ste 148/150<br />
                 Pittsburgh, PA 15221
               </p>
               <a
-                href="https://maps.google.com"
+                href="https://www.google.com/maps/search/?api=1&query=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Get Directions
               </a>
@@ -113,7 +113,7 @@ import { Phone, MapPin, Clock, MessageCircle } from "lucide-vue-next";
           <div class="contact-map">
             <iframe
               title="Forest Hills Chiropractic map"
-              src="https://www.google.com/maps?q=21%20Yost%20Blvd%20%23150%20Forest%20Hills%2C%20PA%2015221&output=embed"
+              src="https://www.google.com/maps?q=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221&output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
