@@ -1,0 +1,21 @@
+.services-grid {
+    background: var(--color-white);
+  }
+  
+  .services-grid h2 {
+    margin-top: 12px;
+    margin-bottom: 40px;
+    font-size: clamp(2.4rem, 4vw, 4.2rem);
+  }
+  
+  .services-grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  @media (max-width: 768px) {
+    .services-grid__wrapper {
+      grid-template-columns: 1fr;
+    }
+  }

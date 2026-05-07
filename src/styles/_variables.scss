@@ -1,0 +1,48 @@
+/* Colors */
+$color-green: #1f3d2b;
+$color-green-dark: #102219;
+$color-black: #111111;
+$color-gold: #c8a96a;
+$color-cream: #ebe1d9;
+$color-gray: #6b6f72;
+$color-white: #ffffff;
+
+$color-text: $color-black;
+$color-text-muted: $color-gray;
+$color-background: $color-white;
+$color-background-soft: #f7f4ef;
+$color-border: rgba(17, 17, 17, 0.14);
+
+/* CSS variables for runtime/global use */
+:root {
+  --color-green: #{$color-green};
+  --color-green-dark: #{$color-green-dark};
+  --color-black: #{$color-black};
+  --color-gold: #{$color-gold};
+  --color-cream: #{$color-cream};
+  --color-gray: #{$color-gray};
+  --color-white: #{$color-white};
+
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-background: #{$color-background};
+  --color-background-soft: #{$color-background-soft};
+  --color-border: #{$color-border};
+
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --container-max: 1120px;
+  --container-narrow: 920px;
+  --container-reading: 760px;
+  --container-padding: 24px;
+
+  --section-padding-sm: 48px;
+  --section-padding-md: 72px;
+  --section-padding-lg: 96px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --shadow-soft: 0 12px 32px rgba(17, 17, 17, 0.08);
+}

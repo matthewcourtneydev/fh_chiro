@@ -1,0 +1,609 @@
+.therapies-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Hero */
+
+.therapies-hero {
+  background:
+    radial-gradient(circle at 8% 20%, rgba(200, 169, 106, 0.1), transparent 32%),
+    var(--color-background-soft);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.therapies-hero__inner {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 72px;
+  align-items: center;
+  padding-block: 88px;
+}
+
+.therapies-hero__content {
+  animation: fadeUp 700ms ease both;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-green);
+}
+
+.breadcrumb span {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.breadcrumb span:last-child {
+  color: var(--color-green);
+}
+
+.therapies-hero h1 {
+  margin-top: 18px;
+  font-size: clamp(4rem, 7vw, 7.25rem);
+  line-height: 0.88;
+}
+
+.therapies-hero__content > p:not(.eyebrow) {
+  max-width: 560px;
+  margin-top: 28px;
+  font-size: 1.08rem;
+  color: var(--color-text-muted);
+}
+
+.therapies-hero .btn {
+  gap: 10px;
+  width: fit-content;
+  margin-top: 34px;
+}
+
+.therapies-hero__visual {
+  position: relative;
+  min-height: 520px;
+  animation: imageSettle 900ms ease both;
+}
+
+.therapies-hero__visual > img {
+  width: 100%;
+  height: 520px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.therapies-hero__card {
+  position: absolute;
+  left: -56px;
+  bottom: -34px;
+  width: min(330px, 82%);
+  padding: 34px;
+  color: var(--color-white);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 34%),
+    linear-gradient(135deg, #d0ad64, #b8924e);
+  box-shadow: 0 22px 48px rgba(17, 17, 17, 0.18);
+  animation: fadeUp 700ms 180ms ease both;
+}
+
+.therapies-hero__card > svg {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.therapies-hero__card > span {
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.therapies-hero__card h2 {
+  margin-top: 22px;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.therapies-hero__card ul {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.therapies-hero__card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Shared headings */
+
+.therapies-section-header {
+  max-width: 760px;
+}
+
+.therapies-section-header h2,
+.therapies-intro h2,
+.therapies-accordion h2,
+.therapies-performance h2,
+.therapies-help h2 {
+  margin-top: 12px;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+}
+
+.therapies-section-header > p:not(.eyebrow) {
+  max-width: 640px;
+  margin-top: 18px;
+  color: var(--color-text-muted);
+}
+
+/* Modalities */
+
+.therapies-modalities {
+  background: var(--color-white);
+}
+
+.therapies-modalities__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 46px;
+}
+
+.therapies-modalities__card {
+  position: relative;
+  min-height: 245px;
+  padding: 30px;
+  background: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  animation: fadeUp 700ms ease both;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.therapies-modalities__card::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.therapies-modalities__card:hover {
+  transform: translateY(-5px);
+  background: var(--color-white);
+  border-color: rgba(200, 169, 106, 0.45);
+  box-shadow: var(--shadow-soft);
+}
+
+.therapies-modalities__card:hover::before {
+  transform: scaleX(1);
+}
+
+.therapies-modalities__card:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.therapies-modalities__card:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.therapies-modalities__card:nth-child(4) {
+  animation-delay: 200ms;
+}
+
+.therapies-modalities__card:nth-child(5) {
+  animation-delay: 260ms;
+}
+
+.therapies-modalities__card:nth-child(6) {
+  animation-delay: 320ms;
+}
+
+.therapies-modalities__icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  color: var(--color-white);
+  background: var(--color-green-dark);
+  border-radius: 50%;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.therapies-modalities__card:hover .therapies-modalities__icon {
+  transform: translateY(-3px) scale(1.04);
+  color: var(--color-green-dark);
+  background: var(--color-gold);
+}
+
+.therapies-modalities__card h3 {
+  margin-top: 24px;
+  font-size: 1.15rem;
+}
+
+.therapies-modalities__card p {
+  margin-top: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Intro */
+
+.therapies-intro {
+  background:
+    radial-gradient(circle at 100% 20%, rgba(31, 61, 43, 0.06), transparent 34%),
+    var(--color-background-soft);
+  border-top: 1px solid var(--color-border);
+}
+
+.therapies-intro__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.therapies-intro__media {
+  height: 430px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  animation: fadeUp 700ms ease both;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.therapies-intro__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.therapies-intro__media:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(200, 169, 106, 0.45);
+}
+
+.therapies-intro__media:hover img {
+  transform: scale(1.03);
+}
+
+.therapies-intro__content {
+  animation: fadeUp 700ms ease both;
+}
+
+.therapies-intro__content p:not(.eyebrow) {
+  max-width: 620px;
+  margin-top: 18px;
+  color: var(--color-text-muted);
+}
+
+/* Accordion */
+
+.therapies-accordion {
+  background: var(--color-white);
+}
+
+.therapies-accordion__inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.therapies-accordion__heading {
+  animation: fadeUp 700ms ease both;
+}
+
+.therapies-accordion__heading > p:not(.eyebrow) {
+  max-width: 480px;
+  margin-top: 22px;
+  color: var(--color-text-muted);
+}
+
+.therapies-accordion__list {
+  display: grid;
+  gap: 12px;
+  animation: fadeUp 700ms ease both;
+}
+
+.therapies-accordion__item {
+  background: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.therapies-accordion__item:hover {
+  transform: translateY(-3px);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(200, 169, 106, 0.45);
+}
+
+.therapies-accordion__item summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 20px 22px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.therapies-accordion__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.therapies-accordion__item summary svg {
+  color: var(--color-green);
+}
+
+.therapies-accordion__item summary svg:last-child {
+  transition: transform 180ms ease;
+}
+
+.therapies-accordion__item[open] summary svg:last-child {
+  transform: rotate(180deg);
+}
+
+.therapies-accordion__item summary span {
+  color: var(--color-text-muted);
+}
+
+.therapies-accordion__item > p {
+  padding: 0 22px 22px 58px;
+  color: var(--color-text-muted);
+  animation: accordionFade 220ms ease both;
+}
+
+/* Performance Banner */
+
+.therapies-performance {
+  color: var(--color-white);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(200, 169, 106, 0.12), transparent 30%),
+    linear-gradient(135deg, var(--color-green-dark), var(--color-black));
+}
+
+.therapies-performance__inner {
+  min-height: 320px;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 64px;
+  align-items: center;
+  padding-block: 72px;
+  animation: fadeUp 700ms ease both;
+}
+
+.therapies-performance .eyebrow {
+  color: var(--color-gold);
+}
+
+.therapies-performance p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* Help */
+
+.therapies-help {
+  background: var(--color-white);
+}
+
+.therapies-help__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.therapies-help__content {
+  animation: fadeUp 700ms ease both;
+}
+
+.therapies-help__content > p:not(.eyebrow) {
+  max-width: 560px;
+  margin-top: 18px;
+  color: var(--color-text-muted);
+}
+
+.therapies-help ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 26px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.therapies-help li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-muted);
+}
+
+.therapies-help li svg {
+  flex: 0 0 auto;
+  color: var(--color-green);
+}
+
+.therapies-help__image {
+  height: 390px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  animation: fadeUp 700ms ease both;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.therapies-help__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.therapies-help__image:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(200, 169, 106, 0.45);
+}
+
+.therapies-help__image:hover img {
+  transform: scale(1.03);
+}
+
+/* Animations */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageSettle {
+  from {
+    opacity: 0;
+    transform: scale(1.035);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes accordionFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .therapies-hero__inner,
+  .therapies-intro__inner,
+  .therapies-accordion__inner,
+  .therapies-performance__inner,
+  .therapies-help__inner {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .therapies-hero__card {
+    left: 24px;
+    bottom: -28px;
+  }
+
+  .therapies-modalities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .therapies-hero__inner {
+    min-height: auto;
+    padding-block: 72px 96px;
+  }
+
+  .therapies-hero h1 {
+    font-size: clamp(3.2rem, 14vw, 5rem);
+  }
+
+  .therapies-hero__visual,
+  .therapies-hero__visual > img {
+    min-height: 360px;
+    height: 360px;
+  }
+
+  .therapies-hero__card {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .therapies-modalities__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .therapies-intro__media,
+  .therapies-help__image {
+    height: 300px;
+  }
+
+  .therapies-accordion__item > p {
+    padding-left: 22px;
+  }
+
+  .therapies-help ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .therapies-page *,
+  .therapies-page *::before,
+  .therapies-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

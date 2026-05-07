@@ -1,0 +1,35 @@
+.about-mission {
+    color: var(--color-white);
+    background:
+      radial-gradient(circle at top right, rgba(200, 169, 106, 0.12), transparent 36%),
+      linear-gradient(135deg, var(--color-green-dark), var(--color-black));
+  }
+  
+  .about-mission__inner {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    max-width: 920px;
+    padding-block: 56px;
+    text-align: center;
+  }
+  
+  .about-mission .eyebrow {
+    color: var(--color-gold);
+  }
+  
+  .about-mission__icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--color-gold);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .about-mission__text {
+    margin-top: 12px;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    color: rgba(255, 255, 255, 0.82);
+  }

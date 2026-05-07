@@ -1,0 +1,141 @@
+.location-map {
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-white);
+  }
+  
+  .location-map__header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .location-map h2 {
+    margin-top: 10px;
+    font-size: clamp(2.4rem, 4vw, 4.2rem);
+  }
+  
+  .location-map__layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 36px;
+    align-items: stretch;
+  }
+  
+  .location-map__info {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .location-map__card {
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    background: var(--color-background-soft);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+  
+  .location-map__card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+    border-color: rgba(200, 169, 106, 0.35);
+  }
+  
+  .location-map__card h3 {
+    font-size: 1.35rem;
+    color: var(--color-green);
+  }
+  
+  .location-map__card p {
+    margin-top: 14px;
+    color: var(--color-text-muted);
+  }
+  
+  .location-map__phone {
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 700;
+    color: var(--color-green);
+    transition: color 180ms ease;
+  }
+  
+  .location-map__phone:hover,
+  .location-map__phone:focus-visible {
+    color: var(--color-gold);
+  }
+  
+  .location-map__card ul {
+    display: grid;
+    gap: 10px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .location-map__card li {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+  
+  .location-map__card strong {
+    color: var(--color-black);
+  }
+  
+  .location-map__map {
+    min-height: 470px;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    background: var(--color-background-soft);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+  
+  .location-map__map:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+    border-color: rgba(200, 169, 106, 0.35);
+  }
+  
+  .location-map__map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 470px;
+    border: 0;
+    filter: grayscale(100%) contrast(0.95) brightness(1.05);
+  }
+  
+  @media (max-width: 900px) {
+    .location-map__header {
+      align-items: start;
+      flex-direction: column;
+    }
+  
+    .location-map__layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .location-map__map,
+    .location-map__map iframe {
+      min-height: 360px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .location-map__card {
+      padding: 22px;
+    }
+  
+    .location-map__card li {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
