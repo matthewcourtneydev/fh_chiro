@@ -11,8 +11,8 @@ import {
 const items = [
   {
     icon: Star,
-    title: '5.0 Rating',
-    text: '400+ Google Reviews',
+    title: '4.9 RATING',
+    text: '350+ Google Reviews',
     accent: true,
   },
   {
@@ -22,13 +22,13 @@ const items = [
   },
   {
     icon: Users,
-    title: '500+',
-    text: 'Happy Patients',
+    title: 'Patient-Focused Care',
+    text: 'Care built around your goals',
   },
   {
     icon: ShieldCheck,
     title: 'Evidence-Based Care',
-    text: 'Focused on lasting results',
+    text: 'Focused on lasting progress',
   },
   {
     icon: CircleCheck,
