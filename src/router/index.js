@@ -19,7 +19,7 @@ import Accessibility from "@/pages/Accessibility/Accessibility.vue";
 import TermsOfService from "@/pages/TermsOfService/TermsOfService.vue";
 import HipaaPolicy from "@/pages/HipaaPolicy/HipaaPolicy.vue";
 
-const SITE_URL = "https://fhchiropractic.com";
+const SITE_URL = "https://fh-chiropractic.com";
 
 const DEFAULT_TITLE =
   "Forest Hills Chiropractic | Chiropractor in Pittsburgh, PA";

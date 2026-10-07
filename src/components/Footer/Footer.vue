@@ -128,7 +128,7 @@ const props = defineProps({
 
         <a href="tel:+14126464344">(412) 646-4344</a>
 
-        <a href="mailto:info@fhchiropractic.com"> info@fhchiropractic.com </a>
+        <a href="mailto:info@fh-chiropractic.com"> info@fh-chiropractic.com </a>
       </div>
     </div>
 
