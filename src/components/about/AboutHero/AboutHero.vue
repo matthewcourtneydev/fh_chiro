@@ -1,5 +1,5 @@
 <script setup>
-import './AboutHero.scss'
+import "./AboutHero.scss";
 </script>
 
 <template>
@@ -14,9 +14,10 @@ import './AboutHero.scss'
         </h1>
 
         <p class="about-hero__text animate-fade-up animate-delay-2">
-          Forest Hills Chiropractic combines hands-on care, movement expertise,
-          and a performance-driven approach to help you move better, feel better,
-          and live better.
+          Forest Hills Chiropractic provides personalized chiropractic care in
+          Pittsburgh, PA, combining hands-on care, movement expertise, and a
+          performance-driven approach to help you move better, feel better, and
+          live better.
         </p>
       </div>
 

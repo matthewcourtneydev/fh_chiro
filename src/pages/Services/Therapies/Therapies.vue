@@ -1,6 +1,6 @@
 <script setup>
-import './Therapies.scss'
-import Footer from '@/components/Footer/Footer.vue'
+import "./Therapies.scss";
+import Footer from "@/components/Footer/Footer.vue";
 import {
   CheckCircle,
   ChevronDown,
@@ -11,83 +11,78 @@ import {
   Wind,
   StretchHorizontal,
   ArrowRight,
-} from 'lucide-vue-next'
+} from "lucide-vue-next";
 
-import heroImage from '@/assets/images/therapies-recovery-hero.png'
-import bodyImageOne from '@/assets/images/therapies-recovery-body-1.png'
-import bodyImageTwo from '@/assets/images/therapies-recovery-body-2.png'
+import heroImage from "@/assets/images/therapies-recovery-hero.png";
+import bodyImageOne from "@/assets/images/therapies-recovery-body-1.png";
+import bodyImageTwo from "@/assets/images/therapies-recovery-body-2.png";
 
 const modalities = [
   {
     icon: HandHeart,
-    title: 'Soft Tissue Therapy',
-    text: 'Hands-on care designed to reduce tension and improve tissue quality.',
+    title: "Soft Tissue Therapy",
+    text: "Hands-on care designed to reduce tension and improve tissue quality.",
   },
   {
     icon: StretchHorizontal,
-    title: 'Stretch Therapy',
-    text: 'Guided movement to improve flexibility, comfort, and mobility.',
+    title: "Stretch Therapy",
+    text: "Guided movement to improve flexibility, comfort, and mobility.",
   },
   {
     icon: Sparkles,
-    title: 'Recovery Therapies',
-    text: 'Support healing, circulation, and comfort between visits.',
+    title: "Recovery Therapies",
+    text: "Support healing, circulation, and comfort between visits.",
   },
   {
     icon: Activity,
-    title: 'Mobility Work',
-    text: 'Targeted movement strategies to help restore better function.',
+    title: "Mobility Work",
+    text: "Targeted movement strategies to help restore better function.",
   },
   {
     icon: Wind,
-    title: 'Tension Relief',
-    text: 'Focused care for tight muscles, soreness, and everyday stress.',
+    title: "Tension Relief",
+    text: "Focused care for tight muscles, soreness, and everyday stress.",
   },
   {
     icon: Dumbbell,
-    title: 'Performance Support',
-    text: 'Recovery-focused care for active lifestyles and training demands.',
+    title: "Performance Support",
+    text: "Recovery-focused care for active lifestyles and training demands.",
   },
-]
+];
 
 const recoveryQuestions = [
   {
-    title: 'What can therapies help with?',
-    text:
-      'Therapies may help with muscle tension, soreness, stiffness, limited mobility, postural strain, and recovery between chiropractic visits.',
+    title: "What can therapies help with?",
+    text: "Therapies may help with muscle tension, soreness, stiffness, limited mobility, postural strain, and recovery between chiropractic visits.",
   },
   {
-    title: 'Can therapies be combined with adjustments?',
-    text:
-      'Yes. Many patients benefit from combining chiropractic adjustments with soft tissue work, stretching, or recovery therapies to support better movement.',
+    title: "Can therapies be combined with adjustments?",
+    text: "Yes. Many patients benefit from combining chiropractic adjustments with soft tissue work, stretching, or recovery therapies to support better movement.",
   },
   {
-    title: 'What does treatment feel like?',
-    text:
-      'Treatment is personalized to your comfort level. Care may feel relaxing, relieving, or mildly intense depending on the area being treated.',
+    title: "What does treatment feel like?",
+    text: "Treatment is personalized to your comfort level. Care may feel relaxing, relieving, or mildly intense depending on the area being treated.",
   },
   {
-    title: 'Who is this best for?',
-    text:
-      'Therapies can be helpful for athletes, active adults, desk workers, people dealing with chronic tension, and anyone looking to move and recover better.',
+    title: "Who is this best for?",
+    text: "Therapies can be helpful for athletes, active adults, desk workers, people dealing with chronic tension, and anyone looking to move and recover better.",
   },
   {
-    title: 'How often should I schedule recovery care?',
-    text:
-      'Frequency depends on your symptoms, goals, and activity level. Your care plan may include short-term recovery support or ongoing maintenance.',
+    title: "How often should I schedule recovery care?",
+    text: "Frequency depends on your symptoms, goals, and activity level. Your care plan may include short-term recovery support or ongoing maintenance.",
   },
-]
+];
 
 const helpedConditions = [
-  'Muscle tension',
-  'Neck and shoulder tightness',
-  'Post-workout soreness',
-  'Limited mobility',
-  'Postural strain',
-  'Overuse irritation',
-  'Recovery between visits',
-  'Everyday aches and stiffness',
-]
+  "Muscle tension",
+  "Neck and shoulder tightness",
+  "Post-workout soreness",
+  "Limited mobility",
+  "Postural strain",
+  "Overuse irritation",
+  "Recovery between visits",
+  "Everyday aches and stiffness",
+];
 </script>
 
 <template>
@@ -108,8 +103,9 @@ const helpedConditions = [
           </h1>
 
           <p>
-            Targeted therapies to reduce tension, speed recovery, and help your
-            body move and feel its best.
+            Personalized therapy and recovery care in Pittsburgh, PA designed to
+            reduce tension, support mobility, and help your body recover and
+            move better.
           </p>
 
           <a href="/booking" class="btn btn-primary">
@@ -157,9 +153,7 @@ const helpedConditions = [
         <div class="therapies-section-header">
           <p class="eyebrow">Recovery Modalities</p>
 
-          <h2>
-            Care options built around how your body moves.
-          </h2>
+          <h2>Care options built around how your body moves.</h2>
 
           <p>
             Recovery care is not one-size-fits-all. We use targeted therapies to
@@ -196,14 +190,12 @@ const helpedConditions = [
         <div class="therapies-intro__content">
           <p class="eyebrow">How it helps</p>
 
-          <h2>
-            Less tension. More control. Better recovery.
-          </h2>
+          <h2>Less tension. More control. Better recovery.</h2>
 
           <p>
             Therapies and recovery work can help calm irritated tissues, reduce
-            muscle tension, and improve the way your body handles daily movement,
-            training, or stress.
+            muscle tension, and improve the way your body handles daily
+            movement, training, or stress.
           </p>
 
           <p>
@@ -220,13 +212,11 @@ const helpedConditions = [
         <div class="therapies-accordion__heading">
           <p class="eyebrow">Common Questions</p>
 
-          <h2>
-            What to know before recovery care.
-          </h2>
+          <h2>What to know before recovery care.</h2>
 
           <p>
-            Therapy should feel clear, purposeful, and tailored to what your body
-            needs. Here are a few things patients often ask.
+            Therapy should feel clear, purposeful, and tailored to what your
+            body needs. Here are a few things patients often ask.
           </p>
         </div>
 
@@ -254,9 +244,7 @@ const helpedConditions = [
         <div>
           <p class="eyebrow">Performance Recovery</p>
 
-          <h2>
-            Built for athletes, active adults, and everyday movers.
-          </h2>
+          <h2>Built for athletes, active adults, and everyday movers.</h2>
         </div>
 
         <p>
@@ -272,9 +260,7 @@ const helpedConditions = [
         <div class="therapies-help__content">
           <p class="eyebrow">Who it can help</p>
 
-          <h2>
-            Support for tension, soreness, and movement limitations.
-          </h2>
+          <h2>Support for tension, soreness, and movement limitations.</h2>
 
           <p>
             Therapies and recovery care can be useful for people looking to feel

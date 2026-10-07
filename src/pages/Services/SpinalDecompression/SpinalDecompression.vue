@@ -1,6 +1,6 @@
 <script setup>
-import './SpinalDecompression.scss'
-import Footer from '@/components/Footer/Footer.vue'
+import "./SpinalDecompression.scss";
+import Footer from "@/components/Footer/Footer.vue";
 import {
   Leaf,
   UserCheck,
@@ -9,84 +9,78 @@ import {
   RefreshCw,
   CheckCircle,
   ChevronDown,
-} from 'lucide-vue-next'
+} from "lucide-vue-next";
 
-import heroImage from '@/assets/images/spinal-decompression-hero.png'
-import bodyImageOne from '@/assets/images/spinal-decompression-body-1.png'
-import bodyImageTwo from '@/assets/images/spinal-decompression-body-2.png'
+import heroImage from "@/assets/images/spinal-decompression-hero.png";
+import bodyImageOne from "@/assets/images/spinal-decompression-body-1.png";
+import bodyImageTwo from "@/assets/images/spinal-decompression-body-2.png";
 
 const trustItems = [
   {
     icon: Leaf,
-    title: 'Non-Surgical Solution',
-    text: 'Effective relief without surgery or medication',
+    title: "Non-Surgical Solution",
+    text: "A non-surgical approach to relieving spinal pressure",
     gold: true,
   },
   {
     icon: UserCheck,
-    title: 'Targets the Source',
-    text: 'Addresses disc pressure and nerve irritation',
+    title: "Targets the Source",
+    text: "Addresses disc pressure and nerve irritation",
   },
   {
     icon: ShieldCheck,
-    title: 'Promotes Healing',
-    text: 'Encourages your body’s natural recovery',
+    title: "Promotes Healing",
+    text: "Encourages your body’s natural recovery",
   },
   {
     icon: Clock3,
-    title: 'Safe & Gentle',
-    text: 'Comfortable treatments with no downtime',
+    title: "Safe & Gentle",
+    text: "Comfortable treatments with no downtime",
   },
   {
     icon: RefreshCw,
-    title: 'Long-Term Support',
-    text: 'Helps reduce pain and improve quality of life',
+    title: "Long-Term Support",
+    text: "Helps reduce pain and improve quality of life",
   },
-]
+];
 
 const benefits = [
   {
-    title: 'Relieves pressure on discs and nerves',
-    text:
-      'Decompression gently relieves pressure caused by herniated or bulging discs, helping reduce pain, numbness, tingling, and radiating symptoms.',
+    title: "Relieves pressure on discs and nerves",
+    text: "Decompression gently relieves pressure caused by herniated or bulging discs, helping reduce pain, numbness, tingling, and radiating symptoms.",
   },
   {
-    title: 'Supports herniated and bulging discs',
-    text:
-      'Gentle traction may help create space in the spine and reduce irritation around affected discs and nerves.',
+    title: "Supports herniated and bulging discs",
+    text: "Gentle traction may help create space in the spine and reduce irritation around affected discs and nerves.",
   },
   {
-    title: 'Reduces sciatica and nerve-related pain',
-    text:
-      'When nerve pressure is reduced, patients may experience less pain traveling into the hips, glutes, legs, or feet.',
+    title: "Reduces sciatica and nerve-related pain",
+    text: "When nerve pressure is reduced, patients may experience less pain traveling into the hips, glutes, legs, or feet.",
   },
   {
-    title: 'Improves mobility and flexibility',
-    text:
-      'By reducing pressure and stiffness, decompression care may help you move with less restriction and more confidence.',
+    title: "Improves mobility and flexibility",
+    text: "By reducing pressure and stiffness, decompression care may help you move with less restriction and more confidence.",
   },
   {
-    title: 'Promotes long-term spinal health',
-    text:
-      'Care is designed to support better spinal function, reduce recurring irritation, and help you maintain movement over time.',
+    title: "Promotes long-term spinal health",
+    text: "Care is designed to support better spinal function, reduce recurring irritation, and help you maintain movement over time.",
   },
   {
-    title: 'Non-invasive with no downtime',
-    text:
-      'Spinal decompression is a gentle, non-surgical option that allows most patients to return to normal daily activity after care.',
+    title: "Non-invasive with no downtime",
+    text: "Spinal decompression is a gentle, non-surgical option that allows most patients to return to normal daily activity after care.",
   },
-]
+];
 
 const conditions = [
-  'Herniated or bulging discs',
-  'Sciatica',
-  'Degenerative disc disease',
-  'Chronic lower back pain',
-  'Numbness or tingling',
-  'Spinal stenosis',
-  'Failed back surgery syndrome',
-  'And more',
-]
+  "Herniated or bulging discs",
+  "Sciatica",
+  "Degenerative disc disease",
+  "Chronic lower back pain",
+  "Numbness or tingling",
+  "Spinal stenosis",
+  "Failed back surgery syndrome",
+  "And more",
+];
 </script>
 
 <template>
@@ -113,9 +107,9 @@ const conditions = [
           </h1>
 
           <p>
-            Spinal decompression is a non-surgical therapy designed to relieve
-            pressure on spinal discs and nerves, reduce pain, and support natural
-            healing.
+            Non-surgical spinal decompression in Pittsburgh, PA designed to
+            relieve pressure on spinal discs and nerves, improve mobility, and
+            support natural recovery.
           </p>
 
           <a href="/booking" class="btn btn-primary">Request Appointment</a>
@@ -181,9 +175,7 @@ const conditions = [
         <div class="spinal-benefits__heading">
           <p class="eyebrow">The Benefits</p>
 
-          <h2>
-            Designed to help you feel better and move more.
-          </h2>
+          <h2>Designed to help you feel better and move more.</h2>
 
           <p>
             Spinal decompression offers a range of benefits for people dealing
@@ -215,9 +207,7 @@ const conditions = [
         <div class="spinal-conditions__content">
           <p class="eyebrow">Who it can help</p>
 
-          <h2>
-            Ideal for many conditions.
-          </h2>
+          <h2>Ideal for many conditions.</h2>
 
           <p>
             Spinal decompression may help if you’re dealing with persistent pain

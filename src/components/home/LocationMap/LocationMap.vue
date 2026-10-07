@@ -1,15 +1,15 @@
 <script setup>
-import './LocationMap.scss'
+import "./LocationMap.scss";
 
 const hours = [
-  ['Monday', '9:00am - 12:00pm | 3:30pm - 6:00pm'],
-  ['Tuesday', '9:00am - 12:00pm | 3:30pm - 6:00pm'],
-  ['Wednesday', '9:00am - 12:00pm | 3:30pm - 6:00pm'],
-  ['Thursday', '9:00am - 12:00pm | 3:30pm - 6:00pm'],
-  ['Friday', 'Closed'],
-  ['Saturday', 'Closed'],
-  ['Sunday', 'Closed'],
-]
+  ["Monday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
+  ["Tuesday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
+  ["Wednesday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
+  ["Thursday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
+  ["Friday", "Closed"],
+  ["Saturday", "Closed"],
+  ["Sunday", "Closed"],
+];
 </script>
 
 <template>
@@ -23,7 +23,7 @@ const hours = [
 
         <a
           class="btn btn-primary"
-          href="https://www.google.com/maps/search/?api=1&query=21+Yost+Blvd+%23150+Forest+Hills+PA+15221"
+          href="https://www.google.com/maps/search/?api=1&query=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -37,8 +37,8 @@ const hours = [
             <h3>Forest Hills Chiropractic</h3>
 
             <p>
-              21 Yost Blvd #150<br />
-              Forest Hills, PA 15221
+              21 Yost Blvd Ste. 148/150<br />
+              Pittsburgh, PA 15221
             </p>
 
             <a href="tel:+14126464344" class="location-map__phone">
@@ -62,8 +62,8 @@ const hours = [
 
         <div class="location-map__map">
           <iframe
-            title="Forest Hills Chiropractic map"
-            src="https://www.google.com/maps?q=21%20Yost%20Blvd%20%23150%20Forest%20Hills%2C%20PA%2015221&output=embed"
+            title="Map showing Forest Hills Chiropractic at 21 Yost Blvd in Pittsburgh, Pennsylvania"
+            src="https://www.google.com/maps?q=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>

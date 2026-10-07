@@ -1,6 +1,6 @@
 <script setup>
-import './CustomOrthotics.scss'
-import Footer from '@/components/Footer/Footer.vue'
+import "./CustomOrthotics.scss";
+import Footer from "@/components/Footer/Footer.vue";
 import {
   Footprints,
   Leaf,
@@ -12,89 +12,72 @@ import {
   Ruler,
   CalendarCheck,
   CheckCircle,
-} from 'lucide-vue-next'
+} from "lucide-vue-next";
 
-import heroImage from '@/assets/images/orthotics-hero.png'
-import bodyImage from '@/assets/images/orthotics-body.png'
+import heroImage from "@/assets/images/orthotics-hero.png";
+import bodyImage from "@/assets/images/orthotics-body.png";
 
 const trustItems = [
   {
     icon: Footprints,
-    title: 'Improved Alignment',
-    text: 'Supports proper foot mechanics and spinal alignment.',
+    title: "Improved Alignment",
+    text: "Supports proper foot mechanics and spinal alignment.",
     gold: true,
   },
   {
     icon: Leaf,
-    title: 'Pain Relief',
-    text: 'Reduces stress on feet, knees, hips, and back.',
+    title: "Pain Relief",
+    text: "Reduces stress on feet, knees, hips, and back.",
   },
   {
     icon: Activity,
-    title: 'Better Performance',
-    text: 'Enhances movement and athletic performance.',
+    title: "Better Performance",
+    text: "Enhances movement and athletic performance.",
   },
   {
     icon: ShieldCheck,
-    title: 'Prevent Injuries',
-    text: 'Helps reduce overuse injuries and future problems.',
+    title: "Prevent Injuries",
+    text: "Helps reduce overuse injuries and future problems.",
   },
   {
     icon: UserRound,
-    title: 'Custom Fit',
-    text: 'Made specifically for your unique feet and needs.',
+    title: "Custom Fit",
+    text: "Made specifically for your unique feet and needs.",
   },
-]
+];
 
 const process = [
   {
     icon: ClipboardList,
-    title: 'Consultation',
-    text: 'We listen, learn about your concerns, and understand your goals.',
+    title: "Consultation",
+    text: "We listen, learn about your concerns, and understand your goals.",
   },
   {
     icon: ScanLine,
-    title: 'Assessment',
-    text: 'We evaluate your posture, gait, and foot mechanics to find the root cause.',
+    title: "Assessment",
+    text: "We evaluate your posture, gait, and foot mechanics to find the root cause.",
   },
   {
     icon: Ruler,
-    title: 'Custom Design',
-    text: 'Your orthotics are designed for the perfect fit and support.',
+    title: "Custom Design",
+    text: "Your orthotics are designed for the perfect fit and support.",
   },
   {
     icon: CalendarCheck,
-    title: 'Fitting & Follow-Up',
-    text: 'We ensure a proper fit and support your progress with follow-up care.',
+    title: "Fitting & Follow-Up",
+    text: "We ensure a proper fit and support your progress with follow-up care.",
   },
-]
+];
 
 const benefits = [
-  'Plantar fasciitis',
-  'Sports injuries',
-  'Knee, hip, and lower back pain',
-  'Overpronation and flat feet',
-  'Poor posture and alignment',
-  'Shin splints and overuse injuries',
-]
+  "Plantar fasciitis",
+  "Sports injuries",
+  "Knee, hip, and lower back pain",
+  "Overpronation and flat feet",
+  "Poor posture and alignment",
+  "Shin splints and overuse injuries",
+];
 
-const testimonials = [
-  {
-    quote:
-      'My custom orthotics have been a game changer. My foot pain is gone and I’m more active than ever.',
-    name: 'Sarah M.',
-  },
-  {
-    quote:
-      'I noticed improvements in my posture and back pain within a few weeks. Highly recommend.',
-    name: 'Jason T.',
-  },
-  {
-    quote:
-      'Great experience from start to finish. The orthotics are comfortable and really make a difference.',
-    name: 'Michael R.',
-  },
-]
 </script>
 
 <template>
@@ -122,13 +105,15 @@ const testimonials = [
           </h1>
 
           <p>
-            Custom orthotics are designed to improve alignment, reduce pain, and
-            support your body from the ground up.
+            Custom orthotics in Pittsburgh, PA designed to support better foot
+            mechanics, alignment, comfort, and movement from the ground up.
           </p>
 
           <div class="orthotics-hero__actions">
             <a href="/booking" class="btn btn-primary">Request Appointment</a>
-            <a href="#orthotics-process" class="btn btn-secondary">Learn More</a>
+            <a href="#orthotics-process" class="btn btn-secondary"
+              >Learn More</a
+            >
           </div>
         </div>
       </div>
@@ -244,26 +229,6 @@ const testimonials = [
             <Footprints :size="32" :stroke-width="1.6" />
             <h3>{{ benefit }}</h3>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="orthotics-testimonials section">
-      <div class="container">
-        <div class="orthotics-section-header orthotics-section-header--center">
-          <p class="eyebrow">What patients are saying</p>
-        </div>
-
-        <div class="orthotics-testimonials__grid">
-          <article
-            v-for="testimonial in testimonials"
-            :key="testimonial.name"
-            class="orthotics-testimonials__card"
-          >
-            <div>“</div>
-            <p>{{ testimonial.quote }}</p>
-            <strong>— {{ testimonial.name }}</strong>
-          </article>
         </div>
       </div>
     </section>

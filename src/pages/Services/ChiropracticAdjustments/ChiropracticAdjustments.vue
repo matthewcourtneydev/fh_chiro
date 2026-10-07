@@ -1,6 +1,6 @@
 <script setup>
-import './ChiropracticAdjustments.scss'
-import Footer from '@/components/Footer/Footer.vue'
+import "./ChiropracticAdjustments.scss";
+import Footer from "@/components/Footer/Footer.vue";
 import {
   Star,
   UserRound,
@@ -8,84 +8,78 @@ import {
   HeartPulse,
   CheckCircle,
   ChevronDown,
-} from 'lucide-vue-next'
+} from "lucide-vue-next";
 
-import heroImage from '@/assets/images/chiropractor-hero-img.png'
-import officeImage from '@/assets/images/chiropractor-office-image.png'
-import neckImage from '@/assets/images/chiropractor-neck-image.png'
+import heroImage from "@/assets/images/chiropractor-hero-img.png";
+import officeImage from "@/assets/images/chiropractor-office-image.png";
+import neckImage from "@/assets/images/chiropractor-neck-image.png";
 
 const trustItems = [
   {
     icon: Star,
-    title: 'Evidence-Based Care',
-    text: 'Proven techniques for real results',
+    title: "Evidence-Based Care",
+    text: "Proven techniques for real results",
     gold: true,
   },
   {
     icon: UserRound,
-    title: 'Personalized Treatment',
-    text: 'Care tailored to your body and goals',
+    title: "Personalized Treatment",
+    text: "Care tailored to your body and goals",
   },
   {
     icon: ShieldCheck,
-    title: 'Improved Movement',
-    text: 'Restoring function and mobility',
+    title: "Improved Movement",
+    text: "Restoring function and mobility",
   },
   {
     icon: HeartPulse,
-    title: 'Pain Relief',
-    text: 'Reducing pain and supporting healing',
+    title: "Pain Relief",
+    text: "Reducing pain and supporting healing",
   },
   {
     icon: CheckCircle,
-    title: 'Long-Term Support',
-    text: 'Helping you move better every day',
+    title: "Long-Term Support",
+    text: "Helping you move better every day",
   },
-]
+];
 
 const benefits = [
   {
-    title: 'Helps reduce back and neck pain',
-    text:
-      'Adjustments can help reduce pain caused by joint restriction, muscle tension, posture stress, and everyday wear. Many patients seek care for chronic or recurring discomfort.',
+    title: "Helps reduce back and neck pain",
+    text: "Adjustments can help reduce pain caused by joint restriction, muscle tension, posture stress, and everyday wear. Many patients seek care for chronic or recurring discomfort.",
   },
   {
-    title: 'Supports better mobility and posture',
-    text:
-      'By improving joint motion and reducing stiffness, chiropractic care can help you move more freely and support healthier posture patterns.',
+    title: "Supports better mobility and posture",
+    text: "By improving joint motion and reducing stiffness, chiropractic care can help you move more freely and support healthier posture patterns.",
   },
   {
-    title: 'Addresses joint restriction and stiffness',
-    text:
-      'When joints are not moving well, surrounding muscles and tissues may compensate. Adjustments are designed to restore more natural movement.',
+    title: "Addresses joint restriction and stiffness",
+    text: "When joints are not moving well, surrounding muscles and tissues may compensate. Adjustments are designed to restore more natural movement.",
   },
   {
-    title: 'Improves athletic performance',
-    text:
-      'For active patients, chiropractic care may support better mechanics, recovery, mobility, and overall movement quality.',
+    title: "Improves athletic performance",
+    text: "For active patients, chiropractic care may support better mechanics, recovery, mobility, and overall movement quality.",
   },
   {
-    title: 'Personalized to your symptoms and goals',
-    text:
-      'Care is tailored to your comfort level, symptoms, activity level, and long-term goals.',
+    title: "Personalized to your symptoms and goals",
+    text: "Care is tailored to your comfort level, symptoms, activity level, and long-term goals.",
   },
   {
-    title: 'Supports long-term spinal health',
-    text:
-      'Regular care may help reduce recurring stiffness, improve movement habits, and support a healthier lifestyle over time.',
+    title: "Supports long-term spinal health",
+    text: "Regular care may help reduce recurring stiffness, improve movement habits, and support a healthier lifestyle over time.",
   },
-]
+];
 
 const conditions = [
-  'Back and neck pain',
-  'Headaches and migraines',
-  'Postural strain',
-  'Sports and overuse injuries',
-  'Joint stiffness',
-  'Sciatica',
-  'Everyday movement challenges',
-  'And more',
-]
+  "Back and neck pain",
+  "Headaches and migraines",
+  "Postural strain",
+  "Sports and overuse injuries",
+  "Joint stiffness",
+  "Sciatica",
+  "Everyday movement challenges",
+  "And more",
+];
 </script>
 
 <template>
@@ -109,8 +103,9 @@ const conditions = [
           <h1>Chiropractic care designed to restore movement.</h1>
 
           <p>
-            Gentle, precise adjustments to help improve alignment, reduce joint
-            restriction, and support better everyday movement.
+            Personalized chiropractic adjustments in Pittsburgh, PA designed to
+            improve joint motion, reduce restriction, and support better
+            everyday movement.
           </p>
 
           <a href="/booking" class="btn btn-primary">Request Appointment</a>

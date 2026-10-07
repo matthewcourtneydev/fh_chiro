@@ -1,6 +1,6 @@
 <script setup>
-import './CorrectiveCare.scss'
-import Footer from '@/components/Footer/Footer.vue'
+import "./CorrectiveCare.scss";
+import Footer from "@/components/Footer/Footer.vue";
 import {
   Target,
   UserRound,
@@ -12,135 +12,124 @@ import {
   Activity,
   Dumbbell,
   HeartHandshake,
-} from 'lucide-vue-next'
+} from "lucide-vue-next";
 
-import heroImage from '@/assets/images/corrective-hero.png'
-import bodyImage from '@/assets/images/corrective body.png'
+import heroImage from "@/assets/images/corrective-hero.png";
+import bodyImage from "@/assets/images/corrective body.png";
 
 const trustItems = [
   {
     icon: Target,
-    title: 'Root Cause Focused',
-    text: 'We identify and address the underlying issues causing pain or dysfunction.',
+    title: "Root Cause Focused",
+    text: "We identify and address the underlying issues causing pain or dysfunction.",
     gold: true,
   },
   {
     icon: UserRound,
-    title: 'Personalized Plans',
-    text: 'Every plan is tailored to your body, goals, and lifestyle.',
+    title: "Personalized Plans",
+    text: "Every plan is tailored to your body, goals, and lifestyle.",
   },
   {
     icon: TrendingUp,
-    title: 'Measurable Progress',
-    text: 'We track your progress and adjust your plan as you improve.',
+    title: "Measurable Progress",
+    text: "We track your progress and adjust your plan as you improve.",
   },
   {
     icon: ShieldCheck,
-    title: 'Long-Term Results',
-    text: 'Our goal is lasting correction, not temporary relief.',
+    title: "Long-Term Results",
+    text: "Our goal is lasting correction, not temporary relief.",
   },
-]
+];
 
 const phases = [
   {
     icon: ClipboardList,
-    title: 'Relief Care',
-    time: '0–4 Weeks',
-    text: 'Reduce pain and inflammation. Restore comfort and improve function so you can move and feel better.',
+    title: "Relief Care",
+    time: "0–4 Weeks",
+    text: "Reduce pain and inflammation. Restore comfort and improve function so you can move and feel better.",
   },
   {
     icon: Activity,
-    title: 'Corrective Care',
-    time: '4–12 Weeks',
-    text: 'Improve spinal alignment and mobility. Strengthen supporting muscles and correct movement patterns.',
+    title: "Corrective Care",
+    time: "4–12 Weeks",
+    text: "Improve spinal alignment and mobility. Strengthen supporting muscles and correct movement patterns.",
   },
   {
     icon: Dumbbell,
-    title: 'Stabilization Care',
-    time: '3–6 Months',
-    text: 'Build strength, endurance, and resilience. Support your body in maintaining long-term improvements.',
+    title: "Stabilization Care",
+    time: "3–6 Months",
+    text: "Build strength, endurance, and resilience. Support your body in maintaining long-term improvements.",
   },
   {
     icon: HeartHandshake,
-    title: 'Wellness Care',
-    time: 'Ongoing',
-    text: 'Maintain results and continue supporting your health so you can live life to the fullest.',
+    title: "Wellness Care",
+    time: "Ongoing",
+    text: "Maintain results and continue supporting your health so you can live life to the fullest.",
   },
-]
+];
 
 const conditions = [
   {
-    title: 'Chronic back & neck pain',
-    text:
-      'Corrective care can help address recurring pain by improving movement patterns, posture, joint function, and the way your body handles stress.',
+    title: "Chronic back & neck pain",
+    text: "Corrective care can help address recurring pain by improving movement patterns, posture, joint function, and the way your body handles stress.",
   },
   {
-    title: 'Posture & spinal misalignment',
-    text:
-      'Long hours sitting, daily habits, and old injuries can contribute to postural changes. Corrective care focuses on improving alignment and function over time.',
+    title: "Posture & spinal misalignment",
+    text: "Long hours sitting, daily habits, and old injuries can contribute to postural changes. Corrective care focuses on improving alignment and function over time.",
   },
   {
-    title: 'Headaches & migraines',
-    text:
-      'Neck tension, joint restriction, and posture strain may contribute to headaches. A structured plan can help reduce irritation and improve function.',
+    title: "Headaches & migraines",
+    text: "Neck tension, joint restriction, and posture strain may contribute to headaches. A structured plan can help reduce irritation and improve function.",
   },
   {
-    title: 'Sciatica & nerve irritation',
-    text:
-      'Care may help reduce pressure and irritation around sensitive nerves while supporting mobility and better spinal mechanics.',
+    title: "Sciatica & nerve irritation",
+    text: "Care may help reduce pressure and irritation around sensitive nerves while supporting mobility and better spinal mechanics.",
   },
   {
-    title: 'Sports injuries',
-    text:
-      'Corrective care can support recovery by improving mobility, stability, and movement quality after injury or overuse.',
+    title: "Sports injuries",
+    text: "Corrective care can support recovery by improving mobility, stability, and movement quality after injury or overuse.",
   },
   {
-    title: 'Repetitive strain & overuse',
-    text:
-      'Small repeated stresses can build over time. Corrective care helps identify those patterns and support healthier movement.',
+    title: "Repetitive strain & overuse",
+    text: "Small repeated stresses can build over time. Corrective care helps identify those patterns and support healthier movement.",
   },
-]
+];
 
 const process = [
   {
     icon: ClipboardList,
-    title: 'Consultation',
-    text: 'We listen, learn about your goals, and understand your health history.',
+    title: "Consultation",
+    text: "We listen, learn about your goals, and understand your health history.",
   },
   {
     icon: Target,
-    title: 'Assessment',
-    text: 'We perform a thorough exam to identify the root cause of concerns.',
+    title: "Assessment",
+    text: "We perform a thorough exam to identify the root cause of concerns.",
   },
   {
     icon: TrendingUp,
-    title: 'Personalized Plan',
-    text: 'We create a care plan tailored to your needs and lifestyle.',
+    title: "Personalized Plan",
+    text: "We create a care plan tailored to your needs and lifestyle.",
   },
   {
     icon: HeartHandshake,
-    title: 'Ongoing Care',
-    text: 'We support your progress with consistent care and long-term guidance.',
+    title: "Ongoing Care",
+    text: "We support your progress with consistent care and long-term guidance.",
   },
-]
+];
 
 const testimonials = [
   {
     quote:
-      'Corrective care helped me finally fix my back pain for good. I’m stronger, more active, and able to do the things I love again.',
-    name: 'Jessica M.',
+      "I had back pain that set me back for 3 years not being able to do the normal things I do now... I can once again enjoy going out with my husband and son. I tell everyone about Dr. Testen.",
+    name: "M. N.",
   },
   {
     quote:
-      'The plan was easy to follow and the progress I’ve made has been incredible. I wish I started sooner.',
-    name: 'Michael T.',
+      "I am a teacher who was having trouble standing at the blackboard because of the pain. Chiropractic has taken away my pain leaving me with more energy. I now am pain free with no movement problems.",
+    name: "A. M.",
   },
-  {
-    quote:
-      'I feel better every week and know I’m building a healthier future with Corrective Care.',
-    name: 'David R.',
-  },
-]
+];
 </script>
 
 <template>
@@ -171,8 +160,8 @@ const testimonials = [
           </h1>
 
           <p>
-            Corrective Care is a structured, goal-oriented plan designed to
-            address the root cause of your concerns — not just the symptoms.
+            Personalized corrective chiropractic care in Pittsburgh, PA focused
+            on improving movement, mobility, posture, and long-term function.
           </p>
 
           <div class="corrective-hero__actions">
@@ -209,14 +198,13 @@ const testimonials = [
         <div class="corrective-intro__content">
           <p class="eyebrow">What is corrective care?</p>
 
-          <h2>
-            A proactive approach to long-term wellness.
-          </h2>
+          <h2>A proactive approach to long-term wellness.</h2>
 
           <p>
             Corrective Care goes beyond short-term relief. It focuses on
-            improving spinal alignment, restoring proper movement, and retraining
-            your body so you can function, move, and feel your best — every day.
+            improving spinal alignment, restoring proper movement, and
+            retraining your body so you can function, move, and feel your best —
+            every day.
           </p>
 
           <ul>
@@ -252,7 +240,9 @@ const testimonials = [
 
     <section id="how-it-works" class="corrective-plan section">
       <div class="container">
-        <div class="corrective-section-header corrective-section-header--center">
+        <div
+          class="corrective-section-header corrective-section-header--center"
+        >
           <p class="eyebrow">Corrective Care Plan</p>
 
           <h2>A clear path to lasting results.</h2>
@@ -296,9 +286,7 @@ const testimonials = [
         <div class="corrective-conditions__heading">
           <p class="eyebrow">Common conditions we address</p>
 
-          <h2>
-            We help with more than just pain.
-          </h2>
+          <h2>We help with more than just pain.</h2>
 
           <p>
             Corrective care is designed to identify patterns, improve function,
@@ -327,7 +315,9 @@ const testimonials = [
 
     <section class="corrective-process section">
       <div class="container">
-        <div class="corrective-section-header corrective-section-header--center">
+        <div
+          class="corrective-section-header corrective-section-header--center"
+        >
           <p class="eyebrow">What to expect</p>
           <h2>A simple, personalized process.</h2>
           <span></span>
@@ -352,7 +342,9 @@ const testimonials = [
 
     <section class="corrective-testimonials section">
       <div class="container">
-        <div class="corrective-section-header corrective-section-header--center">
+        <div
+          class="corrective-section-header corrective-section-header--center"
+        >
           <p class="eyebrow">What patients are saying</p>
         </div>
 

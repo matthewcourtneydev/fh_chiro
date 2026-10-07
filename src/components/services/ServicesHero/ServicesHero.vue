@@ -1,5 +1,5 @@
 <script setup>
-import './ServicesHero.scss'
+import "./ServicesHero.scss";
 </script>
 
 <template>
@@ -14,14 +14,13 @@ import './ServicesHero.scss'
         </h1>
 
         <p class="services-hero__text">
-          Evidence-based chiropractic services designed to reduce pain, restore
-          function, and support long-term movement.
+          Personalized chiropractic services in Pittsburgh, PA designed to
+          support mobility, improve function, and help you move and feel your
+          best.
         </p>
 
         <div class="services-hero__actions">
-          <a href="/booking" class="btn btn-primary">
-            Request Appointment
-          </a>
+          <a href="/booking" class="btn btn-primary"> Request Appointment </a>
         </div>
       </div>
     </div>

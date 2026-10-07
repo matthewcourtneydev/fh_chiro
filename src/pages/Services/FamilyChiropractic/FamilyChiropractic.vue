@@ -1,6 +1,6 @@
 <script setup>
-import './FamilyChiropractic.scss'
-import Footer from '@/components/Footer/Footer.vue'
+import "./FamilyChiropractic.scss";
+import Footer from "@/components/Footer/Footer.vue";
 import {
   Baby,
   UserRound,
@@ -13,142 +13,113 @@ import {
   Stethoscope,
   CalendarCheck,
   HeartHandshake,
-} from 'lucide-vue-next'
+} from "lucide-vue-next";
 
-import heroImage from '@/assets/images/family-hero.png'
-import familyImage from '@/assets/images/family-page.png'
+import heroImage from "@/assets/images/family-hero.png";
+import familyImage from "@/assets/images/family-page.png";
 
 const trustItems = [
   {
     icon: Heart,
-    title: 'For the Whole Family',
-    text: 'Care for kids, teens, adults, and seniors.',
+    title: "For the Whole Family",
+    text: "Care for kids, teens, adults, and seniors.",
     gold: true,
   },
   {
     icon: HeartHandshake,
-    title: 'Gentle & Personalized',
-    text: 'Treatment plans built around your unique needs.',
+    title: "Gentle & Personalized",
+    text: "Treatment plans built around your unique needs.",
   },
   {
     icon: Activity,
-    title: 'Long-Term Wellness',
-    text: 'Supporting healthy movement for today and tomorrow.',
+    title: "Long-Term Wellness",
+    text: "Supporting healthy movement for today and tomorrow.",
   },
   {
     icon: ShieldCheck,
-    title: 'Trusted Care',
-    text: 'A safe, supportive environment you can count on.',
+    title: "Trusted Care",
+    text: "A safe, supportive environment you can count on.",
   },
-]
+];
 
 const groups = [
   {
     icon: Baby,
-    title: 'Kids & Teens',
-    text: 'Supporting healthy growth, posture, and active lifestyles.',
+    title: "Kids & Teens",
+    text: "Supporting healthy growth, posture, and active lifestyles.",
   },
   {
     icon: UserRound,
-    title: 'Parents',
-    text: 'Helping busy parents feel their best through every season.',
+    title: "Parents",
+    text: "Helping busy parents feel their best through every season.",
   },
   {
     icon: Activity,
-    title: 'Athletes',
-    text: 'Improving performance, preventing injuries, and speeding recovery.',
+    title: "Athletes",
+    text: "Improving performance, preventing injuries, and speeding recovery.",
   },
   {
     icon: HeartHandshake,
-    title: 'Seniors',
-    text: 'Maintaining mobility, comfort, and quality of life.',
+    title: "Seniors",
+    text: "Maintaining mobility, comfort, and quality of life.",
   },
   {
     icon: Heart,
-    title: 'Everyday Wellness',
-    text: 'Supporting posture, movement, and long-term wellbeing.',
+    title: "Everyday Wellness",
+    text: "Supporting posture, movement, and long-term wellbeing.",
   },
-]
+];
 
 const reasons = [
   {
-    title: 'Headaches & poor posture',
-    text:
-      'Family chiropractic care can help address posture stress, neck tension, and movement habits that may contribute to recurring headaches or stiffness.',
+    title: "Headaches & poor posture",
+    text: "Family chiropractic care can help address posture stress, neck tension, and movement habits that may contribute to recurring headaches or stiffness.",
   },
   {
-    title: 'Growing pains',
-    text:
-      'As kids grow and stay active, gentle care can help support movement, comfort, and body awareness.',
+    title: "Growing pains",
+    text: "As kids grow and stay active, gentle care can help support movement, comfort, and body awareness.",
   },
   {
-    title: 'Pregnancy discomfort',
-    text:
-      'Care may help support comfort through pregnancy by addressing low back, hip, and pelvic tension with gentle techniques.',
+    title: "Pregnancy discomfort",
+    text: "Care may help support comfort through pregnancy by addressing low back, hip, and pelvic tension with gentle techniques.",
   },
   {
-    title: 'Sports injuries',
-    text:
-      'For active kids, teens, and adults, chiropractic care can support recovery, mobility, and improved movement patterns.',
+    title: "Sports injuries",
+    text: "For active kids, teens, and adults, chiropractic care can support recovery, mobility, and improved movement patterns.",
   },
   {
-    title: 'Everyday back & neck pain',
-    text:
-      'Whether caused by work, school, parenting, or daily stress, care can help reduce stiffness and support better function.',
+    title: "Everyday back & neck pain",
+    text: "Whether caused by work, school, parenting, or daily stress, care can help reduce stiffness and support better function.",
   },
   {
-    title: 'Mobility & aging gracefully',
-    text:
-      'Chiropractic care can help older adults maintain movement, confidence, and comfort in everyday life.',
+    title: "Mobility & aging gracefully",
+    text: "Chiropractic care can help older adults maintain movement, confidence, and comfort in everyday life.",
   },
-]
+];
 
 const steps = [
   {
     icon: ClipboardList,
-    title: 'Consultation',
-    text: 'We listen, learn about your goals, and understand your health history.',
+    title: "Consultation",
+    text: "We listen, learn about your goals, and understand your health history.",
   },
   {
     icon: Stethoscope,
-    title: 'Assessment',
-    text: 'We perform a thorough exam to identify the root cause of concerns.',
+    title: "Assessment",
+    text: "We perform a thorough exam to identify the root cause of concerns.",
   },
   {
     icon: CalendarCheck,
-    title: 'Personalized Plan',
-    text: 'We create a care plan tailored to your needs and lifestyle.',
+    title: "Personalized Plan",
+    text: "We create a care plan tailored to your needs and lifestyle.",
   },
   {
     icon: HeartHandshake,
-    title: 'Ongoing Care',
-    text: 'We support your progress with consistent care and long-term guidance.',
+    title: "Ongoing Care",
+    text: "We support your progress with consistent care and long-term guidance.",
   },
-]
+];
 
-const testimonials = [
-  {
-    quote:
-      'Forest Hills Chiropractic has been a game changer for our family. My kids sleep better, I have more energy, and we all feel more like ourselves.',
-    name: 'Kelly M.',
-    detail: 'Mom of 2',
-    initials: 'KM',
-  },
-  {
-    quote:
-      'The team is amazing with kids. They explain everything and make each visit comfortable and stress-free.',
-    name: 'Jason D.',
-    detail: 'Dad & Athlete',
-    initials: 'JD',
-  },
-  {
-    quote:
-      'After years of back pain, I finally feel stronger and more mobile. Chiropractic care has truly improved my quality of life.',
-    name: 'Susan R.',
-    detail: 'Retired',
-    initials: 'SR',
-  },
-]
 </script>
 
 <template>
@@ -179,8 +150,8 @@ const testimonials = [
           </h1>
 
           <p>
-            Gentle, personalized chiropractic care designed for children,
-            parents, athletes, and older adults.
+            Gentle, personalized family chiropractic care in Pittsburgh, PA for
+            children, parents, athletes, and older adults.
           </p>
 
           <div class="family-hero__actions">
@@ -285,9 +256,7 @@ const testimonials = [
         <div class="family-reasons__heading">
           <p class="eyebrow">Common reasons families visit</p>
 
-          <h2>
-            We’re here for the everyday and the unexpected.
-          </h2>
+          <h2>We’re here for the everyday and the unexpected.</h2>
 
           <p>
             From small discomforts to big goals, we help families move, feel,
@@ -335,38 +304,6 @@ const testimonials = [
             <h3>{{ index + 1 }}. {{ step.title }}</h3>
             <p>{{ step.text }}</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="family-testimonials section">
-      <div class="container">
-        <div class="family-section-header family-section-header--center">
-          <p class="eyebrow">What families are saying</p>
-          <h2>Trusted by families in our community.</h2>
-        </div>
-
-        <div class="family-testimonials__grid">
-          <article
-            v-for="testimonial in testimonials"
-            :key="testimonial.name"
-            class="family-testimonials__card"
-          >
-            <div class="family-testimonials__quote">“</div>
-
-            <p>
-              {{ testimonial.quote }}
-            </p>
-
-            <div class="family-testimonials__person">
-              <div>{{ testimonial.initials }}</div>
-
-              <span>
-                <strong>{{ testimonial.name }}</strong>
-                {{ testimonial.detail }}
-              </span>
-            </div>
-          </article>
         </div>
       </div>
     </section>
