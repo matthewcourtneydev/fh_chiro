@@ -11,6 +11,9 @@ import Therapies from "@/pages/Services/Therapies/Therapies.vue";
 import FamilyChiropractic from "@/pages/Services/FamilyChiropractic/FamilyChiropractic.vue";
 import CorrectiveCare from "@/pages/Services/CorrectiveCare/CorrectiveCare.vue";
 
+import Conditions from "@/pages/Conditions/Conditions.vue";
+import ConditionDetail from "@/pages/Conditions/ConditionsDetail/ConditionDetail.vue";
+
 import Contact from "@/pages/Contact/Contact.vue";
 import Booking from "@/pages/Booking/Booking.vue";
 
@@ -30,16 +33,59 @@ const DEFAULT_DESCRIPTION =
 const DEFAULT_SOCIAL_DESCRIPTION =
   "Personalized chiropractic care designed to help you move better, recover, and feel your best in Pittsburgh, PA.";
 
-const DEFAULT_SOCIAL_IMAGE =
-  `${SITE_URL}/social-preview.jpg`;
+const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/social-preview.jpg`;
+
+const conditionSeo = {
+  "back-pain": {
+    title:
+      "Back Pain Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic",
+    description:
+      "Explore chiropractic care options for back pain at Forest Hills Chiropractic in Pittsburgh, PA, including personalized evaluation and treatment approaches.",
+  },
+  "neck-pain": {
+    title:
+      "Neck Pain Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic",
+    description:
+      "Learn about chiropractic care for neck pain, stiffness, and restricted movement at Forest Hills Chiropractic in Pittsburgh, PA.",
+  },
+  sciatica: {
+    title:
+      "Sciatica Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic",
+    description:
+      "Explore chiropractic evaluation and care options for sciatica and radiating leg discomfort at Forest Hills Chiropractic in Pittsburgh, PA.",
+  },
+  headaches: {
+    title:
+      "Chiropractic Care for Headaches in Pittsburgh, PA | Forest Hills Chiropractic",
+    description:
+      "Learn how Forest Hills Chiropractic evaluates headaches and related neck or muscle tension, and explore available chiropractic care options.",
+  },
+  "joint-pain": {
+    title:
+      "Joint Pain Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic",
+    description:
+      "Explore personalized chiropractic care options for joint discomfort, stiffness, and mobility concerns in Pittsburgh, PA.",
+  },
+  "sports-injuries": {
+    title:
+      "Sports Injury Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic",
+    description:
+      "Learn about chiropractic evaluation and recovery-focused care for sports-related injuries and movement concerns in Pittsburgh, PA.",
+  },
+  "carpal-tunnel": {
+    title:
+      "Carpal Tunnel Symptoms & Chiropractic Care | Forest Hills Chiropractic",
+    description:
+      "Learn about carpal tunnel symptoms, possible causes of hand discomfort, and evaluation options at Forest Hills Chiropractic in Pittsburgh, PA.",
+  },
+};
 
 const routes = [
   {
     path: "/",
     component: Home,
     meta: {
-      title:
-        "Forest Hills Chiropractic | Chiropractor in Pittsburgh, PA",
+      title: "Forest Hills Chiropractic | Chiropractor in Pittsburgh, PA",
 
       description:
         "Forest Hills Chiropractic provides personalized chiropractic care, spinal decompression, corrective care, recovery therapies, and custom orthotics in Pittsburgh, PA.",
@@ -53,8 +99,7 @@ const routes = [
     path: "/about",
     component: About,
     meta: {
-      title:
-        "About Us | Forest Hills Chiropractic",
+      title: "About Us | Forest Hills Chiropractic",
 
       description:
         "Learn about Forest Hills Chiropractic and our personalized approach to chiropractic care, movement, recovery, and long-term wellness in Pittsburgh, PA.",
@@ -113,8 +158,7 @@ const routes = [
     path: "/services/orthotics",
     component: CustomOrthotics,
     meta: {
-      title:
-        "Custom Orthotics in Pittsburgh, PA | Forest Hills Chiropractic",
+      title: "Custom Orthotics in Pittsburgh, PA | Forest Hills Chiropractic",
 
       description:
         "Custom orthotics at Forest Hills Chiropractic provide personalized foot support designed to improve alignment, comfort, and movement from the ground up.",
@@ -149,8 +193,7 @@ const routes = [
     path: "/contact",
     component: Contact,
     meta: {
-      title:
-        "Contact Forest Hills Chiropractic | Pittsburgh, PA",
+      title: "Contact Forest Hills Chiropractic | Pittsburgh, PA",
 
       description:
         "Contact Forest Hills Chiropractic at 21 Yost Blvd Ste. 148/150 in Pittsburgh, PA. Call our office for appointments, questions, and chiropractic care information.",
@@ -161,14 +204,26 @@ const routes = [
     path: "/booking",
     component: Booking,
     meta: {
-      title:
-        "Book an Appointment | Forest Hills Chiropractic",
+      title: "Book an Appointment | Forest Hills Chiropractic",
 
       description:
         "Schedule an appointment with Forest Hills Chiropractic in Pittsburgh, PA. Contact our office to get started with personalized chiropractic care.",
     },
   },
-
+  {
+    path: "/conditions",
+    component: Conditions,
+    meta: {
+      title: "Conditions We Treat | Forest Hills Chiropractic",
+      description:
+        "Explore common conditions evaluated at Forest Hills Chiropractic in Pittsburgh, PA, including back pain, neck pain, sciatica, headaches, and joint pain.",
+    },
+  },
+  {
+    path: "/conditions/:slug",
+    name: "condition-detail",
+    component: ConditionDetail,
+  },
   /*
    * Utility/legal pages
    *
@@ -180,8 +235,7 @@ const routes = [
     path: "/privacy-policy",
     component: PrivacyPolicy,
     meta: {
-      title:
-        "Privacy Policy | Forest Hills Chiropractic",
+      title: "Privacy Policy | Forest Hills Chiropractic",
 
       description:
         "Review the Forest Hills Chiropractic privacy policy and learn how information is handled when using our website.",
@@ -194,8 +248,7 @@ const routes = [
     path: "/accessibility",
     component: Accessibility,
     meta: {
-      title:
-        "Accessibility | Forest Hills Chiropractic",
+      title: "Accessibility | Forest Hills Chiropractic",
 
       description:
         "Read the Forest Hills Chiropractic website accessibility statement and our commitment to providing an accessible online experience.",
@@ -208,8 +261,7 @@ const routes = [
     path: "/terms-of-service",
     component: TermsOfService,
     meta: {
-      title:
-        "Terms of Service | Forest Hills Chiropractic",
+      title: "Terms of Service | Forest Hills Chiropractic",
 
       description:
         "Review the terms of service governing use of the Forest Hills Chiropractic website.",
@@ -222,8 +274,7 @@ const routes = [
     path: "/hipaa-policy",
     component: HipaaPolicy,
     meta: {
-      title:
-        "HIPAA Policy | Forest Hills Chiropractic",
+      title: "HIPAA Policy | Forest Hills Chiropractic",
 
       description:
         "Review information regarding privacy practices and HIPAA at Forest Hills Chiropractic.",
@@ -264,8 +315,7 @@ function setMetaTag(selector, attributeName, attributeValue, content) {
 }
 
 function setCanonical(url) {
-  let canonical =
-    document.head.querySelector('link[rel="canonical"]');
+  let canonical = document.head.querySelector('link[rel="canonical"]');
 
   if (!canonical) {
     canonical = document.createElement("link");
@@ -281,29 +331,27 @@ function setCanonical(url) {
    ========================================================= */
 
 router.afterEach((to) => {
-  const title =
-    to.meta.title || DEFAULT_TITLE;
+  const conditionMeta =
+    to.name === "condition-detail"
+      ? conditionSeo[String(to.params.slug)]
+      : null;
+
+  const title = conditionMeta?.title || to.meta.title || DEFAULT_TITLE;
 
   const description =
-    to.meta.description || DEFAULT_DESCRIPTION;
+    conditionMeta?.description || to.meta.description || DEFAULT_DESCRIPTION;
 
   const socialDescription =
-    to.meta.socialDescription ||
-    description ||
-    DEFAULT_SOCIAL_DESCRIPTION;
+    to.meta.socialDescription || description || DEFAULT_SOCIAL_DESCRIPTION;
 
   /*
    * Use to.path rather than fullPath so query parameters
    * such as ?type=new do not create different canonical URLs.
    */
 
-  const routePath =
-    to.path === "/"
-      ? "/"
-      : to.path.replace(/\/+$/, "");
+  const routePath = to.path === "/" ? "/" : to.path.replace(/\/+$/, "");
 
-  const canonicalUrl =
-    `${SITE_URL}${routePath}`;
+  const canonicalUrl = `${SITE_URL}${routePath}`;
 
   /* -------------------------
      Standard SEO
@@ -311,20 +359,13 @@ router.afterEach((to) => {
 
   document.title = title;
 
-  setMetaTag(
-    'meta[name="description"]',
-    "name",
-    "description",
-    description,
-  );
+  setMetaTag('meta[name="description"]', "name", "description", description);
 
   setMetaTag(
     'meta[name="robots"]',
     "name",
     "robots",
-    to.meta.noindex
-      ? "noindex, follow"
-      : "index, follow",
+    to.meta.noindex ? "noindex, follow" : "index, follow"
   );
 
   setCanonical(canonicalUrl);
@@ -333,61 +374,41 @@ router.afterEach((to) => {
      Open Graph
      ------------------------- */
 
-  setMetaTag(
-    'meta[property="og:title"]',
-    "property",
-    "og:title",
-    title,
-  );
+  setMetaTag('meta[property="og:title"]', "property", "og:title", title);
 
   setMetaTag(
     'meta[property="og:description"]',
     "property",
     "og:description",
-    socialDescription,
+    socialDescription
   );
 
-  setMetaTag(
-    'meta[property="og:type"]',
-    "property",
-    "og:type",
-    "website",
-  );
+  setMetaTag('meta[property="og:type"]', "property", "og:type", "website");
 
-  setMetaTag(
-    'meta[property="og:url"]',
-    "property",
-    "og:url",
-    canonicalUrl,
-  );
+  setMetaTag('meta[property="og:url"]', "property", "og:url", canonicalUrl);
 
   setMetaTag(
     'meta[property="og:image"]',
     "property",
     "og:image",
-    DEFAULT_SOCIAL_IMAGE,
+    DEFAULT_SOCIAL_IMAGE
   );
 
   setMetaTag(
     'meta[property="og:image:alt"]',
     "property",
     "og:image:alt",
-    "Forest Hills Chiropractic in Pittsburgh, Pennsylvania",
+    "Forest Hills Chiropractic in Pittsburgh, Pennsylvania"
   );
 
   setMetaTag(
     'meta[property="og:site_name"]',
     "property",
     "og:site_name",
-    "Forest Hills Chiropractic",
+    "Forest Hills Chiropractic"
   );
 
-  setMetaTag(
-    'meta[property="og:locale"]',
-    "property",
-    "og:locale",
-    "en_US",
-  );
+  setMetaTag('meta[property="og:locale"]', "property", "og:locale", "en_US");
 
   /* -------------------------
      X / Twitter
@@ -397,35 +418,30 @@ router.afterEach((to) => {
     'meta[name="twitter:card"]',
     "name",
     "twitter:card",
-    "summary_large_image",
+    "summary_large_image"
   );
 
-  setMetaTag(
-    'meta[name="twitter:title"]',
-    "name",
-    "twitter:title",
-    title,
-  );
+  setMetaTag('meta[name="twitter:title"]', "name", "twitter:title", title);
 
   setMetaTag(
     'meta[name="twitter:description"]',
     "name",
     "twitter:description",
-    socialDescription,
+    socialDescription
   );
 
   setMetaTag(
     'meta[name="twitter:image"]',
     "name",
     "twitter:image",
-    DEFAULT_SOCIAL_IMAGE,
+    DEFAULT_SOCIAL_IMAGE
   );
 
   setMetaTag(
     'meta[name="twitter:image:alt"]',
     "name",
     "twitter:image:alt",
-    "Forest Hills Chiropractic in Pittsburgh, Pennsylvania",
+    "Forest Hills Chiropractic in Pittsburgh, Pennsylvania"
   );
 });
 

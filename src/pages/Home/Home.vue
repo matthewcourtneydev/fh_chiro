@@ -1,3 +1,4 @@
+
 <script setup>
 import './Home.scss'
 import HomeHero from '@/components/home/HomeHero/HomeHero.vue'

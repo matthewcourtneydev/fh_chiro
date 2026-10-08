@@ -1,6 +1,9 @@
+
 <script setup>
 import "./Footer.scss";
 import { CalendarDays } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
+import logo from "@/assets/images/logo.png";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -79,7 +82,9 @@ const props = defineProps({
               perform at your best.
             </p>
 
-            <a class="btn btn-primary" href="/booking"> Book Appointment </a>
+            <RouterLink class="btn btn-primary" to="/booking">
+              Book Appointment
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -87,14 +92,19 @@ const props = defineProps({
 
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a class="footer__logo" href="/">
-          <div class="footer__mark">FH</div>
-
-          <div>
-            <span>Forest Hills</span>
-            <span>Chiropractic</span>
-          </div>
-        </a>
+        <RouterLink
+          class="footer__logo"
+          to="/"
+          aria-label="Forest Hills Chiropractic - Home"
+        >
+          <img
+            :src="logo"
+            alt="Forest Hills Chiropractic"
+            class="footer__logo-image"
+            width="240"
+            height="86"
+          />
+        </RouterLink>
 
         <p>
           Performance-focused chiropractic care designed to help you move,
@@ -105,17 +115,25 @@ const props = defineProps({
       <div class="footer__column">
         <h2>Quick Links</h2>
 
-        <a v-for="link in quickLinks" :key="link.label" :href="link.href">
+        <RouterLink
+          v-for="link in quickLinks"
+          :key="link.label"
+          :to="link.href"
+        >
           {{ link.label }}
-        </a>
+        </RouterLink>
       </div>
 
       <div class="footer__column">
         <h2>Services</h2>
 
-        <a v-for="link in serviceLinks" :key="link.label" :href="link.href">
+        <RouterLink
+          v-for="link in serviceLinks"
+          :key="link.label"
+          :to="link.href"
+        >
           {{ link.label }}
-        </a>
+        </RouterLink>
       </div>
 
       <div class="footer__column footer__contact">
@@ -123,12 +141,16 @@ const props = defineProps({
 
         <p>
           21 Yost Blvd Ste. 148/150<br />
-          Forest Hills, PA 15221
+          Pittsburgh, PA 15221
         </p>
 
-        <a href="tel:+14126464344">(412) 646-4344</a>
+        <a href="tel:+14126464344">
+          (412) 646-4344
+        </a>
 
-        <a href="mailto:info@fhchiropractic.com"> info@fh-chiropractic.com </a>
+        <a href="mailto:info@fhchiropractic.com">
+          info@fhchiropractic.com
+        </a>
       </div>
     </div>
 
@@ -136,9 +158,13 @@ const props = defineProps({
       <p>© 2026 Forest Hills Chiropractic. All rights reserved.</p>
 
       <div class="footer__legal">
-        <a v-for="link in legalLinks" :key="link.label" :href="link.href">
+        <RouterLink
+          v-for="link in legalLinks"
+          :key="link.label"
+          :to="link.href"
+        >
           {{ link.label }}
-        </a>
+        </RouterLink>
       </div>
     </div>
   </footer>

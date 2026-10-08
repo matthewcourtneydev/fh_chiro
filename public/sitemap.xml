@@ -1,48 +1,23 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
->
-  <url>
-    <loc>https://fh-chiropractic.com/</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/about</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/services</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/services/chiropractic-adjustments</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/services/spinal-decompression</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/services/therapies</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/services/orthotics</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/services/family</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/services/corrective</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/contact</loc>
-  </url>
-
-  <url>
-    <loc>https://fh-chiropractic.com/booking</loc>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://fh-chiropractic.com/</loc></url>
+  <url><loc>https://fh-chiropractic.com/about</loc></url>
+  <url><loc>https://fh-chiropractic.com/services</loc></url>
+  <url><loc>https://fh-chiropractic.com/services/spinal-decompression</loc></url>
+  <url><loc>https://fh-chiropractic.com/services/chiropractic-adjustments</loc></url>
+  <url><loc>https://fh-chiropractic.com/services/therapies</loc></url>
+  <url><loc>https://fh-chiropractic.com/services/orthotics</loc></url>
+  <url><loc>https://fh-chiropractic.com/services/family</loc></url>
+  <url><loc>https://fh-chiropractic.com/services/corrective</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions/back-pain</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions/neck-pain</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions/sciatica</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions/headaches</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions/joint-pain</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions/sports-injuries</loc></url>
+  <url><loc>https://fh-chiropractic.com/conditions/carpal-tunnel</loc></url>
+  <url><loc>https://fh-chiropractic.com/contact</loc></url>
+  <url><loc>https://fh-chiropractic.com/booking</loc></url>
 </urlset>

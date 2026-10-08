@@ -1,3 +1,4 @@
+
 .why {
   position: relative;
   width: 100%;
@@ -15,10 +16,10 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(17, 17, 17, 0.95) 0%,
-    rgba(17, 17, 17, 0.86) 35%,
-    rgba(17, 17, 17, 0.62) 55%,
-    rgba(17, 17, 17, 0.26) 75%,
+    rgba(12, 23, 48, 0.95) 0%,
+    rgba(12, 23, 48, 0.86) 35%,
+    rgba(12, 23, 48, 0.62) 55%,
+    rgba(12, 23, 48, 0.26) 75%,
     transparent 100%
   );
 }
@@ -110,7 +111,11 @@
   .why {
     background-image: none !important;
     background:
-      radial-gradient(circle at top right, rgba(200, 169, 106, 0.08), transparent 42%),
+      radial-gradient(
+        circle at top right,
+        rgba(200, 169, 106, 0.08),
+        transparent 42%
+      ),
       var(--color-green-dark);
   }
 
