@@ -1,3 +1,4 @@
+
 <script setup>
 import "./AboutHero.scss";
 </script>
@@ -10,7 +11,9 @@ import "./AboutHero.scss";
 
         <h1 class="animate-fade-up animate-delay-1">
           Built on Experience.<br />
-          Driven by Purpose.
+          <span class="about-hero__accent">
+            Driven by Purpose.
+          </span>
         </h1>
 
         <p class="about-hero__text animate-fade-up animate-delay-2">

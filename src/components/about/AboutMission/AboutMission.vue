@@ -1,6 +1,6 @@
 <script setup>
-import './AboutMission.scss'
-import { HeartHandshake } from 'lucide-vue-next'
+import "./AboutMission.scss";
+import { HeartHandshake } from "lucide-vue-next";
 </script>
 
 <template>
@@ -14,8 +14,9 @@ import { HeartHandshake } from 'lucide-vue-next'
         <p class="eyebrow">Our Mission</p>
 
         <p class="about-mission__text">
-          To deliver exceptional chiropractic care that restores function,
-          reduces pain, and helps you perform at your best.
+          To provide the Pittsburgh community with exceptional chiropractic care
+          that restores function, reduces pain, and helps every patient move
+          better, feel better, and perform at their best.
         </p>
       </div>
     </div>

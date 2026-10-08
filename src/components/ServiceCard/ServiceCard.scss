@@ -1,43 +1,153 @@
 .service-card {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    background: var(--color-white);
-    cursor: pointer;
-    transition: all 0.25s ease;
-    border-radius: 6px;
-  
-    &:hover {
-      border-color: var(--color-green);
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    }
+  display: flex;
+  min-width: 0;
+  height: 100%;
+
+  background: #f7f4ef;
+  border: 1px solid rgba(200, 169, 106, 0.16);
+  border-radius: 4px;
+
+  color: #101d36;
+  text-align: left;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+    background: #fffdf9;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
   }
-  
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+}
+
+.service-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-height: 270px;
+  padding: 32px;
+}
+
+.service-card__accent {
+  display: block;
+  width: 38px;
+  height: 3px;
+
+  margin-bottom: 24px;
+
+  background: var(--color-gold);
+
+  transition: width 220ms ease;
+
+  .service-card:hover &,
+  .service-card:focus-visible & {
+    width: 58px;
+  }
+}
+
+.service-card__category {
+  display: block;
+  margin-bottom: 12px;
+
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #a78343;
+}
+
+.service-card h3 {
+  margin: 0 0 12px;
+
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  color: #101d36;
+}
+
+.service-card p {
+  margin: 0 0 24px;
+
+  font-size: 0.95rem;
+  line-height: 1.65;
+
+  color: #5f6570;
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: auto;
+
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  color: #101d36;
+
+  transition:
+    gap 220ms ease,
+    color 220ms ease;
+
+  .service-card:hover &,
+  .service-card:focus-visible & {
+    gap: 13px;
+    color: #a78343;
+  }
+}
+
+@media (max-width: 768px) {
   .service-card__inner {
-    padding: 32px;
+    min-height: 245px;
+    padding: 26px;
   }
-  
+
+  .service-card__accent {
+    margin-bottom: 20px;
+  }
+
   .service-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 10px;
+    font-size: 1.15rem;
   }
-  
+
   .service-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
+    font-size: 0.92rem;
   }
-  
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card__accent,
   .service-card__link {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-green);
-    transition: transform 0.2s ease;
-  
-    .service-card:hover & {
-      transform: translateX(4px);
-    }
+    transition: none;
   }
+
+  .service-card:hover,
+  .service-card:focus-visible {
+    transform: none;
+  }
+}

@@ -1,38 +1,31 @@
 <script setup>
-import './ServiceCard.scss'
-import { useRouter } from 'vue-router'
+import "./ServiceCard.scss";
 
-const props = defineProps({
+defineProps({
   title: String,
+  category: String,
   description: String,
   link: String,
-})
-
-const router = useRouter()
-
-function handleClick() {
-  if (props.link) {
-    router.push(props.link)
-  }
-}
+});
 </script>
 
 <template>
-  <article
-    class="service-card"
-    role="button"
-    tabindex="0"
-    @click="handleClick"
-    @keydown.enter="handleClick"
-    @keydown.space.prevent="handleClick"
-  >
+  <RouterLink :to="link" class="service-card">
     <div class="service-card__inner">
+      <span class="service-card__accent" aria-hidden="true"></span>
+
+      <span class="service-card__category">
+        {{ category }}
+      </span>
+
       <h3>{{ title }}</h3>
+
       <p>{{ description }}</p>
 
       <span class="service-card__link">
-        Learn More →
+        Learn More
+        <span aria-hidden="true">→</span>
       </span>
     </div>
-  </article>
+  </RouterLink>
 </template>

@@ -1,21 +1,36 @@
 .services-grid {
-    background: var(--color-white);
-  }
-  
-  .services-grid h2 {
-    margin-top: 12px;
-    margin-bottom: 40px;
-    font-size: clamp(2.4rem, 4vw, 4.2rem);
-  }
-  
+  position: relative;
+  overflow: hidden;
+
+  background-color: #101d36;
+  background-image: url("@/assets/images/about-topography-desktop.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--color-white);
+}
+
+.services-grid .eyebrow {
+  color: var(--color-gold);
+}
+
+.services-grid h2 {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  color: var(--color-white);
+}
+
+.services-grid__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
   .services-grid__wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
-  
-  @media (max-width: 768px) {
-    .services-grid__wrapper {
-      grid-template-columns: 1fr;
-    }
-  }
+}

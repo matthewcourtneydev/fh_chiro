@@ -1,7 +1,7 @@
 
 <script setup>
 import "./Footer.scss";
-import { CalendarDays } from "lucide-vue-next";
+import { CalendarDays, Instagram, Facebook, Music2 } from "lucide-vue-next";
 import { RouterLink } from "vue-router";
 import logo from "@/assets/images/logo.png";
 
@@ -32,23 +32,39 @@ const serviceLinks = [
   },
 ];
 
+const conditionLinks = [
+  { label: "Back Pain", href: "/conditions/back-pain" },
+  { label: "Neck Pain", href: "/conditions/neck-pain" },
+  { label: "Sciatica", href: "/conditions/sciatica" },
+  { label: "Headaches", href: "/conditions/headaches" },
+  { label: "Joint Pain", href: "/conditions/joint-pain" },
+  { label: "Sports Injuries", href: "/conditions/sports-injuries" },
+  { label: "Carpal Tunnel", href: "/conditions/carpal-tunnel" },
+];
+
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/foresthillschiro_412/",
+    icon: Instagram,
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@foresthillschiro",
+    icon: Music2,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/ForestHillsChiropractic",
+    icon: Facebook,
+  },
+];
+
 const legalLinks = [
-  {
-    label: "Privacy Policy",
-    href: "/privacy-policy",
-  },
-  {
-    label: "Accessibility",
-    href: "/accessibility",
-  },
-  {
-    label: "Terms of Service",
-    href: "/terms-of-service",
-  },
-  {
-    label: "HIPAA Policy",
-    href: "/hipaa-policy",
-  },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Accessibility", href: "/accessibility" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "HIPAA Policy", href: "/hipaa-policy" },
 ];
 
 const props = defineProps({
@@ -110,9 +126,23 @@ const props = defineProps({
           Performance-focused chiropractic care designed to help you move,
           recover, and feel your best.
         </p>
+
+        <div class="footer__socials" aria-label="Social media">
+          <a
+            v-for="social in socialLinks"
+            :key="social.label"
+            :href="social.href"
+            :aria-label="`Forest Hills Chiropractic on ${social.label}`"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+          >
+            <component :is="social.icon" :size="19" :stroke-width="1.8" />
+          </a>
+        </div>
       </div>
 
-      <div class="footer__column">
+      <nav class="footer__column" aria-label="Quick links">
         <h2>Quick Links</h2>
 
         <RouterLink
@@ -122,9 +152,9 @@ const props = defineProps({
         >
           {{ link.label }}
         </RouterLink>
-      </div>
+      </nav>
 
-      <div class="footer__column">
+      <nav class="footer__column" aria-label="Services">
         <h2>Services</h2>
 
         <RouterLink
@@ -134,7 +164,19 @@ const props = defineProps({
         >
           {{ link.label }}
         </RouterLink>
-      </div>
+      </nav>
+
+      <nav class="footer__column" aria-label="Conditions we treat">
+        <h2>Conditions We Treat</h2>
+
+        <RouterLink
+          v-for="link in conditionLinks"
+          :key="link.label"
+          :to="link.href"
+        >
+          {{ link.label }}
+        </RouterLink>
+      </nav>
 
       <div class="footer__column footer__contact">
         <h2>Contact</h2>
@@ -155,9 +197,21 @@ const props = defineProps({
     </div>
 
     <div class="container footer__bottom">
-      <p>© 2026 Forest Hills Chiropractic. All rights reserved.</p>
+      <div class="footer__credits">
+        <p>© {{ new Date().getFullYear() }} Forest Hills Chiropractic. All rights reserved.</p>
+        <p>
+          Website by
+          <a
+            href="#"
+            class="footer__portfolio-link"
+            aria-label="Website designer portfolio, coming soon"
+          >
+            Matthew Courtney
+          </a>
+        </p>
+      </div>
 
-      <div class="footer__legal">
+      <nav class="footer__legal" aria-label="Legal links">
         <RouterLink
           v-for="link in legalLinks"
           :key="link.label"
@@ -165,7 +219,7 @@ const props = defineProps({
         >
           {{ link.label }}
         </RouterLink>
-      </div>
+      </nav>
     </div>
   </footer>
 </template>

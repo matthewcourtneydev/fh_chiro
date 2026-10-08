@@ -14,10 +14,8 @@ import {
   CalendarCheck,
   HeartHandshake,
 } from "lucide-vue-next";
-
 import heroImage from "@/assets/images/family-hero.png";
 import familyImage from "@/assets/images/family-page.png";
-
 const trustItems = [
   {
     icon: Heart,
@@ -41,7 +39,6 @@ const trustItems = [
     text: "A safe, supportive environment you can count on.",
   },
 ];
-
 const groups = [
   {
     icon: Baby,
@@ -69,7 +66,6 @@ const groups = [
     text: "Supporting posture, movement, and long-term wellbeing.",
   },
 ];
-
 const reasons = [
   {
     title: "Headaches & poor posture",
@@ -96,7 +92,6 @@ const reasons = [
     text: "Chiropractic care can help older adults maintain movement, confidence, and comfort in everyday life.",
   },
 ];
-
 const steps = [
   {
     icon: ClipboardList,
@@ -119,9 +114,7 @@ const steps = [
     text: "We support your progress with consistent care and long-term guidance.",
   },
 ];
-
 </script>
-
 <template>
   <main class="family-page">
     <section class="family-hero">
@@ -129,11 +122,10 @@ const steps = [
         <img
           :src="heroImage"
           alt="Family speaking with a chiropractor in a warm clinic setting"
+          fetchpriority="high"
         />
       </div>
-
-      <div class="family-hero__overlay"></div>
-
+      <div class="family-hero__overlay" aria-hidden="true"></div>
       <div class="container family-hero__inner">
         <div class="family-hero__content">
           <div class="breadcrumb breadcrumb--light">
@@ -141,19 +133,15 @@ const steps = [
             <span>/</span>
             <span>Family Chiropractic</span>
           </div>
-
           <p class="eyebrow">Family Chiropractic</p>
-
           <h1>
             Care for every<br />
             stage of life.
           </h1>
-
           <p>
             Gentle, personalized family chiropractic care in Pittsburgh, PA for
             children, parents, athletes, and older adults.
           </p>
-
           <div class="family-hero__actions">
             <a href="/booking" class="btn btn-primary">Book Appointment</a>
             <a href="/about" class="btn btn-secondary">Meet Our Team</a>
@@ -161,7 +149,6 @@ const steps = [
         </div>
       </div>
     </section>
-
     <section class="family-trust">
       <div class="container family-trust__inner">
         <div
@@ -176,21 +163,18 @@ const steps = [
             :size="34"
             :stroke-width="1.7"
           />
-
           <h2>{{ item.title }}</h2>
           <p>{{ item.text }}</p>
         </div>
       </div>
     </section>
-
     <section class="family-groups section">
       <div class="container">
         <div class="family-section-header family-section-header--center">
           <p class="eyebrow">Who we care for</p>
           <h2>Care that fits every stage.</h2>
-          <span></span>
+          <span aria-hidden="true"></span>
         </div>
-
         <div class="family-groups__grid">
           <div
             v-for="group in groups"
@@ -200,34 +184,29 @@ const steps = [
             <div class="family-groups__icon">
               <component :is="group.icon" :size="30" :stroke-width="1.7" />
             </div>
-
             <h3>{{ group.title }}</h3>
             <p>{{ group.text }}</p>
           </div>
         </div>
       </div>
     </section>
-
     <section class="family-approach">
       <div class="family-approach__image">
         <img
           :src="familyImage"
           alt="Chiropractor explaining a spine model to a child"
+        loading="lazy"
         />
       </div>
-
       <div class="family-approach__content">
         <p class="eyebrow">Our approach</p>
-
         <h2>
           Gentle care focused on movement, posture, and long-term wellness.
         </h2>
-
         <p>
           We take the time to understand your family’s needs and create a care
           plan that supports your health, comfort, and everyday life.
         </p>
-
         <ul>
           <li>
             <CheckCircle :size="18" :stroke-width="1.8" />
@@ -246,24 +225,19 @@ const steps = [
             Family-centered care
           </li>
         </ul>
-
         <a href="/about" class="btn btn-primary">Learn More About Us</a>
       </div>
     </section>
-
     <section class="family-reasons section">
       <div class="container family-reasons__inner">
         <div class="family-reasons__heading">
           <p class="eyebrow">Common reasons families visit</p>
-
           <h2>We’re here for the everyday and the unexpected.</h2>
-
           <p>
             From small discomforts to big goals, we help families move, feel,
             and live better.
           </p>
         </div>
-
         <div class="family-reasons__list">
           <details
             v-for="(reason, index) in reasons"
@@ -276,21 +250,18 @@ const steps = [
               <span>{{ reason.title }}</span>
               <ChevronDown :size="20" :stroke-width="1.8" />
             </summary>
-
             <p>{{ reason.text }}</p>
           </details>
         </div>
       </div>
     </section>
-
     <section class="family-process section">
       <div class="container">
         <div class="family-section-header family-section-header--center">
           <p class="eyebrow">What to expect</p>
           <h2>A simple, personalized process.</h2>
-          <span></span>
+          <span aria-hidden="true"></span>
         </div>
-
         <div class="family-process__steps">
           <div
             v-for="(step, index) in steps"
@@ -300,14 +271,12 @@ const steps = [
             <div class="family-process__icon">
               <component :is="step.icon" :size="30" :stroke-width="1.7" />
             </div>
-
             <h3>{{ index + 1 }}. {{ step.title }}</h3>
             <p>{{ step.text }}</p>
           </div>
         </div>
       </div>
     </section>
-
     <section class="family-final-cta">
       <div class="container family-final-cta__inner">
         <h2>Ready to help your family move well and live well?</h2>
@@ -316,7 +285,6 @@ const steps = [
         </a>
       </div>
     </section>
-
     <Footer />
   </main>
 </template>

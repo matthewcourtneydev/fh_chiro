@@ -1,5 +1,7 @@
+
 <script setup>
 import "./ServicesHero.scss";
+import servicesHeroImage from "@/assets/images/services-hero.webp";
 </script>
 
 <template>
@@ -20,8 +22,19 @@ import "./ServicesHero.scss";
         </p>
 
         <div class="services-hero__actions">
-          <a href="/booking" class="btn btn-primary"> Request Appointment </a>
+          <a href="/booking" class="btn btn-primary">
+            Request Appointment
+          </a>
         </div>
+      </div>
+
+      <div class="services-hero__visual">
+        <img
+          :src="servicesHeroImage"
+          alt="Modern chiropractic treatment room with an adjustment table"
+          class="services-hero__image"
+          fetchpriority="high"
+        />
       </div>
     </div>
   </section>

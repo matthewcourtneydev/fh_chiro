@@ -1,127 +1,168 @@
 <script setup>
 import "./Contact.scss";
 import Footer from "@/components/Footer/Footer.vue";
-import { Phone, MapPin, Clock, MessageCircle } from "lucide-vue-next";
+
+import {
+  Phone,
+  MapPin,
+  Clock,
+  MessageCircle,
+  ArrowRight,
+  ExternalLink,
+} from "lucide-vue-next";
+
+const phoneNumber = "(412) 646-4344";
+const phoneHref = "tel:+14126464344";
+
+const directionsUrl =
+  "https://www.google.com/maps/search/?api=1&query=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221";
 </script>
 
 <template>
   <main class="contact-page">
+    <!-- Hero -->
     <section class="contact-hero">
       <div class="container contact-hero__inner">
-        <h1>Contact</h1>
-        <div class="contact-hero__rule"></div>
-        <p>
-          Get in touch with Forest Hills Chiropractic in Pittsburgh, PA. We’re
-          here to answer your questions and help you get started.
+        <p class="eyebrow">We're Here to Help</p>
+
+        <h1>Contact Us.</h1>
+
+        <div class="contact-hero__rule" aria-hidden="true"></div>
+
+        <p class="contact-hero__description">
+          Have a question about our services or ready to schedule your visit?
+          Our team at Forest Hills Chiropractic is happy to help you get
+          started.
         </p>
       </div>
     </section>
 
+    <!-- Contact Details & Map -->
     <section class="contact-main section">
-      <div class="container contact-main__inner">
-        <aside class="contact-info">
-          <p class="eyebrow">Get in Touch</p>
+      <div class="container">
+        <div class="contact-main__header">
+          <div>
+            <p class="eyebrow">Visit or Call Us</p>
 
-          <div class="contact-info__item">
-            <div class="contact-info__icon">
-              <Phone :size="24" :stroke-width="1.8" />
-            </div>
-
-            <div>
-              <h2>(412) 646-4344</h2>
-              <a href="tel:+14126464344">Call us</a>
-            </div>
+            <h2>Let's Get You Moving.</h2>
           </div>
 
-          <div class="contact-info__item">
-            <div class="contact-info__icon">
-              <MapPin :size="24" :stroke-width="1.8" />
+          <p class="contact-main__intro">
+            Find our office in Pittsburgh, explore our hours, or get
+            directions to your next appointment.
+          </p>
+        </div>
+
+        <div class="contact-main__inner">
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <div class="contact-info__item">
+              <div class="contact-info__icon" aria-hidden="true">
+                <Phone :size="23" :stroke-width="1.8" />
+              </div>
+
+              <div class="contact-info__content">
+                <h3>Call Our Office</h3>
+
+                <a
+                  :href="phoneHref"
+                  class="contact-info__primary-link"
+                >
+                  {{ phoneNumber }}
+                </a>
+
+                <p>
+                  Speak with our team about appointments, services,
+                  or general questions.
+                </p>
+              </div>
             </div>
 
-            <div>
-              <h2>Forest Hills Shopping Center</h2>
-              <p>
-                21 Yost Blvd, Ste 148/150<br />
-                Pittsburgh, PA 15221
-              </p>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Directions
-              </a>
+            <div class="contact-info__item">
+              <div class="contact-info__icon" aria-hidden="true">
+                <MapPin :size="23" :stroke-width="1.8" />
+              </div>
+
+              <div class="contact-info__content">
+                <h3>Visit Our Office</h3>
+
+                <strong>Forest Hills Shopping Center</strong>
+
+                <address>
+                  21 Yost Blvd, Ste 148/150<br />
+                  Pittsburgh, PA 15221
+                </address>
+
+                <a
+                  :href="directionsUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-info__directions"
+                >
+                  Get Directions
+                  <ExternalLink :size="15" :stroke-width="1.8" />
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div class="contact-info__item">
-            <div class="contact-info__icon">
-              <Clock :size="24" :stroke-width="1.8" />
-            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon" aria-hidden="true">
+                <Clock :size="23" :stroke-width="1.8" />
+              </div>
 
-            <div>
-              <h2>Office Hours</h2>
+              <div class="contact-info__content">
+                <h3>Office Hours</h3>
 
-              <div class="contact-info__hours">
-                <span>Mon - Thu</span>
-                <span>
-                  9:00am - 12:00pm<br />
-                  3:30pm - 6:00pm
-                </span>
+                <div class="contact-info__hours">
+                  <span>Monday – Thursday</span>
+                  <span>
+                    9:00am – 12:00pm<br />
+                    3:30pm – 6:00pm
+                  </span>
 
-                <span>Fri</span>
-                <span>Closed</span>
+                  <span>Friday</span>
+                  <span>Closed</span>
 
-                <span>Sat - Sun</span>
-                <span>Closed</span>
+                  <span>Saturday – Sunday</span>
+                  <span>Closed</span>
+                </div>
               </div>
             </div>
           </div>
-        </aside>
 
-        <section class="contact-form">
-          <section class="contact-form contact-form--unavailable">
-            <p class="eyebrow">Get in Touch</p>
-
-            <h2>Have a question?</h2>
-
-            <p>
-              Online messaging is currently unavailable. Please call our office
-              and our team will be happy to help.
-            </p>
-
-            <a href="tel:+14126464344" class="btn btn-dark">
-              Call (412) 646-4344
-            </a>
-          </section>
-        </section>
-
-        <div class="contact-map">
-          <iframe
-            title="Map showing Forest Hills Chiropractic at 21 Yost Blvd in Pittsburgh, Pennsylvania"
-            src="https://www.google.com/maps?q=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <!-- Google Maps -->
+          <div class="contact-map">
+            <iframe
+              title="Map showing Forest Hills Chiropractic at 21 Yost Blvd in Pittsburgh, Pennsylvania"
+              src="https://www.google.com/maps?q=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Bottom Callout -->
     <section class="contact-callout">
       <div class="container contact-callout__inner">
-        <div class="contact-callout__icon">
-          <MessageCircle :size="28" :stroke-width="1.8" />
+        <div class="contact-callout__icon" aria-hidden="true">
+          <MessageCircle :size="27" :stroke-width="1.8" />
         </div>
 
-        <div>
-          <h2>Prefer to talk?</h2>
+        <div class="contact-callout__content">
+          <h2>Ready to Get Started?</h2>
+
           <p>
-            Give us a call. We’re happy to answer your questions and help you
-            schedule.
+            Have questions or need help scheduling? Our team is just
+            a phone call away.
           </p>
         </div>
 
-        <a href="tel:+14126464344" class="btn btn-outline">Call Now</a>
+        <a :href="phoneHref" class="btn btn-outline">
+          Call Our Office
+          <ArrowRight :size="17" :stroke-width="1.8" />
+        </a>
       </div>
     </section>
 

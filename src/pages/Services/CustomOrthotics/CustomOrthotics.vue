@@ -12,6 +12,12 @@ import {
   Ruler,
   CalendarCheck,
   CheckCircle,
+  PersonStanding,
+  Dumbbell,
+  Accessibility,
+  GitBranch,
+  AlignCenter,
+  Zap,
 } from "lucide-vue-next";
 
 import heroImage from "@/assets/images/orthotics-hero.png";
@@ -22,7 +28,6 @@ const trustItems = [
     icon: Footprints,
     title: "Improved Alignment",
     text: "Supports proper foot mechanics and spinal alignment.",
-    gold: true,
   },
   {
     icon: Leaf,
@@ -70,14 +75,13 @@ const process = [
 ];
 
 const benefits = [
-  "Plantar fasciitis",
-  "Sports injuries",
-  "Knee, hip, and lower back pain",
-  "Overpronation and flat feet",
-  "Poor posture and alignment",
-  "Shin splints and overuse injuries",
+  { title: "Plantar fasciitis", icon: Footprints },
+  { title: "Sports injuries", icon: Dumbbell },
+  { title: "Knee, hip, and lower back pain", icon: Accessibility },
+  { title: "Overpronation and flat feet", icon: GitBranch },
+  { title: "Poor posture and alignment", icon: PersonStanding },
+  { title: "Shin splints and overuse injuries", icon: Zap },
 ];
-
 </script>
 
 <template>
@@ -111,9 +115,7 @@ const benefits = [
 
           <div class="orthotics-hero__actions">
             <a href="/booking" class="btn btn-primary">Request Appointment</a>
-            <a href="#orthotics-process" class="btn btn-secondary"
-              >Learn More</a
-            >
+            <a href="#orthotics-process" class="btn btn-secondary">Learn More</a>
           </div>
         </div>
       </div>
@@ -133,7 +135,6 @@ const benefits = [
             :size="36"
             :stroke-width="1.7"
           />
-
           <h2>{{ item.title }}</h2>
           <p>{{ item.text }}</p>
         </div>
@@ -144,9 +145,7 @@ const benefits = [
       <div class="container orthotics-intro__inner">
         <div class="orthotics-intro__content">
           <p class="eyebrow">Custom Orthotics</p>
-
           <h2>Support that’s built for you.</h2>
-
           <p>
             Over-the-counter insoles cannot address the unique way your body
             moves. Our custom orthotics are designed based on a thorough
@@ -205,7 +204,6 @@ const benefits = [
             <div class="orthotics-process__icon">
               <component :is="step.icon" :size="30" :stroke-width="1.7" />
             </div>
-
             <h3>{{ index + 1 }}. {{ step.title }}</h3>
             <p>{{ step.text }}</p>
           </div>
@@ -223,11 +221,11 @@ const benefits = [
         <div class="orthotics-benefits__grid">
           <div
             v-for="benefit in benefits"
-            :key="benefit"
+            :key="benefit.title"
             class="orthotics-benefits__item"
           >
-            <Footprints :size="32" :stroke-width="1.6" />
-            <h3>{{ benefit }}</h3>
+            <component :is="benefit.icon" :size="32" :stroke-width="1.6" />
+            <h3>{{ benefit.title }}</h3>
           </div>
         </div>
       </div>
@@ -235,6 +233,7 @@ const benefits = [
 
     <section class="orthotics-final-cta">
       <div class="container orthotics-final-cta__inner">
+        <div class="orthotics-final-cta__accent" aria-hidden="true"></div>
         <h2>Step into better support.</h2>
         <a href="/booking" class="btn btn-primary">
           Request Your Orthotics Today

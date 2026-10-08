@@ -67,6 +67,7 @@
     ),
     radial-gradient(
       circle at 16% 24%,
+
       rgba(200, 169, 106, 0.16),
       transparent 30%
     );
@@ -413,6 +414,7 @@
 .orthotics-process {
   background: radial-gradient(
       circle at 50% 0%,
+
       rgba(25, 47, 91, 0.06),
       transparent 30%
     ),
@@ -533,10 +535,11 @@
 
   background: radial-gradient(
       circle at 0% 10%,
+
       rgba(200, 169, 106, 0.08),
       transparent 30%
     ),
-    var(--color-background-soft);
+    var(--color-background);
 
   border: 1px solid var(--color-border);
 }
@@ -691,6 +694,7 @@
 
   background: radial-gradient(
       circle at 92% 20%,
+
       rgba(200, 169, 106, 0.14),
       transparent 30%
     ),
@@ -839,11 +843,167 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orthotics-page *,
-  .orthotics-page *::before,
-  .orthotics-page *::after {
+  .orthotics-page \*,
+  .orthotics-page \*::before,
+  .orthotics-page \*::after {
     animation: none !important;
 
     transition: none !important;
+  }
+}
+
+/* Refined light appointment CTA */
+.orthotics-final-cta__inner {
+  min-height: 225px;
+  gap: 22px;
+}
+
+.orthotics-final-cta h2 {
+  color: var(--color-green-dark);
+  max-width: 760px;
+}
+
+.orthotics-final-cta__accent {
+  width: 52px;
+  height: 3px;
+  background: var(--color-gold);
+}
+
+/* Distinct condition icons with consistent visual rhythm */
+.orthotics-benefits__item svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 700px) {
+  .orthotics-final-cta__inner {
+    min-height: 205px;
+    padding-block: 48px;
+  }
+
+  .orthotics-benefits__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .orthotics-benefits__item {
+    min-height: 130px;
+    padding: 16px 10px;
+  }
+}
+
+/* Light section before the shared dark footer CTA */
+.orthotics-final-cta {
+  color: var(--color-green-dark);
+  background: linear-gradient(115deg, #f8f5ef 0%, #eee8de 100%);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Final refinements: tighter section rhythm and non-sticky hover */
+.orthotics-page .orthotics-intro.section,
+.orthotics-page .orthotics-process.section {
+  padding-block: clamp(52px, 6vw, 84px);
+}
+
+.orthotics-page .orthotics-benefits.section {
+  padding-block: 0;
+}
+
+.orthotics-benefits__box {
+  padding-block: clamp(40px, 5vw, 58px);
+}
+
+.orthotics-benefits__grid {
+  margin-top: 28px;
+}
+
+.orthotics-final-cta__inner {
+  min-height: 0;
+  padding-block: 48px;
+  gap: 16px;
+}
+
+/* Never leave an active/selected visual state on informational trust tiles. */
+.orthotics-trust__item,
+.orthotics-trust__item:active,
+.orthotics-trust__item:focus {
+  background: var(--color-white);
+  transform: none;
+  box-shadow: none;
+}
+
+.orthotics-trust__item .orthotics-trust__icon {
+  color: var(--color-green);
+  transform: none;
+}
+
+.orthotics-trust__item .orthotics-trust__icon--gold {
+  color: var(--color-gold);
+}
+
+/* Hover styles apply only to devices with a real hover pointer. */
+@media (hover: hover) and (pointer: fine) {
+  .orthotics-trust__item:hover {
+    background: var(--color-background-soft);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .orthotics-trust__item:hover .orthotics-trust__icon {
+    color: var(--color-gold);
+    transform: translateY(-2px);
+  }
+}
+
+@media (hover: none) {
+  .orthotics-trust__item:hover,
+  .orthotics-trust__item:active,
+  .orthotics-trust__item:focus {
+    background: var(--color-white);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .orthotics-trust__item:hover .orthotics-trust__icon {
+    color: var(--color-green);
+    transform: none;
+  }
+
+  .orthotics-trust__item:hover .orthotics-trust__icon--gold {
+    color: var(--color-gold);
+  }
+}
+
+@media (max-width: 900px) {
+  .orthotics-page .orthotics-intro.section,
+  .orthotics-page .orthotics-process.section {
+    padding-block: 48px;
+  }
+
+  .orthotics-benefits__box {
+    padding-block: 42px;
+  }
+
+  .orthotics-final-cta__inner {
+    padding-block: 42px;
+  }
+}
+
+@media (max-width: 700px) {
+  .orthotics-page .orthotics-intro.section,
+  .orthotics-page .orthotics-process.section {
+    padding-block: 40px;
+  }
+
+  .orthotics-benefits__box {
+    padding-block: 36px;
+  }
+
+  .orthotics-benefits__grid {
+    margin-top: 22px;
+  }
+
+  .orthotics-final-cta__inner {
+    padding-block: 38px;
   }
 }

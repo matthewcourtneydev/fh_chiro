@@ -1,4 +1,3 @@
-
 .conditions-preview {
   background: var(--color-background-soft);
 
@@ -39,6 +38,10 @@
     gap: 18px;
   }
 
+  &__card:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -46,9 +49,7 @@
     padding: clamp(24px, 2.5vw, 34px);
     background: var(--color-white);
     border: 1px solid rgba(17, 17, 17, 0.09);
-    transition:
-      transform 220ms ease,
-      box-shadow 220ms ease,
+    transition: transform 220ms ease, box-shadow 220ms ease,
       border-color 220ms ease;
 
     &:hover,
@@ -80,9 +81,7 @@
 
   &__arrow {
     color: var(--color-green);
-    transition:
-      transform 200ms ease,
-      color 200ms ease;
+    transition: transform 200ms ease, color 200ms ease;
   }
 
   &__card:hover &__arrow,
@@ -169,8 +168,21 @@
       gap: 20px;
     }
 
-    &__grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .conditions-preview {
+      &__header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      &__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      &__card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc((100% - 18px) / 2);
+        justify-self: center;
+      }
     }
   }
 }
@@ -185,14 +197,17 @@
       }
     }
 
-    &__grid {
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
+    .conditions-preview {
+      &__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
 
-    &__card {
-      min-height: auto;
-      padding: 26px;
+      &__card:last-child {
+        grid-column: auto;
+        width: 100%;
+        justify-self: stretch;
+      }
     }
 
     &__card-top {
