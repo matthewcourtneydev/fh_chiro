@@ -2,7 +2,7 @@
 import "./Footer.scss";
 import { CalendarDays, Instagram, Facebook, Music2, ChevronDown } from "lucide-vue-next";
 import { RouterLink } from "vue-router";
-import logo from "@/assets/images/logos/web_full_dark.PNG";
+import logo from "@/assets/images/logos/web_full_dark.png";
 
 const quickLinks = [
   { label: "Home", href: "/" },

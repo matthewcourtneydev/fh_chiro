@@ -4,8 +4,8 @@ import { ref, watch, onBeforeUnmount } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { ChevronDown, Instagram, Facebook, Music2 } from "lucide-vue-next";
 
-import desktopLogo from "@/assets/images/logos/web_full_dark.PNG";
-import mobileLogo from "@/assets/images/logos/mobile_full_dark.PNG";
+import desktopLogo from "@/assets/images/logos/web_full_dark.png";
+import mobileLogo from "@/assets/images/logos/mobile_full_dark.png";
 import "./Navbar.scss";
 
 const route = useRoute();
