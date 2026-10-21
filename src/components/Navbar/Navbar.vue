@@ -4,7 +4,8 @@ import { ref, watch, onBeforeUnmount } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { ChevronDown, Instagram, Facebook, Music2 } from "lucide-vue-next";
 
-import logo from "@/assets/images/logo.png";
+import desktopLogo from "@/assets/images/logos/web_full_dark.PNG";
+import mobileLogo from "@/assets/images/logos/mobile_full_dark.PNG";
 import "./Navbar.scss";
 
 const route = useRoute();
@@ -56,7 +57,12 @@ const conditionLinks = [
   { label: "Headaches", to: "/conditions/headaches" },
   { label: "Joint Pain", to: "/conditions/joint-pain" },
   { label: "Sports Injuries", to: "/conditions/sports-injuries" },
-  { label: "Carpal Tunnel", to: "/conditions/carpal-tunnel" },
+  { label: "Carpal Tunnel Symptoms", to: "/conditions/carpal-tunnel" },
+  { label: "Disc Problems", to: "/conditions/disc-problems" },
+  { label: "Posture-Related Pain", to: "/conditions/posture-related-pain" },
+  { label: "Shoulder Pain", to: "/conditions/shoulder-pain" },
+  { label: "Foot & Heel Pain", to: "/conditions/foot-heel-pain" },
+  { label: "Muscle Strain & Overuse", to: "/conditions/muscle-strain-overuse" },
 ];
 
 const socialLinks = [
@@ -182,13 +188,16 @@ onBeforeUnmount(() => {
         aria-label="Forest Hills Chiropractic - Home"
         @click="closeMenu"
       >
-        <img
-          :src="logo"
-          alt="Forest Hills Chiropractic"
-          class="navbar__logo"
-          width="210"
-          height="75"
-        />
+        <picture>
+          <source media="(max-width: 1024px)" :srcset="mobileLogo" />
+          <img
+            :src="desktopLogo"
+            alt="Forest Hills Chiropractic"
+            class="navbar__logo"
+            width="210"
+            height="75"
+          />
+        </picture>
       </RouterLink>
 
       <!-- Desktop Navigation -->

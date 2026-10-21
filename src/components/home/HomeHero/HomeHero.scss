@@ -7,7 +7,7 @@
   width: 100%;
   overflow: hidden;
   color: var(--color-white);
-  background-color: var(--color-green-dark);
+  background-color: var(--color-navy-dark);
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -18,11 +18,12 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(16, 31, 62, 0.98) 0%,
-    rgba(16, 31, 62, 0.92) 25%,
-    rgba(16, 31, 62, 0.68) 45%,
-    rgba(16, 31, 62, 0.3) 65%,
-    rgba(16, 31, 62, 0.08) 80%,
+    rgba(47, 61, 76, 0.98) 0%,
+    rgba(47, 61, 76, 0.96) 25%,
+    rgba(47, 61, 76, 0.85) 40%,
+    rgba(47, 61, 76, 0.52) 55%,
+    rgba(47, 61, 76, 0.18) 70%,
+    rgba(47, 61, 76, 0.04) 85%,
     transparent 100%
   );
   pointer-events: none;
@@ -113,9 +114,9 @@
   .home-hero__overlay {
     background: linear-gradient(
       180deg,
-      rgba(16, 31, 62, 0.92) 0%,
-      rgba(16, 31, 62, 0.84) 38%,
-      rgba(16, 31, 62, 0.7) 100%
+      rgba(47, 61, 76, 0.95) 0%,
+      rgba(47, 61, 76, 0.88) 38%,
+      rgba(47, 61, 76, 0.76) 100%
     );
   }
 

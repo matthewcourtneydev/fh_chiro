@@ -1,35 +1,190 @@
 .about-mission {
-    color: var(--color-white);
-    background:
-      radial-gradient(circle at top right, rgba(200, 169, 106, 0.12), transparent 36%),
-      linear-gradient(135deg, var(--color-green-dark), var(--color-black));
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--color-white, #fff);
+  background:
+    radial-gradient(
+      ellipse at 19% 52%,
+      rgba(76, 105, 133, 0.19) 0%,
+      transparent 44%
+    ),
+    radial-gradient(
+      ellipse at 93% 0%,
+      rgba(201, 164, 87, 0.065) 0%,
+      transparent 38%
+    ),
+    linear-gradient(125deg, #15273a 0%, #203143 52%, #192a3b 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 48%
+    );
   }
-  
+}
+
+.about-mission__inner {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.3fr);
+  align-items: center;
+  column-gap: clamp(48px, 7vw, 116px);
+  max-width: 1180px;
+  padding-block: clamp(60px, 7vw, 90px);
+}
+
+.about-mission__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.about-mission__logo-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 310px);
+  aspect-ratio: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 9%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(201, 164, 87, 0.1) 0%,
+      rgba(201, 164, 87, 0.035) 43%,
+      transparent 72%
+    );
+    filter: blur(18px);
+    pointer-events: none;
+  }
+}
+
+.about-mission__logo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 285px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.13));
+}
+
+.about-mission__content {
+  min-width: 0;
+  max-width: 720px;
+}
+
+.about-mission .about-mission__eyebrow {
+  margin: 0 0 16px;
+  color: var(--color-gold, #c9a457);
+}
+
+.about-mission__heading {
+  margin: 0;
+  max-width: 690px;
+  color: var(--color-white, #fff);
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.65vw, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+
+  span {
+    color: var(--color-gold, #c9a457);
+  }
+}
+
+.about-mission__rule {
+  width: 62px;
+  height: 3px;
+  margin-top: 27px;
+  background: var(--color-gold, #c9a457);
+}
+
+.about-mission__text {
+  max-width: 690px;
+  margin: 25px 0 0;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  line-height: 1.85;
+}
+
+@media (max-width: 900px) {
   .about-mission__inner {
-    display: grid;
+    grid-template-columns: minmax(155px, 0.55fr) minmax(0, 1.45fr);
+    gap: 40px;
+  }
+
+  .about-mission__logo {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-mission__inner {
+    grid-template-columns: 1fr;
     justify-items: center;
     gap: 16px;
-    max-width: 920px;
-    padding-block: 56px;
+    padding-block: 68px 76px;
     text-align: center;
   }
-  
-  .about-mission .eyebrow {
-    color: var(--color-gold);
+
+  .about-mission__logo-wrap {
+    width: 185px;
+    aspect-ratio: auto;
   }
-  
-  .about-mission__icon {
-    width: 64px;
-    height: 64px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--color-gold);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+
+  .about-mission__logo {
+    width: 100%;
+    max-width: 185px;
   }
-  
+
+  .about-mission__content {
+    max-width: 620px;
+  }
+
+  .about-mission .about-mission__eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .about-mission__heading {
+    font-size: clamp(2.1rem, 7.5vw, 3.25rem);
+  }
+
+  .about-mission__rule {
+    margin: 22px auto 0;
+  }
+
   .about-mission__text {
-    margin-top: 12px;
-    font-size: clamp(1.1rem, 2vw, 1.45rem);
-    color: rgba(255, 255, 255, 0.82);
+    margin-top: 22px;
+    line-height: 1.75;
   }
+}
+
+@media (max-width: 480px) {
+  .about-mission__inner {
+    padding-block: 56px 64px;
+  }
+
+  .about-mission__logo-wrap,
+  .about-mission__logo {
+    max-width: 150px;
+  }
+
+  .about-mission__text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}

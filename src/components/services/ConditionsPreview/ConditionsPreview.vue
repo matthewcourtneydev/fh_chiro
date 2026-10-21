@@ -1,69 +1,57 @@
-
 <script setup>
-import './ConditionsPreview.scss'
+import { computed, ref } from "vue";
+import { RouterLink } from "vue-router";
 import {
-  ArrowUpRight,
-  ArrowRight,
   Activity,
+  Accessibility,
   HeartPulse,
   Brain,
   Bone,
   Dumbbell,
   Hand,
-  Accessibility,
-} from 'lucide-vue-next'
+  Disc3,
+  ScanLine,
+  BicepsFlexed,
+  Footprints,
+  Waves,
+  ChevronDown,
+  ArrowRight,
+} from "lucide-vue-next";
+import { conditions } from "@/data/conditions.js";
+import "./ConditionsPreview.scss";
 
-const conditions = [
-  {
-    title: 'Back Pain',
-    description:
-      'Explore personalized care options for lower back discomfort, stiffness, and movement limitations.',
-    icon: Activity,
-    href: '/conditions/back-pain',
-  },
-  {
-    title: 'Neck Pain',
-    description:
-      'Learn about care options for neck stiffness, muscle tension, and restricted mobility.',
-    icon: Accessibility,
-    href: '/conditions/neck-pain',
-  },
-  {
-    title: 'Sciatica',
-    description:
-      'Understand radiating leg pain and explore treatment options that may be appropriate for your symptoms.',
-    icon: HeartPulse,
-    href: '/conditions/sciatica',
-  },
-  {
-    title: 'Headaches',
-    description:
-      'Explore care options for certain headaches associated with neck tension and movement restrictions.',
-    icon: Brain,
-    href: '/conditions/headaches',
-  },
-  {
-    title: 'Joint Pain',
-    description:
-      'Learn about personalized care for joint stiffness and movement limitations affecting everyday activities.',
-    icon: Bone,
-    href: '/conditions/joint-pain',
-  },
-  {
-    title: 'Sports Injuries',
-    description:
-      'Explore recovery-focused care designed to support mobility and a safe return to activity.',
-    icon: Dumbbell,
-    href: '/conditions/sports-injuries',
-  },
-  {
-    title: 'Carpal Tunnel Symptoms',
-    description:
-      'Learn about wrist discomfort, tingling, and when a professional evaluation may be appropriate.',
-    icon: Hand,
-    href: '/conditions/carpal-tunnel',
-  },
-]
+// The condition records, titles, descriptions, and routes come from conditions.js.
+// Icons are presentation-only and keyed by the same condition slugs.
+const iconsBySlug = {
+  "back-pain": Activity,
+  "neck-pain": Accessibility,
+  sciatica: HeartPulse,
+  headaches: Brain,
+  "joint-pain": Bone,
+  "sports-injuries": Dumbbell,
+  "carpal-tunnel": Hand,
+  "disc-problems": Disc3,
+  "posture-related-pain": ScanLine,
+  "shoulder-pain": BicepsFlexed,
+  "foot-heel-pain": Footprints,
+  "muscle-strain-overuse": Waves,
+};
+
+const conditionItems = computed(() =>
+  Object.entries(conditions).map(([slug, data]) => ({
+    slug,
+    title: data.title,
+    description: data.intro || data.overview || "",
+    icon: iconsBySlug[slug] || Activity,
+    href: `/conditions/${slug}`,
+  }))
+);
+
+const expandedSlug = ref(null);
+
+function toggleCondition(slug) {
+  expandedSlug.value = expandedSlug.value === slug ? null : slug;
+}
 </script>
 
 <template>
@@ -72,72 +60,91 @@ const conditions = [
     aria-labelledby="conditions-preview-heading"
   >
     <div class="container">
-      <div class="conditions-preview__header">
-        <div>
-          <p class="eyebrow">What We Can Help With</p>
+      <header class="conditions-preview__header">
+        <p class="eyebrow">What We Can Help With</p>
+        <h2 id="conditions-preview-heading">
+          Find Care for <span>What You're Experiencing.</span>
+        </h2>
+      </header>
 
-          <h2 id="conditions-preview-heading">
-            Find Care for<br />
-            <span>What You're Experiencing.</span>
-          </h2>
-        </div>
-
-        <p class="conditions-preview__intro">
-          Whether you're experiencing persistent back pain, neck stiffness,
-          headaches, or movement limitations, explore common conditions
-          our team evaluates and learn about available care options.
-        </p>
+      <!-- Desktop/tablet: compact, fully clickable condition cards -->
+      <div class="conditions-preview__grid">
+        <RouterLink
+          v-for="condition in conditionItems"
+          :key="condition.slug"
+          :to="condition.href"
+          class="conditions-preview__card"
+          :aria-label="`Explore ${condition.title}`"
+        >
+          <component
+            :is="condition.icon"
+            class="conditions-preview__icon"
+            :size="30"
+            :stroke-width="1.6"
+            aria-hidden="true"
+          />
+          <h3>{{ condition.title }}</h3>
+        </RouterLink>
       </div>
 
-      <div class="conditions-preview__grid">
-        <a
-          v-for="condition in conditions"
-          :key="condition.title"
-          :href="condition.href"
-          class="conditions-preview__card"
-          :aria-label="`Learn more about ${condition.title}`"
+      <!-- Mobile: accessible accordion with condition summary and route -->
+      <div class="conditions-preview__accordion">
+        <div
+          v-for="condition in conditionItems"
+          :key="condition.slug"
+          class="conditions-preview__accordion-item"
+          :class="{ 'is-open': expandedSlug === condition.slug }"
         >
-          <div class="conditions-preview__card-top">
-            <div class="conditions-preview__icon">
+          <h3 class="conditions-preview__accordion-heading">
+            <button
+              type="button"
+              class="conditions-preview__accordion-trigger"
+              :aria-expanded="expandedSlug === condition.slug"
+              :aria-controls="`condition-panel-${condition.slug}`"
+              @click="toggleCondition(condition.slug)"
+            >
               <component
                 :is="condition.icon"
-                :size="25"
+                class="conditions-preview__accordion-icon"
+                :size="22"
                 :stroke-width="1.7"
+                aria-hidden="true"
               />
-            </div>
-
-            <ArrowUpRight
-              class="conditions-preview__arrow"
-              :size="21"
-              :stroke-width="1.8"
-            />
-          </div>
-
-          <div class="conditions-preview__card-content">
-            <h3>{{ condition.title }}</h3>
+              <span>{{ condition.title }}</span>
+              <ChevronDown
+                class="conditions-preview__chevron"
+                :size="19"
+                aria-hidden="true"
+              />
+            </button>
+          </h3>
+          <div
+            v-show="expandedSlug === condition.slug"
+            :id="`condition-panel-${condition.slug}`"
+            class="conditions-preview__accordion-panel"
+          >
             <p>{{ condition.description }}</p>
+            <RouterLink
+              :to="condition.href"
+              class="conditions-preview__accordion-link"
+            >
+              Explore Condition
+              <ArrowRight :size="17" aria-hidden="true" />
+            </RouterLink>
           </div>
-
-          <span class="conditions-preview__card-link">
-            Learn More
-            <ArrowRight :size="17" :stroke-width="1.8" />
-          </span>
-        </a>
+        </div>
       </div>
 
       <div class="conditions-preview__footer">
-        <div>
-          <strong>Not sure where to start?</strong>
-          <p>
-            Our team can help you explore care options based on
-            your individual needs.
-          </p>
-        </div>
+        <p>
+          Not sure what you're experiencing?
+          <span>Explore all conditions we evaluate.</span>
+        </p>
 
-        <a href="/conditions" class="btn btn-primary">
-          Explore All Conditions
-          <ArrowRight :size="18" :stroke-width="1.8" />
-        </a>
+        <RouterLink to="/conditions" class="conditions-preview__footer-link">
+          View All Conditions
+          <ArrowRight :size="18" :stroke-width="1.8" aria-hidden="true" />
+        </RouterLink>
       </div>
     </div>
   </section>

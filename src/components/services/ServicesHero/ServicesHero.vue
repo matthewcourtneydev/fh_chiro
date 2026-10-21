@@ -11,8 +11,10 @@ import servicesHeroImage from "@/assets/images/services-hero.webp";
         <p class="eyebrow">Our Services</p>
 
         <h1>
-          Care That Gets You<br />
-          Back to What You Love.
+          Care That Gets You Back to
+          <span class="services-hero__accent">
+            What You Love.
+          </span>
         </h1>
 
         <p class="services-hero__text">
@@ -24,6 +26,16 @@ import servicesHeroImage from "@/assets/images/services-hero.webp";
         <div class="services-hero__actions">
           <a href="/booking" class="btn btn-primary">
             Request Appointment
+          </a>
+
+          <a
+            href="#core-services"
+            class="services-hero__explore"
+          >
+            <span>Explore Our Services</span>
+            <span class="services-hero__arrow" aria-hidden="true">
+              ↓
+            </span>
           </a>
         </div>
       </div>

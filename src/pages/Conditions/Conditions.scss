@@ -1,535 +1,343 @@
-
+/* =========================================================*
+*   CONDITIONS PAGE — Forest Hills Chiropractic*
+*   Solid naval hero / white condition cards / topo care / cream CTA*
+*   ========================================================= */
 .conditions-page {
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
-  /* =========================
-     HERO
-  ========================= */
-  
+  --conditions-naval: var(--color-navy, #2f3d4c);
+  --conditions-naval-deep: var(--color-navy-dark, #243140);
+  --conditions-gold: var(--color-gold, #d6b56e);
+  --conditions-cream: #f7f5ef;
+  --conditions-ink: var(--color-ink, #202d3c);
+  --conditions-muted: #647285;
+  width: 100%;
+  overflow-x: clip;
+  .eyebrow { letter-spacing: .12em; }
+  h1, h2, h3 { text-wrap: balance; }
+/* HERO — SOLID NAVAL BLUE */
   .conditions-hero {
     position: relative;
-    padding: clamp(85px, 8vw, 125px) 0;
-    background: var(--color-background-soft);
-    border-bottom: 1px solid var(--color-border);
-  
+    isolation: isolate;
+    background: var(--conditions-naval);
+    color: #fff;
+    padding: clamp(84px, 8vw, 130px) 0;
+    border-bottom: 1px solid rgba(214,181,109,.26);
     &__inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+      grid-template-columns: minmax(0, 1.45fr) minmax(275px, .55fr);
       align-items: center;
-      gap: clamp(32px, 4vw, 64px);
+      gap: clamp(35px, 5vw, 85px);
     }
-  
-    &__content {
-      max-width: 920px;
-    }
-  
-    .eyebrow {
-      margin-bottom: 24px;
-    }
-  
+    &__content { min-width: 0; max-width: 930px; }
+    .eyebrow { color: var(--conditions-gold); margin-bottom: 22px; }
     h1 {
-      font-size: clamp(3.5rem, 6vw, 6.5rem);
-      line-height: 0.98;
-      overflow-wrap: normal;
-      word-break: normal;
-  
-      span {
-        color: var(--color-gold);
-      }
+      margin: 0;
+      max-width: 950px;
+      color: #fff;
+      font-size: clamp(3.25rem, 6vw, 6.25rem);
+      line-height: .98;
+      letter-spacing: -.035em;
+      span { color: var(--conditions-gold); }
     }
-  
     &__description {
-      max-width: 620px;
-      margin-top: 30px;
-      color: var(--color-text-muted);
-      font-size: 1.05rem;
+      max-width: 650px;
+      margin-top: 28px;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(.98rem, 1.15vw, 1.08rem);
       line-height: 1.8;
     }
-  
     &__actions {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 28px;
-      margin-top: 34px;
-  
-      .btn {
-        gap: 12px;
-      }
+      align-items: center;
+      gap: 24px;
+      margin-top: 32px;
+      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
     }
-  
     &__secondary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: var(--font-heading);
-      font-size: 0.9rem;
-      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
       text-transform: uppercase;
-      color: var(--color-green);
-      transition: gap 200ms ease;
-  
-      &:hover,
-      &:focus-visible {
-        gap: 14px;
-      }
+      font: 700 .87rem/1.3 var(--font-heading, inherit);
+      transition: gap .2s ease, color .2s ease;
+      &:hover, &:focus-visible { gap: 13px; color: var(--conditions-gold); }
     }
-  
     &__aside {
       width: 100%;
-      max-width: 390px;
-      padding: 38px;
-      background: var(--color-green-dark);
-      color: var(--color-white);
-      border-left: 4px solid var(--color-gold);
-  
+      min-width: 0;
+      max-width: 410px;
+      box-sizing: border-box;
+      justify-self: end;
+      padding: clamp(28px, 3vw, 43px);
+      background: rgba(10, 25, 42, 0.48);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-left: 4px solid var(--conditions-gold);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
       &-label {
-        font-family: var(--font-heading);
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
+        display: block;
+        color: var(--conditions-gold);
         text-transform: uppercase;
-        color: var(--color-gold);
+        font: 700 0.78rem/1.4 var(--font-heading, inherit);
+        letter-spacing: 0.13em;
       }
-  
       p {
-        margin: 24px 0;
-        font-family: var(--font-heading);
-        font-size: clamp(1.5rem, 2vw, 1.9rem);
-        font-weight: 600;
-        line-height: 1.2;
+        max-width: 100%;
+        margin: 21px 0;
+        color: #fff;
         text-transform: uppercase;
+// Smaller, more controlled typography
+        font-family: var(--font-heading, inherit);
+        font-size: clamp(1.15rem, 1.45vw, 1.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.015em;
+        overflow-wrap: break-word;
       }
-  
       &-line {
-        width: 55px;
+        width: 50px;
         height: 2px;
-        margin-bottom: 20px;
-        background: var(--color-gold);
+        margin-bottom: 18px;
+        background: var(--conditions-gold);
       }
-  
       > span:last-child {
-        font-size: 0.85rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.7);
+        display: block;
+        max-width: 100%;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.88rem;
+        line-height: 1.65;
       }
     }
   }
-  
-  /* =========================
-     CONDITIONS GRID
-  ========================= */
-  
+/* CONDITIONS — CLEAN WHITE GRID */
   .conditions-list {
-    background: var(--color-white);
-  
+    background: #fff;
+    color: var(--conditions-ink);
+    scroll-margin-top: 90px;
     &__heading {
       display: flex;
+      align-items: end;
       justify-content: space-between;
-      align-items: flex-end;
       gap: 40px;
-      margin-bottom: 44px;
-  
-      .eyebrow {
-        margin-bottom: 18px;
-      }
-  
+      margin-bottom: 42px;
+      .eyebrow { margin-bottom: 15px; color: var(--conditions-naval); }
       h2 {
-        font-size: clamp(2.8rem, 4.5vw, 4.8rem);
-  
-        span {
-          color: var(--color-gold);
-        }
+        margin: 0;
+        font-size: clamp(2.7rem, 4.5vw, 4.8rem);
+        line-height: 1.02;
+        span { color: var(--conditions-gold); }
       }
-  
-      > p {
-        max-width: 410px;
-        color: var(--color-text-muted);
-        line-height: 1.8;
-      }
+      > p { max-width: 400px; color: var(--conditions-muted); line-height: 1.75; }
     }
-  
     &__grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 16px;
     }
-  
     &__card {
       display: flex;
       flex-direction: column;
-      min-height: 330px;
-      padding: 32px;
-      background: var(--color-background-soft);
-      border: 1px solid var(--color-border);
-      transition:
-        transform 220ms ease,
-        background 220ms ease,
-        box-shadow 220ms ease,
-        border-color 220ms ease;
-  
-      &:hover,
-      &:focus-visible {
-        transform: translateY(-5px);
-        background: var(--color-white);
-        border-color: rgba(200, 169, 106, 0.55);
-        box-shadow: 0 18px 40px rgba(16, 34, 25, 0.09);
+      min-width: 0;
+      min-height: 300px;
+      padding: clamp(24px, 2.2vw, 34px);
+      background: var(--conditions-cream);
+      border: 1px solid #e9e7e2;
+      color: var(--conditions-ink);
+      text-decoration: none;
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background .22s ease;
+      &:hover, &:focus-visible {
+        transform: translateY(-4px);
+        background: #fff;
+        border-color: var(--conditions-gold);
+        box-shadow: 0 18px 35px rgba(17,36,57,.09);
       }
+      &:focus-visible { outline: 2px solid var(--conditions-gold); outline-offset: 3px; }
     }
-  
-    &__card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 34px;
-      color: var(--color-green);
-    }
-  
-    &__number {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--color-gold);
-    }
-  
+    &__card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; color: var(--conditions-naval); }
+    &__number { color: var(--conditions-gold); font: 700 1.08rem/1 var(--font-heading, inherit); }
     &__card-body {
       flex: 1;
-  
-      h3 {
-        margin-bottom: 14px;
-        font-size: clamp(1.4rem, 1.7vw, 1.8rem);
-      }
-  
-      p {
-        color: var(--color-text-muted);
-        font-size: 0.92rem;
-        line-height: 1.75;
-      }
+      h3 { margin: 0 0 12px; color: var(--conditions-ink); font-size: clamp(1.3rem, 1.6vw, 1.7rem); line-height: 1.14; }
+      p { margin: 0; color: var(--conditions-muted); font-size: .93rem; line-height: 1.7; }
     }
-  
     &__card-bottom {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 28px;
-      padding-top: 20px;
-      border-top: 1px solid var(--color-border);
-      color: var(--color-green);
-      font-family: var(--font-heading);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      gap: 8px;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid #e2e1dc;
+      color: var(--conditions-naval);
+      font: 700 .8rem/1.4 var(--font-heading, inherit);
+      letter-spacing: .035em;
       text-transform: uppercase;
-      transition: gap 200ms ease;
+      transition: gap .2s ease;
     }
-  
-    &__card:hover &__card-bottom,
-    &__card:focus-visible &__card-bottom {
-      gap: 16px;
-    }
+    &__card:hover &__card-bottom, &__card:focus-visible &__card-bottom { gap: 14px; }
   }
-  
-  /* =========================
-     CARE PROCESS
-  ========================= */
-  
+/* CARE PROCESS — TOPOGRAPHIC NAVAL BLUE */
   .conditions-care {
-    background: var(--color-background-soft);
-  
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: var(--conditions-naval-deep);
+    background-image: url("@/assets/images/about-topography-desktop.webp");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        90deg,
+        rgba(15, 32, 49, 0.02) 0%,
+        rgba(15, 32, 49, 0.04) 55%,
+        rgba(15, 32, 49, 0.08) 100%
+      );
+    }
     &__inner {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 7vw, 110px);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(45px, 7vw, 110px);
+      align-items: start;
     }
-  
     &__intro {
-      .eyebrow {
-        margin-bottom: 20px;
-      }
-  
+      .eyebrow { color: var(--conditions-gold); margin-bottom: 20px; }
       h2 {
-        font-size: clamp(2.8rem, 4.5vw, 4.8rem);
-  
-        span {
-          color: var(--color-gold);
-        }
+        margin: 0;
+        color: #fff;
+        font-size: clamp(2.7rem, 4.5vw, 4.8rem);
+        line-height: 1.04;
+        span { color: var(--conditions-gold); }
       }
-  
-      > p {
-        max-width: 500px;
-        margin-top: 26px;
-        color: var(--color-text-muted);
-        line-height: 1.8;
-      }
+      > p { max-width: 500px; margin-top: 24px; color: rgba(255,255,255,.77); line-height: 1.8; }
     }
-  
     &__link {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 28px;
-      font-family: var(--font-heading);
-      font-weight: 700;
+      gap: 9px;
+      margin-top: 26px;
+      color: #fff;
+      font: 700 .88rem/1.4 var(--font-heading, inherit);
       text-transform: uppercase;
-      color: var(--color-green);
-      transition: gap 200ms ease;
-  
-      &:hover,
-      &:focus-visible {
-        gap: 16px;
-      }
+      text-decoration: none;
+      transition: color .2s ease, gap .2s ease;
+      &:hover, &:focus-visible { color: var(--conditions-gold); gap: 14px; }
     }
-  
-    &__steps {
-      display: flex;
-      flex-direction: column;
-    }
-  
+    &__steps { display: flex; flex-direction: column; }
     &__step {
       display: grid;
-      grid-template-columns: 50px 1fr;
-      gap: 24px;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--color-border);
-  
-      &:first-child {
-        padding-top: 0;
-      }
-  
-      > span {
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--color-gold);
-      }
-  
-      h3 {
-        margin-bottom: 12px;
-        font-size: 1.4rem;
-      }
-  
-      p {
-        color: var(--color-text-muted);
-        font-size: 0.92rem;
-        line-height: 1.75;
-      }
+      grid-template-columns: 42px minmax(0,1fr);
+      gap: 22px;
+      padding: 25px 0;
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      &:first-child { padding-top: 0; }
+      > span { color: var(--conditions-gold); font: 700 1.5rem/1.2 var(--font-heading, inherit); }
+      h3 { margin: 0 0 10px; color: #fff; font-size: clamp(1.12rem, 1.5vw, 1.4rem); }
+      p { margin: 0; color: rgba(255,255,255,.76); font-size: .94rem; line-height: 1.75; }
     }
   }
-  
-  /* =========================
-     FINAL CTA
-  ========================= */
-  
+/* FINAL CTA — WARM CREAM BETWEEN NAVY SECTIONS */
   .conditions-cta {
-    padding: clamp(70px, 8vw, 110px) 0;
-    background: var(--color-background);
-    color: var(--color-black);
-    border-top: 1px solid var(--color-border);
-  
+    padding: clamp(75px, 8vw, 115px) 0;
+    background: var(--conditions-cream);
+    color: var(--conditions-ink);
     &__inner {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: clamp(40px, 6vw, 90px);
       align-items: center;
-      gap: 70px;
     }
-  
-    .eyebrow {
-      margin-bottom: 20px;
-      color: var(--color-green);
-    }
-  
+    .eyebrow { margin-bottom: 18px; color: var(--conditions-naval); }
     h2 {
-      font-size: clamp(3rem, 5vw, 5.5rem);
-  
-      span {
-        color: var(--color-gold);
-      }
+      margin: 0;
+      color: var(--conditions-ink);
+      font-size: clamp(2.9rem, 5vw, 5.4rem);
+      line-height: 1.02;
+      span { color: var(--conditions-gold); }
     }
-  
-    &__content > p:not(.eyebrow) {
-      max-width: 520px;
-      margin-top: 26px;
-      color: var(--color-text-muted);
-      line-height: 1.8;
-    }
-  
+    &__content > p:not(.eyebrow) { max-width: 550px; margin-top: 23px; color: var(--conditions-muted); line-height: 1.8; }
     &__actions {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 25px;
+      align-items: center;
+      gap: 24px;
       margin-top: 30px;
-  
-      .btn {
-        gap: 10px;
-      }
+      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
     }
-  
     &__phone {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      color: var(--color-green-dark);
-      transition: color 200ms ease;
-  
-      &:hover,
-      &:focus-visible {
-        color: var(--color-gold);
-      }
+      gap: 9px;
+      color: var(--conditions-naval);
+      font-weight: 700;
+      text-decoration: none;
+      transition: color .2s ease;
+      &:hover, &:focus-visible { color: #a17e3b; }
     }
-  
     &__location {
-      padding: 42px;
-      background: var(--color-green-dark);
-      color: var(--color-white);
-      border-left: 4px solid var(--color-gold);
-  
-      > svg {
-        color: var(--color-gold);
-        margin-bottom: 26px;
-      }
-  
-      h3 {
-        margin-bottom: 18px;
-        font-size: 1.8rem;
-        color: var(--color-white);
-      }
-  
-      p {
-        color: rgba(255, 255, 255, 0.75);
-        line-height: 1.8;
-      }
-  
+      padding: clamp(28px, 3vw, 45px);
+      background: var(--conditions-naval);
+      color: #fff;
+      border-left: 4px solid var(--conditions-gold);
+      > svg { margin-bottom: 23px; color: var(--conditions-gold); }
+      h3 { margin: 0 0 16px; color: #fff; font-size: 1.75rem; }
+      p { color: rgba(255,255,255,.77); line-height: 1.8; }
       a {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        margin-top: 24px;
-        color: var(--color-gold);
-        font-family: var(--font-heading);
-        font-weight: 700;
+        margin-top: 22px;
+        color: var(--conditions-gold);
+        text-decoration: none;
+        font: 700 .87rem/1.4 var(--font-heading, inherit);
         text-transform: uppercase;
-        transition: gap 200ms ease;
-  
-        &:hover,
-        &:focus-visible {
-          gap: 14px;
-        }
+        transition: gap .2s ease;
+        &:hover, &:focus-visible { gap: 13px; }
       }
     }
   }
-  
-  /* =========================
-     RESPONSIVE
-  ========================= */
-  
   @media (max-width: 1024px) {
-    .conditions-hero {
-      &__inner {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-  
-      &__aside {
-        max-width: 520px;
-      }
-    }
-  
-    .conditions-list {
-      &__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-  
-    .conditions-cta {
-      &__inner {
-        gap: 40px;
-      }
-    }
+    .conditions-hero__inner { grid-template-columns: 1fr; gap: 38px; }
+    .conditions-hero__aside { justify-self: start; max-width: 580px; }
+    .conditions-list__grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   }
-  
   @media (max-width: 768px) {
-    .conditions-hero {
-      padding: 85px 0 65px;
-  
-      h1 {
-        font-size: clamp(3rem, 9vw, 4.5rem);
-      }
-    }
-  
-    .conditions-list {
-      &__heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-      }
-    }
-  
-    .conditions-care {
-      &__inner {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-    }
-  
-    .conditions-cta {
-      &__inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-  
-      &__location {
-        max-width: 520px;
-      }
-    }
+    .conditions-hero { padding: 76px 0 70px; }
+    .conditions-hero h1 { font-size: clamp(3rem, 8vw, 4.7rem); }
+    .conditions-list__heading { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .conditions-care__inner, .conditions-cta__inner { grid-template-columns: 1fr; gap: 40px; }
+    .conditions-cta__location { max-width: 550px; }
   }
-  
-  @media (max-width: 560px) {
-    .conditions-hero {
-      h1 {
-        font-size: clamp(2.5rem, 10vw, 3.5rem);
-      }
-  
-      &__actions {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-  
-      &__aside {
-        padding: 26px;
-      }
-    }
-  
-    .conditions-list {
-      &__grid {
-        grid-template-columns: 1fr;
-      }
-  
-      &__card {
-        min-height: 280px;
-        padding: 26px;
-      }
-    }
-  
-    .conditions-care {
-      &__step {
-        grid-template-columns: 38px 1fr;
-        gap: 16px;
-      }
-    }
-  
-    .conditions-cta {
-      &__location {
-        padding: 26px;
-      }
-  
-      &__actions {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
+  @media (max-width: 650px) {
+  .conditions-care {
+    background-image: url("@/assets/images/about-topography-mobile.webp");
+    background-position: center center;
+    background-size: cover;
+    &::before { background: rgba(15, 32, 49, 0.04); }
   }
-  
+}
+
+@media (max-width: 560px) {
+    .conditions-hero h1 { font-size: clamp(2.55rem, 10vw, 3.6rem); }
+    .conditions-hero__actions, .conditions-cta__actions { flex-direction: column; align-items: flex-start; gap: 19px; }
+    .conditions-hero__aside { padding: 27px; }
+    .conditions-list__grid { grid-template-columns: 1fr; gap: 13px; }
+    .conditions-list__card { min-height: 245px; padding: 25px; }
+    .conditions-list__card-top { margin-bottom: 22px; }
+    .conditions-care__step { grid-template-columns: 36px minmax(0,1fr); gap: 15px; }
+    .conditions-cta__location { padding: 27px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .conditions-list__card, .conditions-hero__secondary, .conditions-care__link,
+    .conditions-cta__phone, .conditions-cta__location a { transition: none; }
+  }
+}

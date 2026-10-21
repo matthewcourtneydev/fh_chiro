@@ -1,387 +1,652 @@
-/* =========================================================
-   BOOKING PAGE
-   ========================================================= */
+/** =========================================================
 
-   .booking-page {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+    BOOKING PAGE
+
+    ========================================================= */
+
+    .booking-page {
+
+      width: 100%;
   
-  /* =========================================================
-     HERO
-     ========================================================= */
+      min-height: 100vh;
   
-  .booking-hero {
-    width: 100%;
-    background: var(--color-background-soft);
-    border-bottom: 1px solid var(--color-border);
-  }
+      overflow-x: hidden;
   
-  .booking-hero__inner {
-    max-width: 1100px;
-    min-height: 340px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-block: 78px 72px;
-  }
-  
-  .booking-hero h1 {
-    max-width: 950px;
-    margin-top: 16px;
-    font-size: clamp(2.8rem, 5vw, 5rem);
-    line-height: 0.98;
-  
-    span {
-      display: block;
-      color: var(--color-green);
-    }
-  }
-  
-  .booking-hero__description {
-    max-width: 600px;
-    margin-top: 26px;
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--color-text-muted);
-  }
-  
-  /* =========================================================
-     TOPOGRAPHIC BOOKING OPTIONS
-     ========================================================= */
-  
-  .booking-options-section {
-    position: relative;
-    isolation: isolate;
-    width: 100%;
-    overflow: hidden;
-    background-color: #102344;
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(10, 24, 49, 0.25),
-        rgba(10, 24, 49, 0.12)
-      ),
-      url("@/assets/images/about-topography-desktop.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .booking-options-heading {
-    max-width: 750px;
-    margin-bottom: 44px;
-  
-    .eyebrow {
-      color: var(--color-gold);
     }
   
-    h2 {
-      margin-top: 12px;
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
-      line-height: 1.04;
-      color: var(--color-white);
+  /** =========================================================
+  
+        HERO
+  
+        ========================================================= */
+  
+    .booking-hero {
+  
+      width: 100%;
+  
+      background: var(--color-background-soft);
+  
+      border-bottom: 1px solid var(--color-border);
+  
     }
   
-    > p:last-child {
-      margin-top: 16px;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.76);
-    }
-  }
-  
-  .booking-patient-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-  
-  /* =========================================================
-     MATCHING PATIENT CARDS
-     ========================================================= */
-  
-  .booking-patient-card {
-    min-width: 0;
-    min-height: 390px;
-    display: flex;
-    flex-direction: column;
-    padding: clamp(30px, 4vw, 48px);
-    background: var(--color-background-soft);
-    border: 1px solid var(--color-border);
-    transition:
-      transform 220ms ease,
-      box-shadow 220ms ease,
-      border-color 220ms ease;
-  
-    &:hover,
-    &:focus-within {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-soft);
-      border-color: var(--color-gold);
-    }
-  }
-  
-  .booking-patient-card__top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-  
-  .booking-patient-card__icon {
-    width: 66px;
-    height: 66px;
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--color-green);
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-  }
-  
-  .booking-patient-card__number {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--color-gold);
-    opacity: 0.85;
-  }
-  
-  .booking-patient-card__content {
-    .eyebrow {
-      margin-bottom: 14px;
-    }
-  
-    h3 {
-      max-width: 420px;
-      font-size: clamp(1.9rem, 3vw, 2.7rem);
-      line-height: 1.05;
-    }
-  
-    > p:last-child {
-      max-width: 430px;
-      margin-top: 20px;
-      font-size: 0.98rem;
-      line-height: 1.75;
-      color: var(--color-text-muted);
-    }
-  }
-  
-  .booking-patient-card__bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    margin-top: auto;
-    padding-top: 36px;
-  }
-  
-  .booking-patient-card__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    min-height: 52px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-  
-    &:focus-visible {
-      outline: 3px solid var(--color-gold);
-      outline-offset: 3px;
-    }
-  }
-  
-  .booking-patient-card__note {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    color: var(--color-text-muted);
-  }
-  
-  /* =========================================================
-     PHONE CALLOUT
-     ========================================================= */
-  
-  .booking-callout {
-    width: 100%;
-    background: var(--color-background-soft);
-    border-top: 1px solid var(--color-border);
-  }
-  
-  .booking-callout__inner {
-    min-height: 160px;
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: 26px;
-    align-items: center;
-    padding-block: 30px;
-  }
-  
-  .booking-callout__icon {
-    width: 64px;
-    height: 64px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--color-green);
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-  }
-  
-  .booking-callout__text {
-    h2 {
-      font-size: 1.35rem;
-    }
-  
-    p {
-      margin-top: 8px;
-      line-height: 1.6;
-      color: var(--color-text-muted);
-    }
-  }
-  
-  .booking-callout .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-green);
-    background: transparent;
-    border: 1px solid var(--color-green);
-    text-decoration: none;
-  
-    &:focus-visible {
-      outline: 3px solid var(--color-gold);
-      outline-offset: 3px;
-    }
-  }
-  
-  /* =========================================================
-     TABLET
-     ========================================================= */
-  
-  @media (max-width: 800px) {
     .booking-hero__inner {
-      min-height: 310px;
-      padding-block: 72px;
-    }
   
-    .booking-patient-grid {
-      gap: 18px;
-    }
+      max-width: 1100px;
   
-    .booking-patient-card {
-      padding: 28px;
-    }
+      min-height: 340px;
   
-    .booking-patient-card__content h3 {
-      font-size: 2rem;
-    }
+      display: flex;
   
-    .booking-callout__inner {
-      grid-template-columns: auto minmax(0, 1fr);
-    }
+      flex-direction: column;
   
-    .booking-callout .btn {
-      grid-column: 2;
-      justify-self: start;
-    }
-  }
+      justify-content: center;
   
-  /* =========================================================
-     MOBILE
-     ========================================================= */
+      padding-block: 78px 72px;
   
-  @media (max-width: 700px) {
-    .booking-hero__inner {
-      min-height: auto;
-      padding-block: 66px;
     }
   
     .booking-hero h1 {
-      font-size: clamp(2.7rem, 9vw, 4rem);
+  
+      max-width: 950px;
+  
+      margin-top: 16px;
+  
+      font-size: clamp(2.8rem, 5vw, 5rem);
+  
+      line-height: 0.98;
+  
+      span {
+  
+        display: block;
+  
+        color: var(--color-navy);
+  
+      }
+  
     }
   
     .booking-hero__description {
-      margin-top: 22px;
-      font-size: 0.98rem;
+  
+      max-width: 600px;
+  
+      margin-top: 26px;
+  
+      font-size: 1.05rem;
+  
+      line-height: 1.75;
+  
+      color: var(--color-text-muted);
+  
     }
   
+  /** =========================================================
+  
+        TOPOGRAPHIC BOOKING OPTIONS
+  
+        ========================================================= */
+  
     .booking-options-section {
+  
+      position: relative;
+  
+      isolation: isolate;
+  
+      width: 100%;
+  
+      overflow: hidden;
+  
+      background-color: var(--color-navy-dark, #243140);
+  
       background-image:
+  
         linear-gradient(
-          rgba(10, 24, 49, 0.2),
-          rgba(10, 24, 49, 0.2)
+  
+          90deg,
+  
+          rgba(15, 32, 49, 0.02),
+  
+          rgba(15, 32, 49, 0.06)
+  
         ),
-        url("@/assets/images/about-topography-mobile.webp");
-      background-position: center top;
+  
+        url("@/assets/images/about-topography-desktop.webp");
+  
+      background-position: center;
+  
+      background-repeat: no-repeat;
+  
       background-size: cover;
+  
     }
   
     .booking-options-heading {
-      margin-bottom: 30px;
+  
+      max-width: 750px;
+  
+      margin-bottom: 44px;
+  
+      .eyebrow {
+  
+        color: var(--color-gold);
+  
+      }
   
       h2 {
-        font-size: clamp(2rem, 7vw, 3rem);
+  
+        margin-top: 12px;
+  
+        font-size: clamp(2.2rem, 4vw, 3.8rem);
+  
+        line-height: 1.04;
+  
+        color: var(--color-white);
+  
       }
+  
+      > p:last-child {
+  
+        margin-top: 16px;
+  
+        font-size: 1rem;
+  
+        line-height: 1.7;
+  
+        color: rgba(255, 255, 255, 0.76);
+  
+      }
+  
     }
   
     .booking-patient-grid {
-      grid-template-columns: 1fr;
-      gap: 18px;
+  
+      display: grid;
+  
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+      gap: 24px;
+  
     }
   
+  /** =========================================================
+  
+        MATCHING PATIENT CARDS
+  
+        ========================================================= */
+  
     .booking-patient-card {
-      min-height: 0;
-      padding: 32px 26px;
+  
+      min-width: 0;
+  
+      min-height: 390px;
+  
+      display: flex;
+  
+      flex-direction: column;
+  
+      padding: clamp(30px, 4vw, 48px);
+  
+      background: var(--color-background-soft);
+  
+      border: 1px solid var(--color-border);
+  
+      transition:
+  
+        transform 220ms ease,
+  
+        box-shadow 220ms ease,
+  
+        border-color 220ms ease;
+  
+      &:hover,
+  
+      &:focus-within {
+  
+        transform: translateY(-4px);
+  
+        box-shadow: var(--shadow-soft);
+  
+        border-color: var(--color-gold);
+  
+      }
+  
     }
   
     .booking-patient-card__top {
-      margin-bottom: 24px;
+  
+      display: flex;
+  
+      align-items: flex-start;
+  
+      justify-content: space-between;
+  
+      gap: 16px;
+  
+      margin-bottom: 32px;
+  
     }
   
-    .booking-patient-card__content h3 {
-      font-size: 2.2rem;
+    .booking-patient-card__icon {
+  
+      width: 66px;
+  
+      height: 66px;
+  
+      flex-shrink: 0;
+  
+      display: grid;
+  
+      place-items: center;
+  
+      border-radius: 50%;
+  
+      color: var(--color-navy);
+  
+      background: var(--color-white);
+  
+      border: 1px solid var(--color-border);
+  
+    }
+  
+    .booking-patient-card__number {
+  
+      font-family: var(--font-heading);
+  
+      font-size: 1.3rem;
+  
+      font-weight: 700;
+  
+      color: var(--color-gold);
+  
+      opacity: 0.85;
+  
+    }
+  
+    .booking-patient-card__content {
+  
+      .eyebrow {
+  
+        margin-bottom: 14px;
+  
+      }
+  
+      h3 {
+  
+        max-width: 420px;
+  
+        font-size: clamp(1.9rem, 3vw, 2.7rem);
+  
+        line-height: 1.05;
+  
+      }
+  
+      > p:last-child {
+  
+        max-width: 430px;
+  
+        margin-top: 20px;
+  
+        font-size: 0.98rem;
+  
+        line-height: 1.75;
+  
+        color: var(--color-text-muted);
+  
+      }
+  
     }
   
     .booking-patient-card__bottom {
-      padding-top: 28px;
+  
+      display: flex;
+  
+      flex-direction: column;
+  
+      align-items: flex-start;
+  
+      gap: 14px;
+  
+      margin-top: auto;
+  
+      padding-top: 36px;
+  
+    }
+  
+    .booking-patient-card__button {
+  
+      display: inline-flex;
+  
+      align-items: center;
+  
+      justify-content: center;
+  
+      gap: 12px;
+  
+      min-height: 52px;
+  
+      text-align: center;
+  
+      text-decoration: none;
+  
+      cursor: pointer;
+  
+      &:focus-visible {
+  
+        outline: 3px solid var(--color-gold);
+  
+        outline-offset: 3px;
+  
+      }
+  
+    }
+  
+    .booking-patient-card__note {
+  
+      font-size: 0.8rem;
+  
+      line-height: 1.5;
+  
+      color: var(--color-text-muted);
+  
+    }
+  
+  /** =========================================================
+  
+        PHONE CALLOUT
+  
+        ========================================================= */
+  
+    .booking-callout {
+  
+      width: 100%;
+  
+      background: var(--color-background-soft);
+  
+      border-top: 1px solid var(--color-border);
+  
     }
   
     .booking-callout__inner {
-      grid-template-columns: 1fr;
-      gap: 18px;
-      padding-block: 38px;
+  
+      min-height: 160px;
+  
+      display: grid;
+  
+      grid-template-columns: auto minmax(0, 1fr) auto;
+  
+      gap: 26px;
+  
+      align-items: center;
+  
+      padding-block: 30px;
+  
     }
   
-    .booking-callout .btn {
-      grid-column: 1;
-      justify-self: stretch;
+    .booking-callout__icon {
+  
+      width: 64px;
+  
+      height: 64px;
+  
+      display: grid;
+  
+      place-items: center;
+  
+      border-radius: 50%;
+  
+      color: var(--color-navy);
+  
+      background: var(--color-white);
+  
+      border: 1px solid var(--color-border);
+  
     }
-  }
   
-  @media (max-width: 480px) {
-    .booking-patient-card__button,
-    .booking-callout .btn {
-      width: 100%;
-    }
-  }
+    .booking-callout__text {
   
-  /* =========================================================
-     REDUCED MOTION
-     ========================================================= */
+      h2 {
   
-  @media (prefers-reduced-motion: reduce) {
-    .booking-patient-card {
-      transition: none;
+        font-size: 1.35rem;
   
-      &:hover,
-      &:focus-within {
-        transform: none;
       }
+  
+      p {
+  
+        margin-top: 8px;
+  
+        line-height: 1.6;
+  
+        color: var(--color-text-muted);
+  
+      }
+  
     }
-  }
+  
+    .booking-callout .btn-outline {
+  
+      display: inline-flex;
+  
+      align-items: center;
+  
+      justify-content: center;
+  
+      color: var(--color-navy);
+  
+      background: transparent;
+  
+      border: 1px solid var(--color-navy);
+  
+      text-decoration: none;
+  
+      &:focus-visible {
+  
+        outline: 3px solid var(--color-gold);
+  
+        outline-offset: 3px;
+  
+      }
+  
+    }
+  
+  /** =========================================================
+  
+        TABLET
+  
+        ========================================================= */
+  
+    @media (max-width: 800px) {
+  
+      .booking-hero__inner {
+  
+        min-height: 310px;
+  
+        padding-block: 72px;
+  
+      }
+  
+      .booking-patient-grid {
+  
+        gap: 18px;
+  
+      }
+  
+      .booking-patient-card {
+  
+        padding: 28px;
+  
+      }
+  
+      .booking-patient-card__content h3 {
+  
+        font-size: 2rem;
+  
+      }
+  
+      .booking-callout__inner {
+  
+        grid-template-columns: auto minmax(0, 1fr);
+  
+      }
+  
+      .booking-callout .btn {
+  
+        grid-column: 2;
+  
+        justify-self: start;
+  
+      }
+  
+    }
+  
+  /** =========================================================
+  
+        MOBILE
+  
+        ========================================================= */
+  
+    @media (max-width: 700px) {
+  
+      .booking-hero__inner {
+  
+        min-height: auto;
+  
+        padding-block: 66px;
+  
+      }
+  
+      .booking-hero h1 {
+  
+        font-size: clamp(2.7rem, 9vw, 4rem);
+  
+      }
+  
+      .booking-hero__description {
+  
+        margin-top: 22px;
+  
+        font-size: 0.98rem;
+  
+      }
+  
+      .booking-options-section {
+  
+        background-image:
+  
+          linear-gradient(
+  
+            rgba(15, 32, 49, 0.04),
+  
+            rgba(15, 32, 49, 0.04)
+  
+          ),
+  
+          url("@/assets/images/about-topography-mobile.webp");
+  
+        background-position: center top;
+  
+        background-size: cover;
+  
+      }
+  
+      .booking-options-heading {
+  
+        margin-bottom: 30px;
+  
+        h2 {
+  
+          font-size: clamp(2rem, 7vw, 3rem);
+  
+        }
+  
+      }
+  
+      .booking-patient-grid {
+  
+        grid-template-columns: 1fr;
+  
+        gap: 18px;
+  
+      }
+  
+      .booking-patient-card {
+  
+        min-height: 0;
+  
+        padding: 32px 26px;
+  
+      }
+  
+      .booking-patient-card__top {
+  
+        margin-bottom: 24px;
+  
+      }
+  
+      .booking-patient-card__content h3 {
+  
+        font-size: 2.2rem;
+  
+      }
+  
+      .booking-patient-card__bottom {
+  
+        padding-top: 28px;
+  
+      }
+  
+      .booking-callout__inner {
+  
+        grid-template-columns: 1fr;
+  
+        gap: 18px;
+  
+        padding-block: 38px;
+  
+      }
+  
+      .booking-callout .btn {
+  
+        grid-column: 1;
+  
+        justify-self: stretch;
+  
+      }
+  
+    }
+  
+    @media (max-width: 480px) {
+  
+      .booking-patient-card__button,
+  
+      .booking-callout .btn {
+  
+        width: 100%;
+  
+      }
+  
+    }
+  
+  /** =========================================================
+  
+        REDUCED MOTION
+  
+        ========================================================= */
+  
+    @media (prefers-reduced-motion: reduce) {
+  
+      .booking-patient-card {
+  
+        transition: none;
+  
+        &:hover,
+  
+        &:focus-within {
+  
+          transform: none;
+  
+        }
+  
+      }
+  
+    }
   

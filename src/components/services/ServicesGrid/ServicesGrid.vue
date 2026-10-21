@@ -1,3 +1,4 @@
+
 <script setup>
 import "./ServicesGrid.scss";
 import ServiceCard from "@/components/ServiceCard/ServiceCard.vue";
@@ -49,11 +50,41 @@ const services = [
 </script>
 
 <template>
-  <section class="services-grid section">
+  <section
+    id="core-services"
+    class="services-grid section"
+    aria-labelledby="core-services-heading"
+  >
     <div class="container">
-      <p class="eyebrow">Core Services</p>
-      <h2>Personalized Care for How You Move.</h2>
+      <!-- Section Header -->
+      <div class="services-grid__header">
+        <div class="services-grid__heading">
+          <p class="eyebrow">Core Services</p>
 
+          <h2 id="core-services-heading">
+            Personalized Care for How You Move.
+          </h2>
+        </div>
+
+        <div class="services-grid__intro">
+          <p>
+            At Forest Hills Chiropractic, we provide personalized
+            chiropractic care for individuals and families in
+            Forest Hills, PA, and the surrounding Pittsburgh
+            communities.
+          </p>
+
+          <p>
+            From chiropractic adjustments and spinal decompression
+            to therapeutic treatments and corrective care, our
+            approach focuses on addressing discomfort, improving
+            mobility, and helping you maintain an active,
+            healthy lifestyle.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service Cards -->
       <div class="services-grid__wrapper">
         <ServiceCard
           v-for="service in services"

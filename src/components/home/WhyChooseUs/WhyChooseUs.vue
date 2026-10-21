@@ -1,6 +1,6 @@
 <script setup>
 import './WhyChooseUs.scss'
-import whyImage from '@/assets/images/why-choose-us.png'
+import whyImage from '@/assets/images/why-choose-us-2.png'
 import {
   UserRound,
   Target,

@@ -2,42 +2,55 @@
 .booking-cta {
   width: 100%;
   overflow: hidden;
+  padding: clamp(64px, 7vw, 105px) 0;
+  background: var(--color-background-soft);
 
-  &__top {
-    background: var(--color-background-soft);
-    padding: clamp(64px, 7vw, 105px) 0;
-  }
-
-  &__top-inner {
+  &__inner {
     display: grid;
-    grid-template-columns: auto minmax(0, 1.2fr) minmax(0, 0.8fr);
+    grid-template-columns:
+      auto
+      minmax(0, 1.2fr)
+      minmax(0, 0.8fr);
     align-items: center;
     gap: clamp(24px, 3vw, 48px);
   }
+
+  // ==========================================
+  // ICON
+  // ==========================================
 
   &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 64px;
     height: 64px;
     align-self: start;
+
     border: 1px solid var(--color-border);
     border-radius: 50%;
-    color: var(--color-green);
+
+    color: var(--color-navy);
     background: var(--color-white);
   }
 
+  // ==========================================
+  // MAIN CONTENT
+  // ==========================================
+
   &__content {
+    min-width: 0;
+
     .eyebrow {
       margin-bottom: 18px;
-      color: var(--color-green);
+      color: var(--color-navy);
     }
 
     h2 {
+      margin-bottom: 22px;
       font-size: clamp(2.8rem, 4.5vw, 5rem);
       line-height: 1;
-      margin-bottom: 22px;
 
       span {
         color: var(--color-gold);
@@ -52,6 +65,10 @@
     color: var(--color-text-muted);
   }
 
+  // ==========================================
+  // ACTIONS
+  // ==========================================
+
   &__actions {
     display: flex;
     align-items: center;
@@ -64,31 +81,47 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
+
     font-family: var(--font-heading);
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-green-dark);
+    text-decoration: none;
+
+    color: var(--color-navy-dark);
+
     transition: color 180ms ease;
 
     &:hover,
     &:focus-visible {
       color: var(--color-gold);
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 5px;
+    }
   }
+
+  // ==========================================
+  // RIGHT-SIDE CONTENT
+  // ==========================================
 
   &__side {
     max-width: 370px;
     padding: 28px 0 28px 36px;
+
     border-left: 1px solid rgba(17, 17, 17, 0.15);
 
     &-label {
       margin-bottom: 18px;
+
       font-family: var(--font-heading);
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--color-green);
+
+      color: var(--color-navy);
     }
 
     > p:not(.booking-cta__side-label) {
@@ -110,227 +143,40 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--color-green-dark);
+
+      color: var(--color-navy-dark);
     }
-  }
-
-  // Communities section
-  &__communities {
-    position: relative;
-    padding: clamp(64px, 7vw, 105px) 0;
-    background: var(--color-green-dark);
-    color: var(--color-white);
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 560px;
-      height: 560px;
-      top: -280px;
-      right: -180px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(200, 169, 106, 0.09),
-        transparent 70%
-      );
-      pointer-events: none;
-    }
-  }
-
-  &__communities-inner {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    align-items: center;
-    gap: clamp(48px, 7vw, 110px);
-  }
-
-  &__local {
-    max-width: 580px;
-
-    .eyebrow {
-      margin-bottom: 20px;
-      color: var(--color-gold);
-    }
-
-    h2 {
-      font-size: clamp(2.8rem, 4.4vw, 4.8rem);
-      line-height: 1.02;
-      margin-bottom: 26px;
-      color: var(--color-white);
-
-      span {
-        color: var(--color-gold);
-      }
-    }
-  }
-
-  &__local-description {
-    max-width: 510px;
-    font-size: 1rem;
-    line-height: 1.85;
-    color: rgba(255, 255, 255, 0.72);
-  }
-
-  &__location {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-top: 34px;
-
-    > svg {
-      flex-shrink: 0;
-      color: var(--color-gold);
-    }
-
-    strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      color: var(--color-white);
-    }
-
-    p {
-      font-size: 0.9rem;
-      line-height: 1.65;
-      color: rgba(255, 255, 255, 0.65);
-    }
-  }
-
-  &__directions {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 24px;
-    padding-bottom: 7px;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--color-gold);
-    border-bottom: 1px solid var(--color-gold);
-    transition: gap 180ms ease;
-
-    &:hover,
-    &:focus-visible {
-      gap: 16px;
-    }
-  }
-
-  &__areas {
-    padding: clamp(30px, 3.5vw, 52px);
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  &__areas-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
-    padding-bottom: 26px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
-    .eyebrow {
-      color: var(--color-gold);
-      margin-bottom: 12px;
-    }
-
-    h3 {
-      font-size: clamp(1.5rem, 2.1vw, 2.1rem);
-      line-height: 1.1;
-      color: var(--color-white);
-    }
-
-    > svg {
-      flex-shrink: 0;
-      color: var(--color-gold);
-    }
-  }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 26px;
-    list-style: none;
-    padding: 16px 0;
-    margin: 0;
-  }
-
-  &__community {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-height: 56px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: 0.015em;
-    text-transform: uppercase;
-    color: var(--color-white);
-    transition: color 180ms ease;
-
-    &:hover {
-      color: var(--color-gold);
-    }
-  }
-
-  &__diamond {
-    flex: 0 0 6px;
-    width: 6px;
-    height: 6px;
-    background: var(--color-gold);
-    transform: rotate(45deg);
-  }
-
-  &__note {
-    padding-top: 16px;
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.55);
   }
 }
 
+// ==========================================
+// TABLET
+// ==========================================
+
 @media (max-width: 1100px) {
   .booking-cta {
-    &__top-inner {
+    &__inner {
       grid-template-columns: auto minmax(0, 1fr);
     }
 
     &__side {
       grid-column: 2;
       max-width: 600px;
+
       padding: 20px 0 0;
       border-left: 0;
       border-top: 1px solid var(--color-border);
     }
-
-    &__communities-inner {
-      gap: 45px;
-    }
   }
 }
 
-@media (max-width: 900px) {
-  .booking-cta {
-    &__communities-inner {
-      grid-template-columns: 1fr;
-      gap: 42px;
-    }
-
-    &__local {
-      max-width: 700px;
-    }
-  }
-}
+// ==========================================
+// MOBILE
+// ==========================================
 
 @media (max-width: 650px) {
   .booking-cta {
-    &__top-inner {
+    &__inner {
       grid-template-columns: 1fr;
       gap: 24px;
     }
@@ -340,35 +186,18 @@
       height: 54px;
     }
 
-    &__content h2 {
-      font-size: clamp(2.7rem, 10vw, 4rem);
+    &__content {
+      h2 {
+        font-size: clamp(2.7rem, 10vw, 4rem);
+      }
+    }
+
+    &__actions {
+      gap: 20px;
     }
 
     &__side {
       grid-column: 1;
     }
-
-    &__local h2 {
-      font-size: clamp(2.7rem, 9vw, 4rem);
-    }
-
-    &__areas {
-      padding: 28px 22px;
-    }
-
-    &__grid {
-      gap: 0 14px;
-    }
-
-    &__community {
-      gap: 9px;
-      font-size: 0.9rem;
-    }
-  }
-}
-
-@media (max-width: 380px) {
-  .booking-cta__grid {
-    grid-template-columns: 1fr;
   }
 }

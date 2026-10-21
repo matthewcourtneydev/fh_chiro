@@ -1,3 +1,4 @@
+
 .trust-bar {
   width: 100%;
   overflow: hidden;
@@ -22,18 +23,36 @@
   justify-content: center;
   gap: 14px;
   text-align: left;
+  text-decoration: none;
   border-right: 1px solid var(--color-border);
+  border-radius: 2px;
+  color: inherit;
+  cursor: pointer;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
 .trust-bar__item:first-child {
   border-left: 1px solid var(--color-border);
 }
 
+
+.trust-bar__item:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: -3px;
+}
+
 .trust-bar__icon {
   flex: 0 0 auto;
   font-size: 1.9rem;
   line-height: 1;
-  color: var(--color-green);
+  color: var(--color-navy);
+
+  transition:
+    color 200ms ease,
+    transform 200ms ease;
 }
 
 .trust-bar__icon svg {
@@ -44,14 +63,33 @@
   color: var(--color-gold);
 }
 
+.trust-bar__item:hover .trust-bar__icon,
+.trust-bar__item:focus-visible .trust-bar__icon {
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.trust-bar__copy {
+  min-width: 0;
+}
+
 .trust-bar h2 {
+  margin: 0;
   font-size: clamp(0.78rem, 1vw, 0.95rem);
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: 0.01em;
   word-break: keep-all;
   overflow-wrap: normal;
   hyphens: none;
   text-align: center;
+  color: var(--color-text);
+
+  transition: color 200ms ease;
+}
+
+.trust-bar__item:hover h2,
+.trust-bar__item:focus-visible h2 {
+  color: var(--color-navy);
 }
 
 .trust-bar p {
@@ -102,5 +140,23 @@
 
   .trust-bar__item {
     justify-content: flex-start;
+  }
+
+  .trust-bar h2,
+  .trust-bar p {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-bar__item,
+  .trust-bar__icon,
+  .trust-bar h2 {
+    transition: none;
+  }
+
+  .trust-bar__item:hover .trust-bar__icon,
+  .trust-bar__item:focus-visible .trust-bar__icon {
+    transform: none;
   }
 }

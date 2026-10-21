@@ -1,29 +1,32 @@
 <script setup>
-import "./LocationMap.scss";
+import './LocationMap.scss'
+
+const directionsUrl =
+  'https://www.google.com/maps/search/?api=1&query=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221'
 
 const hours = [
-  ["Monday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
-  ["Tuesday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
-  ["Wednesday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
-  ["Thursday", "9:00am - 12:00pm | 3:30pm - 6:00pm"],
-  ["Friday", "Closed"],
-  ["Saturday", "Closed"],
-  ["Sunday", "Closed"],
-];
+  { day: 'Monday', morning: '7:00 AM – 11:15 AM', afternoon: '2:30 PM – 6:00 PM' },
+  { day: 'Tuesday', morning: '7:00 AM – 11:15 AM', afternoon: '2:30 PM – 6:00 PM' },
+  { day: 'Wednesday', morning: '7:00 AM – 11:15 AM', afternoon: null },
+  { day: 'Thursday', morning: '7:00 AM – 11:15 AM', afternoon: '2:30 PM – 6:00 PM' },
+  { day: 'Friday', morning: null, afternoon: null },
+  { day: 'Saturday', morning: null, afternoon: null },
+  { day: 'Sunday', morning: null, afternoon: null },
+]
 </script>
 
 <template>
-  <section class="location-map section">
+  <section class="location-map section" aria-labelledby="location-map-heading">
     <div class="container">
       <div class="location-map__header">
         <div>
-          <p class="eyebrow">Visit our office</p>
-          <h2>We’re here to help.</h2>
+          <p class="eyebrow">Visit Our Office</p>
+          <h2 id="location-map-heading">We’re Here to Help.</h2>
         </div>
 
         <a
           class="btn btn-primary"
-          href="https://www.google.com/maps/search/?api=1&query=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221"
+          :href="directionsUrl"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -36,25 +39,39 @@ const hours = [
           <div class="location-map__card">
             <h3>Forest Hills Chiropractic</h3>
 
-            <p>
-              21 Yost Blvd Ste. 148/150<br />
+            <a
+              class="location-map__address"
+              :href="directionsUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get directions to Forest Hills Chiropractic at 21 Yost Boulevard, Suite 148/150, Pittsburgh, PA 15221 (opens in a new tab)"
+            >
+              21 Yost Blvd, Suite 148/150<br />
               Pittsburgh, PA 15221
-            </p>
+            </a>
 
             <a href="tel:+14126464344" class="location-map__phone">
               P: (412) 646-4344
             </a>
 
-            <p>F: (412) 646-4316</p>
+            <p class="location-map__fax">F: (412) 646-4316</p>
           </div>
 
           <div class="location-map__card">
             <h3>Office Hours</h3>
 
-            <ul>
-              <li v-for="[day, time] in hours" :key="day">
-                <strong>{{ day }}</strong>
-                <span>{{ time }}</span>
+            <ul class="location-map__hours">
+              <li v-for="entry in hours" :key="entry.day">
+                <strong>{{ entry.day }}</strong>
+                <span class="location-map__hours-time">
+                  <template v-if="entry.morning">
+                    <span>{{ entry.morning }}</span>
+                    <span v-if="entry.afternoon" class="location-map__hours-afternoon">
+                      {{ entry.afternoon }}
+                    </span>
+                  </template>
+                  <span v-else>Closed</span>
+                </span>
               </li>
             </ul>
           </div>
@@ -62,10 +79,11 @@ const hours = [
 
         <div class="location-map__map">
           <iframe
-            title="Map showing Forest Hills Chiropractic at 21 Yost Blvd in Pittsburgh, Pennsylvania"
+            title="Map showing Forest Hills Chiropractic at 21 Yost Boulevard in Pittsburgh, Pennsylvania"
             src="https://www.google.com/maps?q=21%20Yost%20Blvd%20Ste%20148%2F150%20Pittsburgh%20PA%2015221&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
           ></iframe>
         </div>
       </div>

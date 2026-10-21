@@ -6,6 +6,7 @@ import TrustBar from '@/components/home/TrustBar/TrustBar.vue'
 import ServicesPreview from '@/components/home/ServicesPreview/ServicesPreview.vue'
 import WhyChooseUs from '@/components/home/WhyChooseUs/WhyChooseUs.vue'
 import BookingCTA from '@/components/home/BookingCTA/BookingCTA.vue'
+import CommunitiesServed from '@/components/home/CommunitiesServed/CommunitiesServed.vue'
 import LocationMap from '@/components/home/LocationMap/LocationMap.vue'
 import Footer from '@/components/Footer/Footer.vue'
 </script>
@@ -17,6 +18,7 @@ import Footer from '@/components/Footer/Footer.vue'
     <ServicesPreview />
     <WhyChooseUs />
     <BookingCTA />
+    <CommunitiesServed />
     <LocationMap />
     <Footer />
   </main>

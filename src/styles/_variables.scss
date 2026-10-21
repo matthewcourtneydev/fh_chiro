@@ -1,50 +1,94 @@
 
-/* Colors */
-$color-green: #192f5b;
-$color-green-dark: #101f3e;
+/* =========================================
+   COLORS
+========================================= */
 
-$color-black: #111111;
-$color-gold: #c8a96a;
+/* Primary brand colors */
+$color-navy: #2f3d4c;       // Sherwin-Williams Naval SW 6244
+$color-navy-dark: #243140;  // Deeper companion navy
+$color-gold: #d6b56e;       // Champagne gold
+
+/* Supporting colors */
 $color-cream: #ebe1d9;
-$color-gray: #6b6f72;
 $color-white: #ffffff;
+$color-ink: #202d3c;
+$color-gray: #697584;
 
-$color-text: $color-black;
+/* Text and surfaces */
+$color-text: $color-ink;
 $color-text-muted: $color-gray;
 $color-background: $color-white;
 $color-background-soft: #f7f4ef;
-$color-border: rgba(17, 17, 17, 0.14);
+$color-border: rgba(47, 61, 76, 0.14);
 
-/* CSS variables for runtime/global use */
+/* =========================================
+   CSS VARIABLES
+========================================= */
+
 :root {
-  --color-green: #{$color-green};
-  --color-green-dark: #{$color-green-dark};
-  --color-black: #{$color-black};
+  /* Primary brand */
+  --color-navy: #{$color-navy};
+  --color-navy-dark: #{$color-navy-dark};
   --color-gold: #{$color-gold};
-  --color-cream: #{$color-cream};
-  --color-gray: #{$color-gray};
-  --color-white: #{$color-white};
 
+  /* Supporting colors */
+  --color-cream: #{$color-cream};
+  --color-white: #{$color-white};
+  --color-ink: #{$color-ink};
+  --color-gray: #{$color-gray};
+
+  /* Text and surfaces */
   --color-text: #{$color-text};
   --color-text-muted: #{$color-text-muted};
   --color-background: #{$color-background};
   --color-background-soft: #{$color-background-soft};
   --color-border: #{$color-border};
 
+  /* =======================================
+     TEMPORARY LEGACY ALIASES
+
+     Keep these until the remaining SCSS
+     files have been updated.
+  ======================================= */
+
+  --color-green: var(--color-navy);
+  --color-green-dark: var(--color-navy-dark);
+  --color-black: var(--color-ink);
+
+  /* =======================================
+     TYPOGRAPHY
+  ======================================= */
+
   --font-heading: 'Oswald', sans-serif;
   --font-body: 'Inter', sans-serif;
+
+  /* =======================================
+     LAYOUT
+  ======================================= */
 
   --container-max: 1400px;
   --container-narrow: 920px;
   --container-reading: 760px;
   --container-padding: 24px;
 
+  /* =======================================
+     SPACING
+  ======================================= */
+
   --section-padding-sm: 48px;
   --section-padding-md: 72px;
   --section-padding-lg: 96px;
 
+  /* =======================================
+     BORDER RADIUS
+  ======================================= */
+
   --radius-sm: 4px;
   --radius-md: 8px;
 
-  --shadow-soft: 0 12px 32px rgba(17, 17, 17, 0.08);
+  /* =======================================
+     SHADOWS
+  ======================================= */
+
+  --shadow-soft: 0 12px 32px rgba(36, 49, 64, 0.1);
 }

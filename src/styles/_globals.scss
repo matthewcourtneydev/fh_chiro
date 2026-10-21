@@ -96,7 +96,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-green);
+  color: var(--color-navy);
 }
 
 .gold-text {
@@ -107,7 +107,7 @@ p {
   color: var(--color-white);
   background:
     radial-gradient(circle at top right, rgba(200, 169, 106, 0.12), transparent 32%),
-    linear-gradient(135deg, var(--color-green-dark), var(--color-black));
+    linear-gradient(135deg, var(--color-navy-dark), var(--color-ink));
 }
 
 .btn {

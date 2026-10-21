@@ -16,7 +16,6 @@ import {
   Dumbbell,
   Accessibility,
   GitBranch,
-  AlignCenter,
   Zap,
 } from "lucide-vue-next";
 
@@ -32,22 +31,22 @@ const trustItems = [
   {
     icon: Leaf,
     title: "Pain Relief",
-    text: "Reduces stress on feet, knees, hips, and back.",
+    text: "May help ease strain through the feet, knees, hips, and back.",
   },
   {
     icon: Activity,
     title: "Better Performance",
-    text: "Enhances movement and athletic performance.",
+    text: "Supports comfortable movement during everyday activity and sport.",
   },
   {
     icon: ShieldCheck,
-    title: "Prevent Injuries",
-    text: "Helps reduce overuse injuries and future problems.",
+    title: "Activity Support",
+    text: "May help manage repetitive stress during walking and training.",
   },
   {
     icon: UserRound,
     title: "Custom Fit",
-    text: "Made specifically for your unique feet and needs.",
+    text: "Selected and fitted for your foot mechanics and individual needs.",
   },
 ];
 
@@ -60,12 +59,12 @@ const process = [
   {
     icon: ScanLine,
     title: "Assessment",
-    text: "We evaluate your posture, gait, and foot mechanics to find the root cause.",
+    text: "We review posture, walking patterns, and foot mechanics to identify areas that may benefit from support.",
   },
   {
     icon: Ruler,
     title: "Custom Design",
-    text: "Your orthotics are designed for the perfect fit and support.",
+    text: "Your orthotic recommendations are tailored to your assessment and comfort needs.",
   },
   {
     icon: CalendarCheck,
@@ -75,12 +74,36 @@ const process = [
 ];
 
 const benefits = [
-  { title: "Plantar fasciitis", icon: Footprints },
-  { title: "Sports injuries", icon: Dumbbell },
-  { title: "Knee, hip, and lower back pain", icon: Accessibility },
-  { title: "Overpronation and flat feet", icon: GitBranch },
-  { title: "Poor posture and alignment", icon: PersonStanding },
-  { title: "Shin splints and overuse injuries", icon: Zap },
+  {
+    title: "Plantar fasciitis",
+    icon: Footprints,
+    path: "/conditions/foot-heel-pain",
+  },
+  {
+    title: "Sports injuries",
+    icon: Dumbbell,
+    path: "/conditions/sports-injuries",
+  },
+  {
+    title: "Knee, hip, and lower back pain",
+    icon: Accessibility,
+    path: "/conditions/joint-pain",
+  },
+  {
+    title: "Overpronation and flat feet",
+    icon: GitBranch,
+    path: "/conditions/foot-heel-pain",
+  },
+  {
+    title: "Poor posture and alignment",
+    icon: PersonStanding,
+    path: "/conditions/posture-related-pain",
+  },
+  {
+    title: "Shin splints and overuse injuries",
+    icon: Zap,
+    path: "/conditions/muscle-strain-overuse",
+  },
 ];
 </script>
 
@@ -101,7 +124,7 @@ const benefits = [
             <span>Custom Orthotics</span>
           </div>
 
-          <p class="eyebrow">Custom Orthotics</p>
+          <p class="eyebrow">Personalized Foot Support</p>
 
           <h1>
             Better support.<br />
@@ -115,7 +138,9 @@ const benefits = [
 
           <div class="orthotics-hero__actions">
             <a href="/booking" class="btn btn-primary">Request Appointment</a>
-            <a href="#orthotics-process" class="btn btn-secondary">Learn More</a>
+            <a href="#orthotics-process" class="btn btn-secondary"
+              >Learn More</a
+            >
           </div>
         </div>
       </div>
@@ -147,10 +172,11 @@ const benefits = [
           <p class="eyebrow">Custom Orthotics</p>
           <h2>Support that’s built for you.</h2>
           <p>
-            Over-the-counter insoles cannot address the unique way your body
-            moves. Our custom orthotics are designed based on a thorough
-            evaluation to support your alignment, improve mobility, and reduce
-            pain.
+            Your feet influence how you walk, stand, and move throughout the
+            day. At Forest Hills Chiropractic in Pittsburgh, we assess foot
+            mechanics, gait, and your daily activities to determine whether
+            custom orthotics may help improve comfort and support more efficient
+            movement.
           </p>
 
           <ul>
@@ -160,7 +186,7 @@ const benefits = [
             </li>
             <li>
               <CheckCircle :size="18" :stroke-width="1.8" />
-              Digitally scanned for precision
+              Individualized assessment and fitting
             </li>
             <li>
               <CheckCircle :size="18" :stroke-width="1.8" />
@@ -188,10 +214,11 @@ const benefits = [
       <div class="container">
         <div class="orthotics-section-header orthotics-section-header--center">
           <p class="eyebrow">Our Process</p>
-          <h2>A personalized process for lasting results.</h2>
+          <h2>A thoughtful approach to better support.</h2>
           <p>
-            Your orthotics are selected and fitted around your movement needs,
-            activity level, and long-term goals.
+            From your initial consultation through fitting and follow-up, our
+            custom orthotics process focuses on your foot mechanics, comfort,
+            activity level, and individual movement goals.
           </p>
         </div>
 
@@ -215,29 +242,32 @@ const benefits = [
       <div class="container orthotics-benefits__box">
         <div class="orthotics-section-header orthotics-section-header--center">
           <p class="eyebrow">Who can benefit?</p>
-          <h2>Orthotics can help with:</h2>
+          <h2>Support for everyday movement challenges.</h2>
+          <p>
+            Custom foot orthotics may be considered for plantar heel discomfort,
+            flat feet, overpronation, and movement-related strain. Our Forest
+            Hills team evaluates your symptoms and determines whether orthotic
+            support is appropriate as part of your care plan.
+          </p>
         </div>
-
         <div class="orthotics-benefits__grid">
-          <div
+          <a
             v-for="benefit in benefits"
             :key="benefit.title"
+            :href="benefit.path"
             class="orthotics-benefits__item"
           >
             <component :is="benefit.icon" :size="32" :stroke-width="1.6" />
-            <h3>{{ benefit.title }}</h3>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="orthotics-final-cta">
-      <div class="container orthotics-final-cta__inner">
-        <div class="orthotics-final-cta__accent" aria-hidden="true"></div>
-        <h2>Step into better support.</h2>
-        <a href="/booking" class="btn btn-primary">
-          Request Your Orthotics Today
-        </a>
+            <h3>{{ benefit.title }}</h3>
+          </a>
+        </div>
+
+        <div class="orthotics-benefits__footer">
+          <a href="/conditions" class="btn btn-primary"
+            >Explore All Conditions</a
+          >
+        </div>
       </div>
     </section>
 

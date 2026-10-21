@@ -1,39 +1,46 @@
+
 <script setup>
 import './TrustBar.scss'
+import { RouterLink } from 'vue-router'
 import {
   Star,
-  BadgeCheck,
-  Users,
-  ShieldCheck,
-  CircleCheck,
+  Award,
+  HeartHandshake,
+  Activity,
+  MapPin,
 } from 'lucide-vue-next'
 
 const items = [
   {
     icon: Star,
-    title: '4.9 RATING',
+    title: '4.9 Google Rating',
     text: '350+ Google Reviews',
-    accent: true,
+    href: 'https://www.google.com/maps/search/?api=1&query=Forest+Hills+Chiropractic+Pittsburgh+PA',
+    external: true,
   },
   {
-    icon: BadgeCheck,
-    title: 'Trusted Chiropractor',
-    text: 'Evidence-based care',
+    icon: Award,
+    title: 'Experienced Chiropractor',
+    text: 'Meet Dr. Michael Testen',
+    href: '/about',
   },
   {
-    icon: Users,
-    title: 'Patient-Focused Care',
-    text: 'Care built around your goals',
+    icon: HeartHandshake,
+    title: 'Personalized Care',
+    text: 'Treatment built around you',
+    href: '/services',
   },
   {
-    icon: ShieldCheck,
-    title: 'Evidence-Based Care',
-    text: 'Focused on lasting progress',
+    icon: Activity,
+    title: 'Recovery & Performance',
+    text: 'Move better. Feel better.',
+    href: '/services/therapies',
   },
   {
-    icon: CircleCheck,
-    title: 'Personalized Treatment',
-    text: 'Plans built around you',
+    icon: MapPin,
+    title: 'Locally Owned & Operated',
+    text: 'Proudly serving Forest Hills',
+    href: '/contact',
   },
 ]
 </script>
@@ -41,9 +48,14 @@ const items = [
 <template>
   <section class="trust-bar" aria-label="Practice highlights">
     <div class="container trust-bar__inner">
-      <div
+      <component
+        :is="item.external ? 'a' : RouterLink"
         v-for="item in items"
         :key="item.title"
+        :href="item.external ? item.href : undefined"
+        :to="item.external ? undefined : item.href"
+        :target="item.external ? '_blank' : undefined"
+        :rel="item.external ? 'noopener noreferrer' : undefined"
         class="trust-bar__item"
       >
         <div
@@ -54,6 +66,7 @@ const items = [
             :is="item.icon"
             :size="32"
             :stroke-width="1.8"
+            aria-hidden="true"
           />
         </div>
 
@@ -61,7 +74,7 @@ const items = [
           <h2>{{ item.title }}</h2>
           <p>{{ item.text }}</p>
         </div>
-      </div>
+      </component>
     </div>
   </section>
 </template>

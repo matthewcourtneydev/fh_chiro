@@ -1,5 +1,7 @@
 <script setup>
 import "./SpinalDecompression.scss";
+import { computed } from "vue";
+import { RouterLink } from "vue-router";
 import Footer from "@/components/Footer/Footer.vue";
 import {
   Leaf,
@@ -9,7 +11,9 @@ import {
   RefreshCw,
   CheckCircle,
   ChevronDown,
+  ArrowRight,
 } from "lucide-vue-next";
+import { conditions as conditionsData } from "@/data/conditions.js";
 
 import heroImage from "@/assets/images/spinal-decompression-hero.png";
 import bodyImageOne from "@/assets/images/spinal-decompression-body-1.png";
@@ -18,74 +22,83 @@ import bodyImageTwo from "@/assets/images/spinal-decompression-body-2.png";
 const trustItems = [
   {
     icon: Leaf,
-    title: "Non-Surgical Solution",
-    text: "A non-surgical approach to relieving spinal pressure",
-    gold: true,
+    title: "Non-Surgical Care",
+    text: "A non-surgical option for selected spinal conditions"
   },
   {
     icon: UserCheck,
-    title: "Targets the Source",
-    text: "Addresses disc pressure and nerve irritation",
+    title: "Individual Assessment",
+    text: "Care based on your symptoms and examination",
   },
   {
     icon: ShieldCheck,
-    title: "Promotes Healing",
-    text: "Encourages your body’s natural recovery",
+    title: "Targeted Treatment",
+    text: "Focused on spinal mobility and symptom management",
   },
   {
     icon: Clock3,
-    title: "Safe & Gentle",
-    text: "Comfortable treatments with no downtime",
+    title: "Gentle Approach",
+    text: "Controlled traction tailored to your comfort",
   },
   {
     icon: RefreshCw,
-    title: "Long-Term Support",
-    text: "Helps reduce pain and improve quality of life",
+    title: "Ongoing Support",
+    text: "Guidance for movement and long-term function",
   },
 ];
 
 const benefits = [
   {
-    title: "Relieves pressure on discs and nerves",
-    text: "Decompression gently relieves pressure caused by herniated or bulging discs, helping reduce pain, numbness, tingling, and radiating symptoms.",
+    title: "May ease disc-related discomfort",
+    text: "Non-surgical spinal decompression uses controlled traction to gently stretch the spine. For some patients with disc-related back or neck pain, this may provide short-term symptom relief as part of a broader treatment plan.",
   },
   {
-    title: "Supports herniated and bulging discs",
-    text: "Gentle traction may help create space in the spine and reduce irritation around affected discs and nerves.",
+    title: "A conservative option for disc problems",
+    text: "People with certain bulging or herniated discs may be evaluated for decompression therapy. An examination helps determine whether traction is appropriate, because not every disc condition benefits from this approach.",
   },
   {
-    title: "Reduces sciatica and nerve-related pain",
-    text: "When nerve pressure is reduced, patients may experience less pain traveling into the hips, glutes, legs, or feet.",
+    title: "May help selected cases of radiating pain",
+    text: "Pain, tingling, or discomfort traveling into an arm or leg can have several causes, including nerve irritation. Your clinician can assess whether spinal decompression or another form of care is appropriate.",
   },
   {
-    title: "Improves mobility and flexibility",
-    text: "By reducing pressure and stiffness, decompression care may help you move with less restriction and more confidence.",
+    title: "Supports a movement-focused care plan",
+    text: "When symptoms improve, patients may find it easier to participate in mobility work, strengthening exercises, and everyday activities. Decompression may be combined with other conservative treatments when appropriate.",
   },
   {
-    title: "Promotes long-term spinal health",
-    text: "Care is designed to support better spinal function, reduce recurring irritation, and help you maintain movement over time.",
+    title: "Personalized to your needs",
+    text: "Treatment settings, visit frequency, and other recommendations depend on your health history, examination findings, symptoms, and response to care. Results vary from person to person.",
   },
   {
-    title: "Non-invasive with no downtime",
-    text: "Spinal decompression is a gentle, non-surgical option that allows most patients to return to normal daily activity after care.",
+    title: "Non-surgical and generally outpatient",
+    text: "Spinal decompression does not involve surgery. Your clinician will review potential benefits, limitations, and contraindications before recommending treatment.",
   },
 ];
 
-const conditions = [
-  "Herniated or bulging discs",
-  "Sciatica",
-  "Degenerative disc disease",
-  "Chronic lower back pain",
-  "Numbness or tingling",
-  "Spinal stenosis",
-  "Failed back surgery syndrome",
-  "And more",
+// Only show condition pages that exist in the shared conditions data.
+// Slugs match the existing ConditionsPreview and dynamic condition routes.
+const featuredSlugs = [
+  "back-pain",
+  "sciatica",
+  "disc-problems",
+  "neck-pain",
+  "posture-related-pain",
+  "joint-pain",
 ];
+
+const linkedConditions = computed(() =>
+  featuredSlugs
+    .filter((slug) => conditionsData[slug])
+    .map((slug) => ({
+      slug,
+      title: conditionsData[slug].title,
+      to: `/conditions/${slug}`,
+    }))
+);
 </script>
 
 <template>
   <main class="spinal-page">
-    <section class="spinal-hero">
+    <section class="spinal-hero" aria-labelledby="spinal-hero-title">
       <div class="spinal-hero__image">
         <img
           :src="heroImage"
@@ -95,29 +108,31 @@ const conditions = [
 
       <div class="container spinal-hero__inner">
         <div class="spinal-hero__content">
-          <div class="breadcrumb">
-            <a href="/services">Services</a>
-            <span>/</span>
-            <span>Spinal Decompression</span>
-          </div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <RouterLink to="/services">Services</RouterLink>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Spinal Decompression</span>
+          </nav>
 
-          <h1>
-            Gentle relief.<br />
-            Lasting results.
+          <h1 id="spinal-hero-title">
+            Gentle care.<br />
+            Better movement.
           </h1>
 
           <p>
-            Non-surgical spinal decompression in Pittsburgh, PA designed to
-            relieve pressure on spinal discs and nerves, improve mobility, and
-            support natural recovery.
+            Explore non-surgical spinal decompression in Forest Hills,
+            Pittsburgh, PA. Treatment may help manage certain types of
+            disc-related discomfort as part of a personalized care plan.
           </p>
 
-          <a href="/booking" class="btn btn-primary">Request Appointment</a>
+          <RouterLink to="/booking" class="btn btn-primary">
+            Request Appointment
+          </RouterLink>
         </div>
       </div>
     </section>
 
-    <section class="spinal-trust">
+    <section class="spinal-trust" aria-label="Our approach">
       <div class="container spinal-trust__inner">
         <div
           v-for="item in trustItems"
@@ -126,12 +141,12 @@ const conditions = [
         >
           <component
             :is="item.icon"
-            :class="{ 'spinal-trust__icon--gold': item.gold }"
             class="spinal-trust__icon"
-            :size="36"
+            :class="{ 'spinal-trust__icon--gold': item.gold }"
+            :size="34"
             :stroke-width="1.7"
+            aria-hidden="true"
           />
-
           <h2>{{ item.title }}</h2>
           <p>{{ item.text }}</p>
         </div>
@@ -143,43 +158,49 @@ const conditions = [
         <div class="spinal-intro__media">
           <img
             :src="bodyImageOne"
-            alt="Doctor explaining spinal decompression using a spine model"
+            alt="Chiropractor explaining spinal care using a spine model"
+            loading="lazy"
           />
         </div>
 
         <div class="spinal-intro__content">
-          <p class="eyebrow">How it works</p>
-
+          <p class="eyebrow">How It Works</p>
           <h2>
-            Relieve pressure.<br />
-            Restore function.
+            A gentle approach<br />
+            to spinal care.
           </h2>
-
           <p>
-            Spinal decompression works by gently stretching the spine to help
-            create negative pressure within the discs. This may help draw in
-            nutrient-rich fluids, retract bulging or herniated discs, and take
-            pressure off irritated nerves.
+            Non-surgical spinal decompression uses a specialized treatment
+            table to apply controlled, intermittent traction to the spine.
+            The goal is to gently change the forces acting on spinal
+            structures and potentially reduce discomfort for appropriately
+            selected patients.
           </p>
-
           <p>
-            Each session is tailored to your condition and comfort level to help
-            you move, heal, and feel better.
+            At Forest Hills Chiropractic, we evaluate your symptoms,
+            health history, and movement needs before discussing whether
+            spinal decompression belongs in your treatment plan.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="spinal-benefits section">
+    <section class="spinal-benefits section" aria-labelledby="spinal-benefits-heading">
       <div class="container spinal-benefits__inner">
         <div class="spinal-benefits__heading">
           <p class="eyebrow">The Benefits</p>
-
-          <h2>Designed to help you feel better and move more.</h2>
-
+          <h2 id="spinal-benefits-heading">
+            An individualized approach to disc-related discomfort.
+          </h2>
           <p>
-            Spinal decompression offers a range of benefits for people dealing
-            with chronic pain and disc-related issues.
+            Spinal decompression therapy in Pittsburgh is one of several
+            conservative treatment options that may be considered for certain
+            types of back pain, neck pain, and disc-related symptoms. By
+            applying gentle, controlled traction, this approach aims to
+            reduce discomfort and support participation in everyday movement.
+            Not every patient is a candidate, and results vary. At Forest
+            Hills Chiropractic, recommendations are based on a clinical
+            evaluation rather than a one-size-fits-all treatment schedule.
           </p>
         </div>
 
@@ -191,41 +212,53 @@ const conditions = [
             :open="index === 0"
           >
             <summary>
-              <CheckCircle :size="22" :stroke-width="1.8" />
+              <CheckCircle :size="21" :stroke-width="1.8" aria-hidden="true" />
               <span>{{ benefit.title }}</span>
-              <ChevronDown :size="20" :stroke-width="1.8" />
+              <ChevronDown :size="19" :stroke-width="1.8" aria-hidden="true" />
             </summary>
-
             <p>{{ benefit.text }}</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="spinal-conditions section">
+    <section class="spinal-conditions section" aria-labelledby="spinal-conditions-heading">
       <div class="container spinal-conditions__inner">
         <div class="spinal-conditions__content">
-          <p class="eyebrow">Who it can help</p>
-
-          <h2>Ideal for many conditions.</h2>
-
+          <p class="eyebrow">Who It Can Help</p>
+          <h2 id="spinal-conditions-heading">
+            Explore related spinal and movement concerns.
+          </h2>
           <p>
-            Spinal decompression may help if you’re dealing with persistent pain
-            that hasn’t improved with other treatments.
+            Symptoms such as persistent back pain, sciatica, and neck
+            discomfort can have different underlying causes. Explore the
+            conditions we evaluate and learn more about available care
+            options. Decompression is not appropriate for every condition.
           </p>
 
-          <ul>
-            <li v-for="condition in conditions" :key="condition">
-              <CheckCircle :size="18" :stroke-width="1.8" />
-              <span>{{ condition }}</span>
-            </li>
-          </ul>
+          <div class="spinal-conditions__grid">
+            <RouterLink
+              v-for="condition in linkedConditions"
+              :key="condition.slug"
+              :to="condition.to"
+              class="spinal-conditions__card"
+            >
+              <span>{{ condition.title }}</span>
+              <ArrowRight :size="19" :stroke-width="1.8" aria-hidden="true" />
+            </RouterLink>
+          </div>
+
+          <RouterLink to="/conditions" class="btn btn-primary spinal-conditions__all">
+            Explore All Conditions
+            <ArrowRight :size="18" :stroke-width="1.8" aria-hidden="true" />
+          </RouterLink>
         </div>
 
         <div class="spinal-conditions__image">
           <img
             :src="bodyImageTwo"
-            alt="Patient relaxing during spinal decompression therapy"
+            alt="Patient resting on a spinal decompression treatment table"
+            loading="lazy"
           />
         </div>
       </div>

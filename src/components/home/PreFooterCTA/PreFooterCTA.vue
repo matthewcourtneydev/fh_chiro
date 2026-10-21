@@ -1,29 +1,36 @@
 <script setup>
-import './PreFooterCTA.scss'
-import { CalendarDays } from 'lucide-vue-next'
+import "./PreFooterCTA.scss";
+import { CalendarDays } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <section class="pre-footer-cta">
+  <section class="pre-footer-cta" aria-labelledby="pre-footer-heading">
     <div class="container pre-footer-cta__inner">
-      <div class="pre-footer-cta__content">
-        <p class="eyebrow">Start your journey today</p>
-
-        <h2>
+      <div class="pre-footer-cta__headline">
+        <p class="eyebrow">Start Your Journey Today</p>
+        <h2 id="pre-footer-heading">
           Feel better.<br />
           Move better.<br />
-          Live better.
+          <span>Live better.</span>
         </h2>
+      </div>
 
-        <p>
-          Book your first visit and take the first step toward long-term health
-          and performance.
-        </p>
+      <div class="pre-footer-cta__action">
+        <div class="pre-footer-cta__icon" aria-hidden="true">
+          <CalendarDays :size="32" :stroke-width="1.7" />
+        </div>
 
-        <a class="btn btn-primary" href="/booking">
-          <CalendarDays :size="20" :stroke-width="1.8" />
-          Book Appointment
-        </a>
+        <div class="pre-footer-cta__copy">
+          <p>
+            Take the first step toward better movement, recovery,
+            and long-term health. We're here to help you get started.
+          </p>
+
+          <RouterLink class="btn btn-primary" to="/booking">
+            Book Appointment
+          </RouterLink>
+        </div>
       </div>
     </div>
   </section>

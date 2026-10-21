@@ -1,3 +1,8 @@
+
+/* =========================================
+   CORE SERVICES SECTION
+========================================= */
+
 .services-grid {
   position: relative;
   overflow: hidden;
@@ -11,26 +16,222 @@
   color: var(--color-white);
 }
 
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.services-grid__header {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.95fr);
+
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+
+  margin-bottom: 58px;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.services-grid__heading {
+  min-width: 0;
+  max-width: 700px;
+}
+
 .services-grid .eyebrow {
+  margin-bottom: 18px;
   color: var(--color-gold);
 }
 
 .services-grid h2 {
-  margin-top: 12px;
-  margin-bottom: 40px;
-  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  max-width: 720px;
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 3.7vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+
   color: var(--color-white);
+
+  text-wrap: balance;
 }
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.services-grid__intro {
+  position: relative;
+  min-width: 0;
+  max-width: 620px;
+
+  padding-left: 32px;
+
+  border-left: 3px solid var(--color-gold);
+}
+
+.services-grid__intro p {
+  margin: 0;
+
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+  line-height: 1.8;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.services-grid__intro p + p {
+  margin-top: 18px;
+}
+
+/* =========================================
+   SERVICE CARDS GRID
+========================================= */
 
 .services-grid__wrapper {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+
+  gap: 26px;
+  align-items: stretch;
 }
 
+/* =========================================
+   LARGE TABLETS
+========================================= */
+
+@media (max-width: 1200px) {
+  .services-grid__header {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    gap: 48px;
+    margin-bottom: 50px;
+  }
+
+  .services-grid h2 {
+    font-size: clamp(2.4rem, 3.7vw, 3.5rem);
+  }
+
+  .services-grid__intro {
+    padding-left: 26px;
+  }
+
+  .services-grid__intro p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .services-grid__header {
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    margin-bottom: 44px;
+  }
+
+  .services-grid__heading {
+    max-width: 700px;
+  }
+
+  .services-grid h2 {
+    max-width: 700px;
+    font-size: clamp(2.5rem, 5vw, 3.7rem);
+  }
+
+  .services-grid__intro {
+    max-width: 760px;
+    padding-left: 24px;
+  }
+
+  .services-grid__wrapper {
+    gap: 20px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 768px) {
+  .services-grid {
+    background-image:
+      url("@/assets/images/about-topography-mobile.webp");
+
+    background-position: center top;
+  }
+
+  .services-grid__header {
+    gap: 28px;
+    margin-bottom: 38px;
+  }
+
+  .services-grid .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .services-grid h2 {
+    font-size: clamp(2.35rem, 7vw, 3.2rem);
+    line-height: 1.08;
+  }
+
+  .services-grid__intro {
+    padding-left: 20px;
+    border-left-width: 2px;
+  }
+
+  .services-grid__intro p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .services-grid__intro p + p {
+    margin-top: 16px;
+  }
+
   .services-grid__wrapper {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .services-grid__header {
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .services-grid h2 {
+    font-size: clamp(2.15rem, 9vw, 2.8rem);
+    letter-spacing: -0.035em;
+  }
+
+  .services-grid__intro {
+    padding-left: 18px;
+  }
+
+  .services-grid__intro p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .services-grid__wrapper {
+    gap: 16px;
   }
 }
