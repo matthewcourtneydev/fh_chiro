@@ -1,0 +1,11 @@
+.legal-page-content {
+    &__intro { margin-bottom: 2rem; }
+    &__section { margin-block: 2rem; }
+    &__section h2 { margin-bottom: 1rem; }
+    &__section p + p, &__section p + ul, &__section ul + p { margin-top: 1rem; }
+    &__section li + li { margin-top: .6rem; }
+    a { text-underline-offset: .18em; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  }
+  

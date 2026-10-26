@@ -1096,3 +1096,27 @@
   }
 
 }
+// Compact contact details: keep information scannable without excess height.
+.contact-info__item {
+  padding-block: 22px;
+}
+
+.contact-info h3 {
+  margin-bottom: 8px;
+}
+
+.contact-info__email {
+  font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+  overflow-wrap: anywhere;
+}
+
+.contact-info__time-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+@media (max-width: 650px) {
+  .contact-info__item { padding-block: 19px; }
+  .contact-info__email { font-size: clamp(1rem, 4.3vw, 1.25rem); }
+}

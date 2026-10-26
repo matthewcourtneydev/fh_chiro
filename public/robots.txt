@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fh-chiropractic.com/sitemap.xml
+Sitemap: https://fhchiropractic.com/sitemap.xml

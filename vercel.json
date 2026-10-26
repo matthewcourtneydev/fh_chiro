@@ -2,13 +2,168 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
+  "redirects": [
     {
-      "handle": "filesystem"
+      "source": "/us",
+      "destination": "/about",
+      "permanent": true
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/chiropractor",
+      "destination": "/services/chiropractic-adjustments",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/request-an-appointment",
+      "destination": "/booking",
+      "permanent": true
+    },
+    {
+      "source": "/spinal-decompression",
+      "destination": "/services/spinal-decompression",
+      "permanent": true
+    },
+    {
+      "source": "/active-rehabilitation",
+      "destination": "/services/therapies",
+      "permanent": true
+    },
+    {
+      "source": "/orthotics",
+      "destination": "/services/orthotics",
+      "permanent": true
+    },
+    {
+      "source": "/chiropractic-care-kids",
+      "destination": "/services/family",
+      "permanent": true
+    },
+    {
+      "source": "/wellness-care",
+      "destination": "/services/family",
+      "permanent": true
+    },
+    {
+      "source": "/back-pain",
+      "destination": "/conditions/back-pain",
+      "permanent": true
+    },
+    {
+      "source": "/neck-pain",
+      "destination": "/conditions/neck-pain",
+      "permanent": true
+    },
+    {
+      "source": "/headaches-migraines",
+      "destination": "/conditions/headaches",
+      "permanent": true
+    },
+    {
+      "source": "/shoulder-pain",
+      "destination": "/conditions/shoulder-pain",
+      "permanent": true
+    },
+    {
+      "source": "/sciatica",
+      "destination": "/conditions/sciatica",
+      "permanent": true
+    },
+    {
+      "source": "/sciatic-leg-pain",
+      "destination": "/conditions/sciatica",
+      "permanent": true
+    },
+    {
+      "source": "/carpal-tunnel",
+      "destination": "/conditions/carpal-tunnel",
+      "permanent": true
+    },
+    {
+      "source": "/disc-injury",
+      "destination": "/conditions/disc-problems",
+      "permanent": true
+    },
+    {
+      "source": "/ai-generated-content-disclaimer",
+      "destination": "/ai-content-disclaimer",
+      "permanent": true
+    },
+    {
+      "source": "/hipaa-privacy-policy",
+      "destination": "/hipaa-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-service",
+      "destination": "/terms-of-service",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services/index.html"
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "/services/:path*/index.html"
+    },
+    {
+      "source": "/conditions",
+      "destination": "/conditions/index.html"
+    },
+    {
+      "source": "/conditions/:slug",
+      "destination": "/conditions/:slug/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/booking",
+      "destination": "/booking/index.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy/index.html"
+    },
+    {
+      "source": "/hipaa-policy",
+      "destination": "/hipaa-policy/index.html"
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/accessibility/index.html"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms-of-service/index.html"
+    },
+    {
+      "source": "/healthcare-disclaimer",
+      "destination": "/healthcare-disclaimer/index.html"
+    },
+    {
+      "source": "/good-faith-estimate",
+      "destination": "/good-faith-estimate/index.html"
+    },
+    {
+      "source": "/ai-content-disclaimer",
+      "destination": "/ai-content-disclaimer/index.html"
     }
   ]
 }

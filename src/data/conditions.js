@@ -1,7 +1,8 @@
-
 export const conditions = {
   'back-pain': {
     title: 'Back Pain',
+    seoTitle: 'Back Pain Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Explore chiropractic care options for back pain at Forest Hills Chiropractic in Pittsburgh, PA, including personalized evaluation and treatment approaches.',
     eyebrow: 'Back Pain Care',
     headline: 'Find a Better Way to Move Without Back Pain.',
     intro:
@@ -22,9 +23,10 @@ export const conditions = {
       'corrective-care',
     ],
   },
-
   'neck-pain': {
     title: 'Neck Pain',
+    seoTitle: 'Neck Pain Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Learn about chiropractic care for neck pain, stiffness, and restricted movement at Forest Hills Chiropractic in Pittsburgh, PA.',
     eyebrow: 'Neck Pain Care',
     headline: 'Move More Comfortably. Feel Less Restricted.',
     intro:
@@ -45,9 +47,10 @@ export const conditions = {
       'corrective-care',
     ],
   },
-
   sciatica: {
     title: 'Sciatica',
+    seoTitle: 'Sciatica Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Explore chiropractic evaluation and care options for sciatica and radiating leg discomfort at Forest Hills Chiropractic in Pittsburgh, PA.',
     eyebrow: 'Sciatica Care',
     headline: 'Explore Relief From Radiating Leg Pain.',
     intro:
@@ -68,9 +71,10 @@ export const conditions = {
       'corrective-care',
     ],
   },
-
   headaches: {
     title: 'Headaches',
+    seoTitle: 'Chiropractic Care for Headaches in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Learn how Forest Hills Chiropractic evaluates headaches and related neck or muscle tension, and explore available chiropractic care options.',
     eyebrow: 'Headache Care',
     headline: 'Understand Your Headaches. Explore Your Options.',
     intro:
@@ -91,9 +95,10 @@ export const conditions = {
       'corrective-care',
     ],
   },
-
   'joint-pain': {
     title: 'Joint Pain',
+    seoTitle: 'Joint Pain Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Explore personalized chiropractic care options for joint discomfort, stiffness, and mobility concerns in Pittsburgh, PA.',
     eyebrow: 'Joint Pain Care',
     headline: 'Support Better Mobility in Everyday Life.',
     intro:
@@ -114,9 +119,10 @@ export const conditions = {
       'custom-orthotics',
     ],
   },
-
   'sports-injuries': {
     title: 'Sports Injuries',
+    seoTitle: 'Sports Injury Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Learn about chiropractic evaluation and recovery-focused care for sports-related injuries and movement concerns in Pittsburgh, PA.',
     eyebrow: 'Sports Injury Care',
     headline: 'Get Back to Doing What You Love.',
     intro:
@@ -137,9 +143,10 @@ export const conditions = {
       'custom-orthotics',
     ],
   },
-
   'carpal-tunnel': {
     title: 'Carpal Tunnel Symptoms',
+    seoTitle: 'Carpal Tunnel Symptoms & Chiropractic Care | Forest Hills Chiropractic',
+    seoDescription: 'Learn about carpal tunnel symptoms, possible causes of hand discomfort, and evaluation options at Forest Hills Chiropractic in Pittsburgh, PA.',
     eyebrow: 'Wrist & Hand Symptoms',
     headline: 'Find Answers for Wrist and Hand Discomfort.',
     intro:
@@ -159,13 +166,13 @@ export const conditions = {
       'chiropractic-adjustments',
     ],
   },
-
-  // ============================================
-  // ADDITIONAL CONDITIONS
-  // ============================================
-
+// ============================================
+// ADDITIONAL CONDITIONS
+// ============================================
   'disc-problems': {
     title: 'Disc Problems',
+    seoTitle: 'Spinal Disc Problems in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Learn about disc-related back and neck symptoms and explore evaluation and conservative care options at Forest Hills Chiropractic in Pittsburgh, PA.',
     eyebrow: 'Spinal Disc Care',
     headline: 'Understand Your Disc Pain. Explore Your Options.',
     intro:
@@ -186,9 +193,10 @@ export const conditions = {
       'corrective-care',
     ],
   },
-
   'posture-related-pain': {
     title: 'Posture-Related Pain',
+    seoTitle: 'Posture-Related Pain in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Explore evaluation and care options for posture-related neck, back, and muscle discomfort at Forest Hills Chiropractic in Pittsburgh, PA.',
     eyebrow: 'Posture & Movement Care',
     headline: 'Move Beyond Everyday Postural Strain.',
     intro:
@@ -209,9 +217,10 @@ export const conditions = {
       'therapies',
     ],
   },
-
   'shoulder-pain': {
     title: 'Shoulder Pain',
+    seoTitle: 'Shoulder Pain Chiropractic Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Learn about possible causes of shoulder pain and explore movement evaluation and appropriate care options in Pittsburgh, PA.',
     eyebrow: 'Shoulder Pain Care',
     headline: 'Support Comfortable Shoulder Movement.',
     intro:
@@ -232,9 +241,10 @@ export const conditions = {
       'corrective-care',
     ],
   },
-
   'foot-heel-pain': {
     title: 'Foot & Heel Pain',
+    seoTitle: 'Foot & Heel Pain Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Explore foot and heel pain evaluation, including whether custom orthotics may be appropriate, at Forest Hills Chiropractic in Pittsburgh, PA.',
     eyebrow: 'Foot & Heel Care',
     headline: 'Find Better Support for Every Step.',
     intro:
@@ -255,9 +265,10 @@ export const conditions = {
       'corrective-care',
     ],
   },
-
   'muscle-strain-overuse': {
     title: 'Muscle Strain & Overuse',
+    seoTitle: 'Muscle Strain & Overuse Care in Pittsburgh, PA | Forest Hills Chiropractic',
+    seoDescription: 'Learn about evaluation and recovery-focused care options for muscle strain and overuse-related discomfort in Pittsburgh, PA.',
     eyebrow: 'Muscle & Recovery Care',
     headline: 'Recover Comfortably. Return to Movement.',
     intro:
@@ -279,11 +290,9 @@ export const conditions = {
     ],
   },
 };
-
 // ============================================
 // SERVICE DATA
 // ============================================
-
 export const serviceData = {
   'chiropractic-adjustments': {
     title: 'Chiropractic Adjustments',
@@ -291,28 +300,24 @@ export const serviceData = {
       'Personalized chiropractic care focused on joint mobility and movement.',
     href: '/services/chiropractic-adjustments',
   },
-
   'spinal-decompression': {
     title: 'Spinal Decompression',
     description:
       'Explore non-surgical spinal decompression for appropriate disc-related conditions.',
     href: '/services/spinal-decompression',
   },
-
   therapies: {
     title: 'Therapies & Recovery',
     description:
       'Support mobility and recovery with individualized therapeutic care.',
     href: '/services/therapies',
   },
-
   'corrective-care': {
     title: 'Corrective Care',
     description:
       'Explore personalized strategies for movement and functional limitations.',
     href: '/services/corrective',
   },
-
   'custom-orthotics': {
     title: 'Custom Orthotics',
     description:

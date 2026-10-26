@@ -2,18 +2,23 @@
 import { spawn } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+
 import puppeteer from "puppeteer";
 import chromium from "@sparticuz/chromium";
+
+import { conditions } from "../src/data/conditions.js";
+import { publishedLegalPages } from "../src/data/legalPages.js";
 
 const PORT = 4178;
 const BASE_URL = `http://127.0.0.1:${PORT}`;
 const OUTPUT_DIR = path.resolve("dist");
 
-const SITE_URL = "https://fh-chiropractic.com";
+const SITE_URL = "https://fhchiropractic.com";
 
 const isVercel = process.env.VERCEL === "1";
 
-const routes = [
+// All static routes outside the condition and legal-page collections.
+const staticRoutes = [
   "/",
   "/about",
   "/services",
@@ -24,20 +29,30 @@ const routes = [
   "/services/family",
   "/services/corrective",
   "/conditions",
-  "/conditions/back-pain",
-  "/conditions/neck-pain",
-  "/conditions/sciatica",
-  "/conditions/headaches",
-  "/conditions/joint-pain",
-  "/conditions/sports-injuries",
-  "/conditions/carpal-tunnel",
   "/contact",
   "/booking",
-  "/privacy-policy",
-  "/accessibility",
-  "/terms-of-service",
-  "/hipaa-policy",
 ];
+
+// Automatically include every condition in conditions.js.
+const conditionRoutes = Object.keys(conditions).map(
+  (slug) => `/conditions/${slug}`
+);
+
+// Automatically include published legal pages.
+const legalRoutes = publishedLegalPages.map(
+  (page) => `/${page.slug}`
+);
+
+const routes = [
+  ...staticRoutes,
+  ...conditionRoutes,
+  ...legalRoutes,
+];
+
+// Prevent accidentally generating the same page twice.
+if (new Set(routes).size !== routes.length) {
+  throw new Error("Duplicate routes found in prerender configuration.");
+}
 
 const server = spawn(
   process.execPath,
@@ -70,7 +85,7 @@ async function waitForServer() {
 
       if (response.ok) return;
     } catch {
-      // Server is still starting.
+      // The preview server may still be starting.
     }
 
     await new Promise((resolve) =>
@@ -138,19 +153,41 @@ async function prerender() {
 
       if (!response?.ok()) {
         throw new Error(
-          `Failed to render ${route}`
+          `Failed to render ${route}. HTTP status: ${response?.status() ?? "unknown"}`
         );
       }
 
+      // Wait for Vue to mount and SEO metadata to be available.
       await page.waitForFunction(
         () =>
-          document.querySelector("#app")?.children
-            .length > 0 &&
-          document.querySelector(
-            'link[rel="canonical"]'
-          ),
+          document.querySelector("#app")?.children.length > 0 &&
+          document.querySelector('link[rel="canonical"]'),
         { timeout: 15000 }
       );
+
+      // Validate the actual page, not just the Vue mount point.
+      const pageData = await page.evaluate(() => {
+        const main = document.querySelector("main");
+        const h1 = document.querySelector("h1");
+        const description = document.querySelector(
+          'meta[name="description"]'
+        );
+        const canonical = document.querySelector(
+          'link[rel="canonical"]'
+        );
+
+        return {
+          title: document.title.trim(),
+          description:
+            description?.getAttribute("content")?.trim() || "",
+          canonical:
+            canonical?.getAttribute("href") || "",
+          h1: h1?.textContent?.trim() || "",
+          hasMain: Boolean(main),
+          mainTextLength:
+            main?.textContent?.trim().length || 0,
+        };
+      });
 
       if (errors.length) {
         throw new Error(
@@ -158,19 +195,43 @@ async function prerender() {
         );
       }
 
-      const canonical = await page.$eval(
-        'link[rel="canonical"]',
-        (element) => element.href
-      );
+      if (!pageData.title) {
+        throw new Error(
+          `Missing page title on ${route}`
+        );
+      }
 
-      const expectedCanonical =
-        `${SITE_URL}${route}`;
+      if (!pageData.description) {
+        throw new Error(
+          `Missing meta description on ${route}`
+        );
+      }
 
-      if (canonical !== expectedCanonical) {
+      if (!pageData.hasMain) {
+        throw new Error(
+          `Missing <main> element on ${route}`
+        );
+      }
+
+      if (!pageData.h1) {
+        throw new Error(
+          `Missing H1 heading on ${route}`
+        );
+      }
+
+      if (pageData.mainTextLength < 50) {
+        throw new Error(
+          `Insufficient main content on ${route}`
+        );
+      }
+
+      const expectedCanonical = `${SITE_URL}${route}`;
+
+      if (pageData.canonical !== expectedCanonical) {
         throw new Error(
           `Unexpected canonical for ${route}:\n` +
           `Expected: ${expectedCanonical}\n` +
-          `Received: ${canonical}`
+          `Received: ${pageData.canonical}`
         );
       }
 
@@ -181,7 +242,7 @@ async function prerender() {
           ? path.join(OUTPUT_DIR, "index.html")
           : path.join(
               OUTPUT_DIR,
-              route,
+              route.slice(1),
               "index.html"
             );
 
