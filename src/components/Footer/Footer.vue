@@ -40,7 +40,7 @@ const socialLinks = [
 ];
 const officeHours = [
   { day: "Monday", times: ["7:00 AM – 11:15 AM", "2:30 PM – 6:00 PM"] },
-  { day: "Tuesday", times: ["7:00 AM – 11:15 AM"] },
+  { day: "Tuesday", times: ["7:00 AM – 11:15 AM", "2:30 PM – 6:00 PM"] },
   { day: "Wednesday", times: ["7:00 AM – 11:15 AM"] },
   { day: "Thursday", times: ["7:00 AM – 11:15 AM", "2:30 PM – 6:00 PM"] },
   { day: "Friday – Sunday", times: ["Closed"] },
