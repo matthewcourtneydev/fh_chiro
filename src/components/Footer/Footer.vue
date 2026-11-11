@@ -82,7 +82,7 @@ const props = defineProps({ showTopCta: { type: Boolean, default: true } });
         </div>
         <div class="footer__credits">
           <p>© {{ new Date().getFullYear() }} Forest Hills Chiropractic. All rights reserved.</p>
-          <p class="footer__designer">Website by <a href="#" class="footer__portfolio-link" aria-label="Matthew Courtney portfolio">Matthew Courtney</a></p>
+          <p class="footer__designer">Website by <a href="Goodform Web Co." class="footer__portfolio-link" aria-label="Matthew Courtney portfolio">Goodform Web Co.</a></p>
         </div>
       </div>
 
